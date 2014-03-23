@@ -4,14 +4,14 @@
   <description asmv2:publisher="ParkJoonYoung" asmv2:product="ForkliftManager" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="ForkliftManager.exe.manifest" size="4853">
+    <dependentAssembly dependencyType="install" codebase="ForkliftManager.exe.manifest" size="4382">
       <assemblyIdentity name="ForkliftManager.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>lBZ/OEzoZ8s73X510ZPAsjWvH5M=</dsig:DigestValue>
+        <dsig:DigestValue>K8T04a+Pbub6ZCi741ZH57ENXig=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -18,6 +18,9 @@ Public Class PrintForm
             Dim Adp As New OleDbDataAdapter("SELECT d_date, d_tons, d_qty, d_cost FROM deal WHERE (deal.d_client)=""" + cBoxClient.Text + """ AND ((deal.d_date) Like """ & YM & "%"") AND ((deal.d_user)=""" + CBoxUser.Text + """)", myConn)
             Dim Table As New DataTable
             Adp.Fill(Table)
+
+
+
             DataGridView1.DataSource = Table
 
         ElseIf (rBtnClient.Checked) Then
@@ -26,7 +29,6 @@ Public Class PrintForm
             Dim Table As New DataTable
             Adp.Fill(Table)
             DataGridView1.DataSource = Table
-            DataGridView1.Sort(DataGridView1.Sort, System.ComponentModel.ListSortDirection.Ascending)
         Else
             MsgBox("업체/작업자 구분을 선택해주세요")
         End If
@@ -85,8 +87,6 @@ Public Class PrintForm
         Me.ClientTableAdapter.Fill(Me.SourceDBDataSet.client)
         DTP.Format = DateTimePickerFormat.Custom
         DTP.CustomFormat = "yyyy-MM"
-
-        UserBindingSource
     End Sub
 
     Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles rBtnUser.CheckedChanged
