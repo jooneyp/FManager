@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CManager", "CManager\CManager.vbproj", "{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		2007|Any CPU = 2007|Any CPU
+		2007|x86 = 2007|x86
+		2010|Any CPU = 2010|Any CPU
+		2010|x86 = 2010|x86
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}.2007|Any CPU.ActiveCfg = 2007|Any CPU
+		{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}.2007|x86.ActiveCfg = 2007|x86
+		{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}.2007|x86.Build.0 = 2007|x86
+		{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}.2010|Any CPU.ActiveCfg = 2010|Any CPU
+		{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}.2010|x86.ActiveCfg = 2010|x86
+		{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}.2010|x86.Build.0 = 2010|x86
+		{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}.Debug|x86.ActiveCfg = Debug|x86
+		{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{199FEC9C-CE2D-4DE3-B63A-141889BB08D7}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

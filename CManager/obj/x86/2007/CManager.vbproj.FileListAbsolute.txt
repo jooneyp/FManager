@@ -1,0 +1,2 @@
+C:\Users\Jooney.P\documents\visual studio 2012\Projects\CManager\CManager\bin\x86\2007\ForkliftManager.exe.config
+C:\Users\Jooney.P\documents\visual studio 2012\Projects\CManager\CManager\obj\x86\2007\CManager.vbproj.ResolveComReference.cache
