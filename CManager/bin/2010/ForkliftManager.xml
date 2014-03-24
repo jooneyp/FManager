@@ -1,0 +1,108 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ForkliftManager
+</name>
+</assembly>
+<members>
+<member name="P:ForkliftManager.My.Resources.Resources.ResourceManager">
+	<summary>
+  이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+</summary>
+</member><member name="P:ForkliftManager.My.Resources.Resources.Culture">
+	<summary>
+  이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대한 현재 스레드의 CurrentUICulture
+  속성을 재정의합니다.
+</summary>
+</member><member name="T:ForkliftManager.My.Resources.Resources">
+	<summary>
+  지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.clientDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.dealDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.userDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.clientRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.dealRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.userRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.clientRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.dealRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.userRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSetTableAdapters.clientTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSetTableAdapters.dealTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:ForkliftManager.SourceDBDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(ForkliftManager.SourceDBDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:ForkliftManager.SourceDBDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(ForkliftManager.SourceDBDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:ForkliftManager.SourceDBDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(ForkliftManager.SourceDBDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:ForkliftManager.SourceDBDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:ForkliftManager.SourceDBDataSetTableAdapters.TableAdapterManager.UpdateAll(ForkliftManager.SourceDBDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+</members>
+</doc>

@@ -268,6 +268,8 @@ Partial Class DealForm
         Me.Controls.Add(Me.cBoxu_name)
         Me.Controls.Add(Me.cBoxc_name)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximumSize = New System.Drawing.Size(410, 498)
+        Me.MinimumSize = New System.Drawing.Size(410, 498)
         Me.Name = "DealForm"
         Me.Text = "DealForm"
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

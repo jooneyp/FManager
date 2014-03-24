@@ -89,6 +89,8 @@ Partial Class MainForm
         Me.Controls.Add(Me.Button_UserMod)
         Me.Controls.Add(Me.Button_Deal)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximumSize = New System.Drawing.Size(590, 206)
+        Me.MinimumSize = New System.Drawing.Size(590, 206)
         Me.Name = "MainForm"
         Me.Text = "Form1"
         Me.ResumeLayout(False)

@@ -368,6 +368,8 @@ Partial Class ClientForm
         Me.Controls.Add(Me.Label_identify_num)
         Me.Controls.Add(Me.Label_company)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximumSize = New System.Drawing.Size(1049, 791)
+        Me.MinimumSize = New System.Drawing.Size(1049, 791)
         Me.Name = "ClientForm"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

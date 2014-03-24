@@ -24,6 +24,14 @@ Partial Class UserForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.UnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UphoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UaddrDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UbnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UbaccountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UcommentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SourceDBDataSet = New ForkliftManager.SourceDBDataSet()
         Me.tBoxPhone = New System.Windows.Forms.TextBox()
         Me.Button_OK = New System.Windows.Forms.Button()
         Me.lblAOE = New System.Windows.Forms.Label()
@@ -44,18 +52,10 @@ Partial Class UserForm
         Me.lblAddr = New System.Windows.Forms.Label()
         Me.lblPhone = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
-        Me.SourceDBDataSet = New ForkliftManager.SourceDBDataSet()
-        Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UserTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter()
-        Me.UnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UphoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UaddrDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UbnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UbaccountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UcommentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
@@ -70,6 +70,52 @@ Partial Class UserForm
         Me.DataGridView1.RowTemplate.Height = 37
         Me.DataGridView1.Size = New System.Drawing.Size(976, 324)
         Me.DataGridView1.TabIndex = 72
+        '
+        'UnameDataGridViewTextBoxColumn
+        '
+        Me.UnameDataGridViewTextBoxColumn.DataPropertyName = "u_name"
+        Me.UnameDataGridViewTextBoxColumn.HeaderText = "u_name"
+        Me.UnameDataGridViewTextBoxColumn.Name = "UnameDataGridViewTextBoxColumn"
+        '
+        'UphoneDataGridViewTextBoxColumn
+        '
+        Me.UphoneDataGridViewTextBoxColumn.DataPropertyName = "u_phone"
+        Me.UphoneDataGridViewTextBoxColumn.HeaderText = "u_phone"
+        Me.UphoneDataGridViewTextBoxColumn.Name = "UphoneDataGridViewTextBoxColumn"
+        '
+        'UaddrDataGridViewTextBoxColumn
+        '
+        Me.UaddrDataGridViewTextBoxColumn.DataPropertyName = "u_addr"
+        Me.UaddrDataGridViewTextBoxColumn.HeaderText = "u_addr"
+        Me.UaddrDataGridViewTextBoxColumn.Name = "UaddrDataGridViewTextBoxColumn"
+        '
+        'UbnameDataGridViewTextBoxColumn
+        '
+        Me.UbnameDataGridViewTextBoxColumn.DataPropertyName = "u_bname"
+        Me.UbnameDataGridViewTextBoxColumn.HeaderText = "u_bname"
+        Me.UbnameDataGridViewTextBoxColumn.Name = "UbnameDataGridViewTextBoxColumn"
+        '
+        'UbaccountDataGridViewTextBoxColumn
+        '
+        Me.UbaccountDataGridViewTextBoxColumn.DataPropertyName = "u_baccount"
+        Me.UbaccountDataGridViewTextBoxColumn.HeaderText = "u_baccount"
+        Me.UbaccountDataGridViewTextBoxColumn.Name = "UbaccountDataGridViewTextBoxColumn"
+        '
+        'UcommentDataGridViewTextBoxColumn
+        '
+        Me.UcommentDataGridViewTextBoxColumn.DataPropertyName = "u_comment"
+        Me.UcommentDataGridViewTextBoxColumn.HeaderText = "u_comment"
+        Me.UcommentDataGridViewTextBoxColumn.Name = "UcommentDataGridViewTextBoxColumn"
+        '
+        'UserBindingSource
+        '
+        Me.UserBindingSource.DataMember = "user"
+        Me.UserBindingSource.DataSource = Me.SourceDBDataSet
+        '
+        'SourceDBDataSet
+        '
+        Me.SourceDBDataSet.DataSetName = "SourceDBDataSet"
+        Me.SourceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'tBoxPhone
         '
@@ -262,61 +308,15 @@ Partial Class UserForm
         Me.lblName.TabIndex = 59
         Me.lblName.Text = "이름 :"
         '
-        'SourceDBDataSet
-        '
-        Me.SourceDBDataSet.DataSetName = "SourceDBDataSet"
-        Me.SourceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'UserBindingSource
-        '
-        Me.UserBindingSource.DataMember = "user"
-        Me.UserBindingSource.DataSource = Me.SourceDBDataSet
-        '
         'UserTableAdapter
         '
         Me.UserTableAdapter.ClearBeforeFill = True
-        '
-        'UnameDataGridViewTextBoxColumn
-        '
-        Me.UnameDataGridViewTextBoxColumn.DataPropertyName = "u_name"
-        Me.UnameDataGridViewTextBoxColumn.HeaderText = "u_name"
-        Me.UnameDataGridViewTextBoxColumn.Name = "UnameDataGridViewTextBoxColumn"
-        '
-        'UphoneDataGridViewTextBoxColumn
-        '
-        Me.UphoneDataGridViewTextBoxColumn.DataPropertyName = "u_phone"
-        Me.UphoneDataGridViewTextBoxColumn.HeaderText = "u_phone"
-        Me.UphoneDataGridViewTextBoxColumn.Name = "UphoneDataGridViewTextBoxColumn"
-        '
-        'UaddrDataGridViewTextBoxColumn
-        '
-        Me.UaddrDataGridViewTextBoxColumn.DataPropertyName = "u_addr"
-        Me.UaddrDataGridViewTextBoxColumn.HeaderText = "u_addr"
-        Me.UaddrDataGridViewTextBoxColumn.Name = "UaddrDataGridViewTextBoxColumn"
-        '
-        'UbnameDataGridViewTextBoxColumn
-        '
-        Me.UbnameDataGridViewTextBoxColumn.DataPropertyName = "u_bname"
-        Me.UbnameDataGridViewTextBoxColumn.HeaderText = "u_bname"
-        Me.UbnameDataGridViewTextBoxColumn.Name = "UbnameDataGridViewTextBoxColumn"
-        '
-        'UbaccountDataGridViewTextBoxColumn
-        '
-        Me.UbaccountDataGridViewTextBoxColumn.DataPropertyName = "u_baccount"
-        Me.UbaccountDataGridViewTextBoxColumn.HeaderText = "u_baccount"
-        Me.UbaccountDataGridViewTextBoxColumn.Name = "UbaccountDataGridViewTextBoxColumn"
-        '
-        'UcommentDataGridViewTextBoxColumn
-        '
-        Me.UcommentDataGridViewTextBoxColumn.DataPropertyName = "u_comment"
-        Me.UcommentDataGridViewTextBoxColumn.HeaderText = "u_comment"
-        Me.UcommentDataGridViewTextBoxColumn.Name = "UcommentDataGridViewTextBoxColumn"
         '
         'UserForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1010, 735)
+        Me.ClientSize = New System.Drawing.Size(1014, 735)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.tBoxPhone)
         Me.Controls.Add(Me.Button_OK)
@@ -339,11 +339,13 @@ Partial Class UserForm
         Me.Controls.Add(Me.lblPhone)
         Me.Controls.Add(Me.lblName)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximumSize = New System.Drawing.Size(1036, 791)
+        Me.MinimumSize = New System.Drawing.Size(1036, 791)
         Me.Name = "UserForm"
         Me.Text = "UserForm"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

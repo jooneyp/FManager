@@ -59,7 +59,7 @@ Partial Class PrintForm
         Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 37
-        Me.DataGridView1.Size = New System.Drawing.Size(707, 524)
+        Me.DataGridView1.Size = New System.Drawing.Size(784, 524)
         Me.DataGridView1.TabIndex = 0
         '
         'SourceDBDataSet
@@ -86,7 +86,7 @@ Partial Class PrintForm
         'DTP
         '
         Me.DTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DTP.Location = New System.Drawing.Point(303, 79)
+        Me.DTP.Location = New System.Drawing.Point(320, 67)
         Me.DTP.Margin = New System.Windows.Forms.Padding(2)
         Me.DTP.Name = "DTP"
         Me.DTP.Size = New System.Drawing.Size(159, 28)
@@ -94,7 +94,7 @@ Partial Class PrintForm
         '
         'btnLoad
         '
-        Me.btnLoad.Location = New System.Drawing.Point(496, 66)
+        Me.btnLoad.Location = New System.Drawing.Point(678, 61)
         Me.btnLoad.Margin = New System.Windows.Forms.Padding(2)
         Me.btnLoad.Name = "btnLoad"
         Me.btnLoad.Size = New System.Drawing.Size(112, 59)
@@ -104,7 +104,7 @@ Partial Class PrintForm
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(623, 66)
+        Me.btnPrint.Location = New System.Drawing.Point(536, 61)
         Me.btnPrint.Margin = New System.Windows.Forms.Padding(2)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(112, 59)
@@ -157,7 +157,7 @@ Partial Class PrintForm
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(330, 50)
+        Me.Label3.Location = New System.Drawing.Point(350, 37)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(104, 18)
         Me.Label3.TabIndex = 9
@@ -184,7 +184,7 @@ Partial Class PrintForm
         'rBtnClient
         '
         Me.rBtnClient.AutoSize = True
-        Me.rBtnClient.Location = New System.Drawing.Point(625, 28)
+        Me.rBtnClient.Location = New System.Drawing.Point(678, 21)
         Me.rBtnClient.Name = "rBtnClient"
         Me.rBtnClient.Size = New System.Drawing.Size(105, 22)
         Me.rBtnClient.TabIndex = 10
@@ -194,7 +194,7 @@ Partial Class PrintForm
         'rBtnUser
         '
         Me.rBtnUser.AutoSize = True
-        Me.rBtnUser.Location = New System.Drawing.Point(496, 28)
+        Me.rBtnUser.Location = New System.Drawing.Point(536, 21)
         Me.rBtnUser.Name = "rBtnUser"
         Me.rBtnUser.Size = New System.Drawing.Size(123, 22)
         Me.rBtnUser.TabIndex = 11
@@ -206,7 +206,7 @@ Partial Class PrintForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(759, 692)
+        Me.ClientSize = New System.Drawing.Size(841, 692)
         Me.Controls.Add(Me.rBtnUser)
         Me.Controls.Add(Me.rBtnClient)
         Me.Controls.Add(Me.Label3)
@@ -219,6 +219,8 @@ Partial Class PrintForm
         Me.Controls.Add(Me.cBoxClient)
         Me.Controls.Add(Me.DataGridView1)
         Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.MaximumSize = New System.Drawing.Size(863, 748)
+        Me.MinimumSize = New System.Drawing.Size(863, 748)
         Me.Name = "PrintForm"
         Me.Text = "Print"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
