@@ -294,7 +294,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SourceDB.mdb">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
