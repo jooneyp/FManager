@@ -65,7 +65,6 @@ C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.P
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.UserForm.resources
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\CManager.vbproj.GenerateResource.Cache
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDBDataSet.xsd
-C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\WorkBook.xls
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDB.mdb
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDBDataSet.Designer.vb
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDBDataSet.vb
@@ -78,3 +77,4 @@ C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\ForkliftManager.p
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\ForkliftManager.xml
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.exe.manifest
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.application
+C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\ExcelForm.xls

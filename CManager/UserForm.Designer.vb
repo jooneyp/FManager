@@ -64,11 +64,11 @@ Partial Class UserForm
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UnameDataGridViewTextBoxColumn, Me.UphoneDataGridViewTextBoxColumn, Me.UaddrDataGridViewTextBoxColumn, Me.UbnameDataGridViewTextBoxColumn, Me.UbaccountDataGridViewTextBoxColumn, Me.UcommentDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.UserBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(18, 394)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
+        Me.DataGridView1.Location = New System.Drawing.Point(13, 263)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 37
-        Me.DataGridView1.Size = New System.Drawing.Size(976, 324)
+        Me.DataGridView1.Size = New System.Drawing.Size(683, 216)
         Me.DataGridView1.TabIndex = 72
         '
         'UnameDataGridViewTextBoxColumn
@@ -119,18 +119,18 @@ Partial Class UserForm
         '
         'tBoxPhone
         '
-        Me.tBoxPhone.Location = New System.Drawing.Point(136, 127)
-        Me.tBoxPhone.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxPhone.Location = New System.Drawing.Point(95, 85)
+        Me.tBoxPhone.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tBoxPhone.Name = "tBoxPhone"
-        Me.tBoxPhone.Size = New System.Drawing.Size(161, 28)
+        Me.tBoxPhone.Size = New System.Drawing.Size(114, 21)
         Me.tBoxPhone.TabIndex = 52
         '
         'Button_OK
         '
-        Me.Button_OK.Location = New System.Drawing.Point(598, 127)
-        Me.Button_OK.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_OK.Location = New System.Drawing.Point(419, 85)
+        Me.Button_OK.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Button_OK.Name = "Button_OK"
-        Me.Button_OK.Size = New System.Drawing.Size(258, 79)
+        Me.Button_OK.Size = New System.Drawing.Size(181, 53)
         Me.Button_OK.TabIndex = 57
         Me.Button_OK.Text = "저장하기"
         Me.Button_OK.UseVisualStyleBackColor = True
@@ -139,172 +139,172 @@ Partial Class UserForm
         'lblAOE
         '
         Me.lblAOE.AutoSize = True
-        Me.lblAOE.Location = New System.Drawing.Point(742, 339)
-        Me.lblAOE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblAOE.Location = New System.Drawing.Point(519, 226)
+        Me.lblAOE.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblAOE.Name = "lblAOE"
-        Me.lblAOE.Size = New System.Drawing.Size(100, 18)
+        Me.lblAOE.Size = New System.Drawing.Size(69, 12)
         Me.lblAOE.TabIndex = 71
         Me.lblAOE.Text = "Add Or Edit"
         Me.lblAOE.Visible = False
         '
         'Button_Clear
         '
-        Me.Button_Clear.Location = New System.Drawing.Point(456, 23)
-        Me.Button_Clear.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_Clear.Location = New System.Drawing.Point(319, 15)
+        Me.Button_Clear.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Button_Clear.Name = "Button_Clear"
-        Me.Button_Clear.Size = New System.Drawing.Size(118, 80)
+        Me.Button_Clear.Size = New System.Drawing.Size(83, 53)
         Me.Button_Clear.TabIndex = 70
         Me.Button_Clear.Text = "비우기"
         Me.Button_Clear.UseVisualStyleBackColor = True
         '
         'Button_GridView
         '
-        Me.Button_GridView.Location = New System.Drawing.Point(598, 233)
-        Me.Button_GridView.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_GridView.Location = New System.Drawing.Point(419, 155)
+        Me.Button_GridView.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Button_GridView.Name = "Button_GridView"
-        Me.Button_GridView.Size = New System.Drawing.Size(397, 80)
+        Me.Button_GridView.Size = New System.Drawing.Size(278, 53)
         Me.Button_GridView.TabIndex = 69
         Me.Button_GridView.Text = "데이터 목록 보기"
         Me.Button_GridView.UseVisualStyleBackColor = True
         '
         'Button_Delete
         '
-        Me.Button_Delete.Location = New System.Drawing.Point(877, 127)
-        Me.Button_Delete.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_Delete.Location = New System.Drawing.Point(614, 85)
+        Me.Button_Delete.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Button_Delete.Name = "Button_Delete"
-        Me.Button_Delete.Size = New System.Drawing.Size(118, 79)
+        Me.Button_Delete.Size = New System.Drawing.Size(83, 53)
         Me.Button_Delete.TabIndex = 68
         Me.Button_Delete.Text = "삭제"
         Me.Button_Delete.UseVisualStyleBackColor = True
         '
         'Button_Modify
         '
-        Me.Button_Modify.Location = New System.Drawing.Point(738, 127)
-        Me.Button_Modify.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_Modify.Location = New System.Drawing.Point(517, 85)
+        Me.Button_Modify.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Button_Modify.Name = "Button_Modify"
-        Me.Button_Modify.Size = New System.Drawing.Size(118, 79)
+        Me.Button_Modify.Size = New System.Drawing.Size(83, 53)
         Me.Button_Modify.TabIndex = 67
         Me.Button_Modify.Text = "수정"
         Me.Button_Modify.UseVisualStyleBackColor = True
         '
         'Button_Add
         '
-        Me.Button_Add.Location = New System.Drawing.Point(598, 127)
-        Me.Button_Add.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_Add.Location = New System.Drawing.Point(419, 85)
+        Me.Button_Add.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Button_Add.Name = "Button_Add"
-        Me.Button_Add.Size = New System.Drawing.Size(118, 79)
+        Me.Button_Add.Size = New System.Drawing.Size(83, 53)
         Me.Button_Add.TabIndex = 66
         Me.Button_Add.Text = "추가"
         Me.Button_Add.UseVisualStyleBackColor = True
         '
         'Button_Search
         '
-        Me.Button_Search.Location = New System.Drawing.Point(597, 23)
-        Me.Button_Search.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_Search.Location = New System.Drawing.Point(418, 15)
+        Me.Button_Search.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.Button_Search.Name = "Button_Search"
-        Me.Button_Search.Size = New System.Drawing.Size(397, 80)
+        Me.Button_Search.Size = New System.Drawing.Size(278, 53)
         Me.Button_Search.TabIndex = 65
         Me.Button_Search.Text = "찾기"
         Me.Button_Search.UseVisualStyleBackColor = True
         '
         'tBoxEtc
         '
-        Me.tBoxEtc.Location = New System.Drawing.Point(136, 287)
-        Me.tBoxEtc.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxEtc.Location = New System.Drawing.Point(95, 191)
+        Me.tBoxEtc.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tBoxEtc.Multiline = True
         Me.tBoxEtc.Name = "tBoxEtc"
-        Me.tBoxEtc.Size = New System.Drawing.Size(438, 26)
+        Me.tBoxEtc.Size = New System.Drawing.Size(308, 19)
         Me.tBoxEtc.TabIndex = 56
         '
         'tBoxBAccount
         '
-        Me.tBoxBAccount.Location = New System.Drawing.Point(413, 233)
-        Me.tBoxBAccount.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxBAccount.Location = New System.Drawing.Point(289, 155)
+        Me.tBoxBAccount.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tBoxBAccount.Name = "tBoxBAccount"
-        Me.tBoxBAccount.Size = New System.Drawing.Size(161, 28)
+        Me.tBoxBAccount.Size = New System.Drawing.Size(114, 21)
         Me.tBoxBAccount.TabIndex = 55
         '
         'tBoxBName
         '
-        Me.tBoxBName.Location = New System.Drawing.Point(136, 233)
-        Me.tBoxBName.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxBName.Location = New System.Drawing.Point(95, 155)
+        Me.tBoxBName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tBoxBName.Name = "tBoxBName"
-        Me.tBoxBName.Size = New System.Drawing.Size(161, 28)
+        Me.tBoxBName.Size = New System.Drawing.Size(114, 21)
         Me.tBoxBName.TabIndex = 54
         '
         'tBoxAddr
         '
-        Me.tBoxAddr.Location = New System.Drawing.Point(136, 180)
-        Me.tBoxAddr.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxAddr.Location = New System.Drawing.Point(95, 120)
+        Me.tBoxAddr.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tBoxAddr.Name = "tBoxAddr"
-        Me.tBoxAddr.Size = New System.Drawing.Size(438, 28)
+        Me.tBoxAddr.Size = New System.Drawing.Size(308, 21)
         Me.tBoxAddr.TabIndex = 53
         '
         'tBoxName
         '
-        Me.tBoxName.Location = New System.Drawing.Point(136, 75)
-        Me.tBoxName.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxName.Location = New System.Drawing.Point(95, 50)
+        Me.tBoxName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
         Me.tBoxName.Name = "tBoxName"
-        Me.tBoxName.Size = New System.Drawing.Size(161, 28)
+        Me.tBoxName.Size = New System.Drawing.Size(114, 21)
         Me.tBoxName.TabIndex = 51
         '
         'lblEtc
         '
         Me.lblEtc.AutoSize = True
-        Me.lblEtc.Location = New System.Drawing.Point(72, 289)
-        Me.lblEtc.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblEtc.Location = New System.Drawing.Point(50, 193)
+        Me.lblEtc.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblEtc.Name = "lblEtc"
-        Me.lblEtc.Size = New System.Drawing.Size(56, 18)
+        Me.lblEtc.Size = New System.Drawing.Size(37, 12)
         Me.lblEtc.TabIndex = 64
         Me.lblEtc.Text = "비고 :"
         '
         'lblBAccount
         '
         Me.lblBAccount.AutoSize = True
-        Me.lblBAccount.Location = New System.Drawing.Point(310, 236)
-        Me.lblBAccount.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblBAccount.Location = New System.Drawing.Point(217, 157)
+        Me.lblBAccount.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblBAccount.Name = "lblBAccount"
-        Me.lblBAccount.Size = New System.Drawing.Size(92, 18)
+        Me.lblBAccount.Size = New System.Drawing.Size(61, 12)
         Me.lblBAccount.TabIndex = 63
         Me.lblBAccount.Text = "계좌번호 :"
         '
         'lblBName
         '
         Me.lblBName.AutoSize = True
-        Me.lblBName.Location = New System.Drawing.Point(52, 235)
-        Me.lblBName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblBName.Location = New System.Drawing.Point(36, 157)
+        Me.lblBName.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblBName.Name = "lblBName"
-        Me.lblBName.Size = New System.Drawing.Size(74, 18)
+        Me.lblBName.Size = New System.Drawing.Size(49, 12)
         Me.lblBName.TabIndex = 62
         Me.lblBName.Text = "은행명 :"
         '
         'lblAddr
         '
         Me.lblAddr.AutoSize = True
-        Me.lblAddr.Location = New System.Drawing.Point(72, 182)
-        Me.lblAddr.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblAddr.Location = New System.Drawing.Point(50, 121)
+        Me.lblAddr.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblAddr.Name = "lblAddr"
-        Me.lblAddr.Size = New System.Drawing.Size(56, 18)
+        Me.lblAddr.Size = New System.Drawing.Size(37, 12)
         Me.lblAddr.TabIndex = 61
         Me.lblAddr.Text = "주소 :"
         '
         'lblPhone
         '
         Me.lblPhone.AutoSize = True
-        Me.lblPhone.Location = New System.Drawing.Point(33, 130)
-        Me.lblPhone.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblPhone.Location = New System.Drawing.Point(23, 87)
+        Me.lblPhone.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblPhone.Name = "lblPhone"
-        Me.lblPhone.Size = New System.Drawing.Size(92, 18)
+        Me.lblPhone.Size = New System.Drawing.Size(61, 12)
         Me.lblPhone.TabIndex = 60
         Me.lblPhone.Text = "전화번호 :"
         '
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(72, 77)
-        Me.lblName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblName.Location = New System.Drawing.Point(50, 51)
+        Me.lblName.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(56, 18)
+        Me.lblName.Size = New System.Drawing.Size(37, 12)
         Me.lblName.TabIndex = 59
         Me.lblName.Text = "이름 :"
         '
@@ -314,9 +314,9 @@ Partial Class UserForm
         '
         'UserForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1014, 735)
+        Me.ClientSize = New System.Drawing.Size(714, 501)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.tBoxPhone)
         Me.Controls.Add(Me.Button_OK)
@@ -338,11 +338,12 @@ Partial Class UserForm
         Me.Controls.Add(Me.lblAddr)
         Me.Controls.Add(Me.lblPhone)
         Me.Controls.Add(Me.lblName)
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MaximumSize = New System.Drawing.Size(1036, 791)
-        Me.MinimumSize = New System.Drawing.Size(1036, 791)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.MaximumSize = New System.Drawing.Size(730, 540)
+        Me.MinimumSize = New System.Drawing.Size(730, 540)
         Me.Name = "UserForm"
-        Me.Text = "UserForm"
+        Me.Text = "사용자 관리"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()

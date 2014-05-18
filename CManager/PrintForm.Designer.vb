@@ -23,27 +23,28 @@ Partial Class PrintForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridView_view = New System.Windows.Forms.DataGridView()
         Me.SourceDBDataSet = New ForkliftManager.SourceDBDataSet()
-        Me.cBoxClient = New System.Windows.Forms.ComboBox()
+        Me.cBox_client = New System.Windows.Forms.ComboBox()
         Me.ClientBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DTP = New System.Windows.Forms.DateTimePicker()
-        Me.btnLoad = New System.Windows.Forms.Button()
-        Me.btnPrint = New System.Windows.Forms.Button()
-        Me.CBoxUser = New System.Windows.Forms.ComboBox()
+        Me.dtp_print = New System.Windows.Forms.DateTimePicker()
+        Me.btn_load = New System.Windows.Forms.Button()
+        Me.btn_print = New System.Windows.Forms.Button()
+        Me.cBox_user = New System.Windows.Forms.ComboBox()
         Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ClientTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.clientTableAdapter()
         Me.SourceDBDataSet1 = New ForkliftManager.SourceDBDataSet()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
+        Me.lbl_client = New System.Windows.Forms.Label()
+        Me.lbl_user = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.SourceDBDataSetBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.DealBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.UserTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter()
         Me.DealTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.dealTableAdapter()
-        Me.rBtnClient = New System.Windows.Forms.RadioButton()
-        Me.rBtnUser = New System.Windows.Forms.RadioButton()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.rBtn_client = New System.Windows.Forms.RadioButton()
+        Me.rBtn_user = New System.Windows.Forms.RadioButton()
+        Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
+        CType(Me.DataGridView_view, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,75 +53,79 @@ Partial Class PrintForm
         CType(Me.DealBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'DataGridView1
+        'DataGridView_view
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(28, 143)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 37
-        Me.DataGridView1.Size = New System.Drawing.Size(784, 524)
-        Me.DataGridView1.TabIndex = 0
+        Me.DataGridView_view.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DataGridView_view.Location = New System.Drawing.Point(20, 95)
+        Me.DataGridView_view.Margin = New System.Windows.Forms.Padding(1)
+        Me.DataGridView_view.Name = "DataGridView_view"
+        Me.DataGridView_view.RowTemplate.Height = 37
+        Me.DataGridView_view.Size = New System.Drawing.Size(549, 349)
+        Me.DataGridView_view.TabIndex = 0
         '
         'SourceDBDataSet
         '
         Me.SourceDBDataSet.DataSetName = "SourceDBDataSet"
         Me.SourceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'cBoxClient
+        'cBox_client
         '
-        Me.cBoxClient.DataSource = Me.ClientBindingSource
-        Me.cBoxClient.DisplayMember = "c_name"
-        Me.cBoxClient.FormattingEnabled = True
-        Me.cBoxClient.Location = New System.Drawing.Point(103, 29)
-        Me.cBoxClient.Margin = New System.Windows.Forms.Padding(2)
-        Me.cBoxClient.Name = "cBoxClient"
-        Me.cBoxClient.Size = New System.Drawing.Size(159, 26)
-        Me.cBoxClient.TabIndex = 1
+        Me.cBox_client.DataSource = Me.ClientBindingSource
+        Me.cBox_client.DisplayMember = "c_name"
+        Me.cBox_client.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cBox_client.FormattingEnabled = True
+        Me.cBox_client.Location = New System.Drawing.Point(72, 19)
+        Me.cBox_client.Margin = New System.Windows.Forms.Padding(1)
+        Me.cBox_client.Name = "cBox_client"
+        Me.cBox_client.Size = New System.Drawing.Size(112, 20)
+        Me.cBox_client.TabIndex = 1
+        Me.cBox_client.ValueMember = "c_name"
         '
         'ClientBindingSource
         '
         Me.ClientBindingSource.DataMember = "client"
         Me.ClientBindingSource.DataSource = Me.SourceDBDataSet
         '
-        'DTP
+        'dtp_print
         '
-        Me.DTP.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DTP.Location = New System.Drawing.Point(320, 67)
-        Me.DTP.Margin = New System.Windows.Forms.Padding(2)
-        Me.DTP.Name = "DTP"
-        Me.DTP.Size = New System.Drawing.Size(159, 28)
-        Me.DTP.TabIndex = 2
+        Me.dtp_print.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.dtp_print.Location = New System.Drawing.Point(224, 45)
+        Me.dtp_print.Margin = New System.Windows.Forms.Padding(1)
+        Me.dtp_print.Name = "dtp_print"
+        Me.dtp_print.Size = New System.Drawing.Size(112, 21)
+        Me.dtp_print.TabIndex = 2
         '
-        'btnLoad
+        'btn_load
         '
-        Me.btnLoad.Location = New System.Drawing.Point(678, 61)
-        Me.btnLoad.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnLoad.Name = "btnLoad"
-        Me.btnLoad.Size = New System.Drawing.Size(112, 59)
-        Me.btnLoad.TabIndex = 4
-        Me.btnLoad.Text = "불러오기"
-        Me.btnLoad.UseVisualStyleBackColor = True
+        Me.btn_load.Location = New System.Drawing.Point(475, 41)
+        Me.btn_load.Margin = New System.Windows.Forms.Padding(1)
+        Me.btn_load.Name = "btn_load"
+        Me.btn_load.Size = New System.Drawing.Size(78, 39)
+        Me.btn_load.TabIndex = 4
+        Me.btn_load.Text = "불러오기"
+        Me.btn_load.UseVisualStyleBackColor = True
         '
-        'btnPrint
+        'btn_print
         '
-        Me.btnPrint.Location = New System.Drawing.Point(536, 61)
-        Me.btnPrint.Margin = New System.Windows.Forms.Padding(2)
-        Me.btnPrint.Name = "btnPrint"
-        Me.btnPrint.Size = New System.Drawing.Size(112, 59)
-        Me.btnPrint.TabIndex = 5
-        Me.btnPrint.Text = "출력하기"
-        Me.btnPrint.UseVisualStyleBackColor = True
+        Me.btn_print.Location = New System.Drawing.Point(375, 41)
+        Me.btn_print.Margin = New System.Windows.Forms.Padding(1)
+        Me.btn_print.Name = "btn_print"
+        Me.btn_print.Size = New System.Drawing.Size(78, 39)
+        Me.btn_print.TabIndex = 5
+        Me.btn_print.Text = "출력하기"
+        Me.btn_print.UseVisualStyleBackColor = True
         '
-        'CBoxUser
+        'cBox_user
         '
-        Me.CBoxUser.DataSource = Me.UserBindingSource
-        Me.CBoxUser.DisplayMember = "u_name"
-        Me.CBoxUser.FormattingEnabled = True
-        Me.CBoxUser.Location = New System.Drawing.Point(103, 81)
-        Me.CBoxUser.Name = "CBoxUser"
-        Me.CBoxUser.Size = New System.Drawing.Size(135, 26)
-        Me.CBoxUser.TabIndex = 6
+        Me.cBox_user.DataSource = Me.UserBindingSource
+        Me.cBox_user.DisplayMember = "u_name"
+        Me.cBox_user.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cBox_user.FormattingEnabled = True
+        Me.cBox_user.Location = New System.Drawing.Point(72, 54)
+        Me.cBox_user.Margin = New System.Windows.Forms.Padding(2)
+        Me.cBox_user.Name = "cBox_user"
+        Me.cBox_user.Size = New System.Drawing.Size(96, 20)
+        Me.cBox_user.TabIndex = 6
         '
         'UserBindingSource
         '
@@ -136,30 +141,33 @@ Partial Class PrintForm
         Me.SourceDBDataSet1.DataSetName = "SourceDBDataSet"
         Me.SourceDBDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'Label1
+        'lbl_client
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(25, 32)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(62, 18)
-        Me.Label1.TabIndex = 7
-        Me.Label1.Text = "업체명"
+        Me.lbl_client.AutoSize = True
+        Me.lbl_client.Location = New System.Drawing.Point(17, 21)
+        Me.lbl_client.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_client.Name = "lbl_client"
+        Me.lbl_client.Size = New System.Drawing.Size(41, 12)
+        Me.lbl_client.TabIndex = 7
+        Me.lbl_client.Text = "업체명"
         '
-        'Label2
+        'lbl_user
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(25, 84)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 18)
-        Me.Label2.TabIndex = 8
-        Me.Label2.Text = "작업자"
+        Me.lbl_user.AutoSize = True
+        Me.lbl_user.Location = New System.Drawing.Point(17, 56)
+        Me.lbl_user.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lbl_user.Name = "lbl_user"
+        Me.lbl_user.Size = New System.Drawing.Size(41, 12)
+        Me.lbl_user.TabIndex = 8
+        Me.lbl_user.Text = "작업자"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(350, 37)
+        Me.Label3.Location = New System.Drawing.Point(245, 25)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(104, 18)
+        Me.Label3.Size = New System.Drawing.Size(69, 12)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "출력대상 월"
         '
@@ -181,49 +189,52 @@ Partial Class PrintForm
         '
         Me.DealTableAdapter.ClearBeforeFill = True
         '
-        'rBtnClient
+        'rBtn_client
         '
-        Me.rBtnClient.AutoSize = True
-        Me.rBtnClient.Location = New System.Drawing.Point(678, 21)
-        Me.rBtnClient.Name = "rBtnClient"
-        Me.rBtnClient.Size = New System.Drawing.Size(105, 22)
-        Me.rBtnClient.TabIndex = 10
-        Me.rBtnClient.Text = "업체기준"
-        Me.rBtnClient.UseVisualStyleBackColor = True
+        Me.rBtn_client.AutoSize = True
+        Me.rBtn_client.Location = New System.Drawing.Point(475, 14)
+        Me.rBtn_client.Margin = New System.Windows.Forms.Padding(2)
+        Me.rBtn_client.Name = "rBtn_client"
+        Me.rBtn_client.Size = New System.Drawing.Size(71, 16)
+        Me.rBtn_client.TabIndex = 10
+        Me.rBtn_client.Text = "업체기준"
+        Me.rBtn_client.UseVisualStyleBackColor = True
         '
-        'rBtnUser
+        'rBtn_user
         '
-        Me.rBtnUser.AutoSize = True
-        Me.rBtnUser.Location = New System.Drawing.Point(536, 21)
-        Me.rBtnUser.Name = "rBtnUser"
-        Me.rBtnUser.Size = New System.Drawing.Size(123, 22)
-        Me.rBtnUser.TabIndex = 11
-        Me.rBtnUser.TabStop = True
-        Me.rBtnUser.Text = "작업자기준"
-        Me.rBtnUser.UseVisualStyleBackColor = True
+        Me.rBtn_user.AutoSize = True
+        Me.rBtn_user.Location = New System.Drawing.Point(375, 14)
+        Me.rBtn_user.Margin = New System.Windows.Forms.Padding(2)
+        Me.rBtn_user.Name = "rBtn_user"
+        Me.rBtn_user.Size = New System.Drawing.Size(83, 16)
+        Me.rBtn_user.TabIndex = 11
+        Me.rBtn_user.TabStop = True
+        Me.rBtn_user.Text = "작업자기준"
+        Me.rBtn_user.UseVisualStyleBackColor = True
         '
         'PrintForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(841, 692)
-        Me.Controls.Add(Me.rBtnUser)
-        Me.Controls.Add(Me.rBtnClient)
+        Me.ClientSize = New System.Drawing.Size(593, 473)
+        Me.Controls.Add(Me.rBtn_user)
+        Me.Controls.Add(Me.rBtn_client)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.CBoxUser)
-        Me.Controls.Add(Me.btnPrint)
-        Me.Controls.Add(Me.btnLoad)
-        Me.Controls.Add(Me.DTP)
-        Me.Controls.Add(Me.cBoxClient)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MaximumSize = New System.Drawing.Size(863, 748)
-        Me.MinimumSize = New System.Drawing.Size(863, 748)
+        Me.Controls.Add(Me.lbl_user)
+        Me.Controls.Add(Me.lbl_client)
+        Me.Controls.Add(Me.cBox_user)
+        Me.Controls.Add(Me.btn_print)
+        Me.Controls.Add(Me.btn_load)
+        Me.Controls.Add(Me.dtp_print)
+        Me.Controls.Add(Me.cBox_client)
+        Me.Controls.Add(Me.DataGridView_view)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(1)
+        Me.MaximumSize = New System.Drawing.Size(609, 512)
+        Me.MinimumSize = New System.Drawing.Size(609, 512)
         Me.Name = "PrintForm"
-        Me.Text = "Print"
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "거래내역 출력"
+        CType(Me.DataGridView_view, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
@@ -234,12 +245,12 @@ Partial Class PrintForm
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents cBoxClient As System.Windows.Forms.ComboBox
-    Friend WithEvents DTP As System.Windows.Forms.DateTimePicker
-    Friend WithEvents btnLoad As System.Windows.Forms.Button
-    Friend WithEvents btnPrint As System.Windows.Forms.Button
-    Friend WithEvents CBoxUser As System.Windows.Forms.ComboBox
+    Friend WithEvents DataGridView_view As System.Windows.Forms.DataGridView
+    Friend WithEvents cBox_client As System.Windows.Forms.ComboBox
+    Friend WithEvents dtp_print As System.Windows.Forms.DateTimePicker
+    Friend WithEvents btn_load As System.Windows.Forms.Button
+    Friend WithEvents btn_print As System.Windows.Forms.Button
+    Friend WithEvents cBox_user As System.Windows.Forms.ComboBox
     Friend WithEvents SourceDBDataSetBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents SourceDBDataSet As ForkliftManager.SourceDBDataSet
     Friend WithEvents ClientBindingSource As System.Windows.Forms.BindingSource
@@ -249,9 +260,10 @@ Partial Class PrintForm
     Friend WithEvents SourceDBDataSet1 As ForkliftManager.SourceDBDataSet
     Friend WithEvents DealBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DealTableAdapter As ForkliftManager.SourceDBDataSetTableAdapters.dealTableAdapter
-    Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents lbl_client As System.Windows.Forms.Label
+    Friend WithEvents lbl_user As System.Windows.Forms.Label
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents rBtnClient As System.Windows.Forms.RadioButton
-    Friend WithEvents rBtnUser As System.Windows.Forms.RadioButton
+    Friend WithEvents rBtn_client As System.Windows.Forms.RadioButton
+    Friend WithEvents rBtn_user As System.Windows.Forms.RadioButton
+    Friend WithEvents ColorDialog1 As System.Windows.Forms.ColorDialog
 End Class

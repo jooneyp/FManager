@@ -4,31 +4,31 @@ Imports Excel = Microsoft.Office.Interop.Excel
 Public Class PrintForm
     Private myConn As New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=.\SourceDB.mdb")
 
-    Private Sub btnLoad_Click(sender As Object, e As EventArgs) Handles btnLoad.Click
-        Dim Month As String = DTP.Value.Month.ToString
-        Dim Year As String = DTP.Value.Year.ToString
+    Private Sub btnLoad_Click(sender As Object, e As EventArgs) Handles btn_load.Click
+        Dim Month As String = dtp_print.Value.Month.ToString
+        Dim Year As String = dtp_print.Value.Year.ToString
         Dim YM As String
         If Month < 10 Then
             Month = "0" & Month
         End If
         YM = Year & "-" & Month
 
-        If (rBtnUser.Checked) Then
+        If (rBtn_user.Checked) Then
 
-            Dim Adp As New OleDbDataAdapter("SELECT d_date, d_tons, d_qty, d_cost FROM deal WHERE (deal.d_client)=""" + cBoxClient.Text + """ AND ((deal.d_date) Like """ & YM & "%"") AND ((deal.d_user)=""" + CBoxUser.Text + """)", myConn)
+            Dim Adp As New OleDbDataAdapter("SELECT d_date, d_tons, d_qty, d_cost FROM deal WHERE (deal.d_client)=""" + cBox_client.Text + """ AND ((deal.d_date) Like """ & YM & "%"") AND ((deal.d_user)=""" + cBox_user.Text + """)", myConn)
             Dim Table As New DataTable
             Adp.Fill(Table)
 
 
 
-            DataGridView1.DataSource = Table
+            DataGridView_view.DataSource = Table
 
-        ElseIf (rBtnClient.Checked) Then
+        ElseIf (rBtn_client.Checked) Then
 
-            Dim Adp As New OleDbDataAdapter("SELECT d_user, d_date, d_cost, d_tons, d_qty FROM deal WHERE (deal.d_client) = """ + cBoxClient.Text + """ AND ((deal.d_date) Like """ & YM & "%"")", myConn)
+            Dim Adp As New OleDbDataAdapter("SELECT d_user, d_date, d_cost, d_tons, d_qty FROM deal WHERE (deal.d_client) = """ + cBox_client.Text + """ AND ((deal.d_date) Like """ & YM & "%"")", myConn)
             Dim Table As New DataTable
             Adp.Fill(Table)
-            DataGridView1.DataSource = Table
+            DataGridView_view.DataSource = Table
         Else
             MsgBox("업체/작업자 구분을 선택해주세요")
         End If
@@ -37,7 +37,7 @@ Public Class PrintForm
 
     End Sub
 
-    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+    Private Sub btn_print_Click(sender As Object, e As EventArgs) Handles btn_print.Click
         Dim ExcelApp As Excel.Application
         Dim WorkB As Excel.Workbook
         Dim WorkS As Excel.Worksheet
@@ -50,11 +50,11 @@ Public Class PrintForm
         WorkB = ExcelApp.Workbooks.Open(My.Computer.FileSystem.CurrentDirectory & "\ExcelForm.xls")
         WorkS = ExcelApp.Sheets("input_se")
 
-        Dim myAdapter As New OleDbDataAdapter("SELECT * FROM [client] WHERE [c_name] = '" + cBoxClient.Text + "'", myConn)
+        Dim myAdapter As New OleDbDataAdapter("SELECT * FROM [client] WHERE [c_name] = '" + cBox_client.Text + "'", myConn)
         Dim myDataTable As New DataTable
         myAdapter.Fill(myDataTable)
 
-        WorkS.Cells(5, 8).Value = cBoxClient.Text
+        WorkS.Cells(5, 8).Value = cBox_client.Text
         WorkS.Cells(6, 8).Value = myDataTable.Rows(0).Item("c_idnum")
         WorkS.Cells(7, 8).Value = myDataTable.Rows(0).Item("c_headname")
         WorkS.Cells(8, 8).Value = myDataTable.Rows(0).Item("c_address")
@@ -68,9 +68,9 @@ Public Class PrintForm
 
         WorkS = ExcelApp.Sheets("input_gm")
 
-        For i = 0 To DataGridView1.RowCount - 2
-            For j = 0 To DataGridView1.ColumnCount - 1
-                WorkS.Cells(i + 19, j + 6) = DataGridView1(j, i).Value.ToString()
+        For i = 0 To DataGridView_view.RowCount - 2
+            For j = 0 To DataGridView_view.ColumnCount - 1
+                WorkS.Cells(i + 19, j + 6) = DataGridView_view(j, i).Value.ToString()
                 WorkS.Cells(i + 19, 3) = "지게차 사용료"
             Next
         Next
@@ -85,18 +85,18 @@ Public Class PrintForm
         Me.UserTableAdapter.Fill(Me.SourceDBDataSet.user)
         'TODO: 이 코드는 데이터를 'SourceDBDataSet.client' 테이블에 로드합니다. 필요한 경우 이 코드를 이동하거나 제거할 수 있습니다.
         Me.ClientTableAdapter.Fill(Me.SourceDBDataSet.client)
-        DTP.Format = DateTimePickerFormat.Custom
-        DTP.CustomFormat = "yyyy-MM"
+        dtp_print.Format = DateTimePickerFormat.Custom
+        dtp_print.CustomFormat = "yyyy-MM"
     End Sub
 
-    Private Sub RadioButton2_CheckedChanged(sender As Object, e As EventArgs) Handles rBtnUser.CheckedChanged
-        CBoxUser.Enabled = True
-        btnPrint.Enabled = True
+    Private Sub rBtn_user_CheckedChanged(sender As Object, e As EventArgs) Handles rBtn_user.CheckedChanged
+        cBox_user.Enabled = True
+        btn_print.Enabled = True
     End Sub
 
-    Private Sub RadioButton1_CheckedChanged(sender As Object, e As EventArgs) Handles rBtnClient.CheckedChanged
-        CBoxUser.Enabled = False
-        btnPrint.Enabled = False
+    Private Sub rBtn_client_CheckedChanged(sender As Object, e As EventArgs) Handles rBtn_client.CheckedChanged
+        cBox_user.Enabled = False
+        btn_print.Enabled = False
 
     End Sub
 End Class

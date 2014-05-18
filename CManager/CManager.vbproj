@@ -276,7 +276,7 @@
       <DependentUpon>SourceDBDataSet.xsd</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <EmbeddedResource Include="WorkBook.xls">
+    <EmbeddedResource Include="ExcelForm.xls">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

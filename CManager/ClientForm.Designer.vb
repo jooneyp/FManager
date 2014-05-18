@@ -63,28 +63,28 @@ Partial Class ClientForm
         '
         'tBoxIden
         '
-        Me.tBoxIden.Location = New System.Drawing.Point(144, 127)
-        Me.tBoxIden.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxIden.Location = New System.Drawing.Point(101, 85)
+        Me.tBoxIden.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxIden.Name = "tBoxIden"
-        Me.tBoxIden.Size = New System.Drawing.Size(161, 28)
+        Me.tBoxIden.Size = New System.Drawing.Size(114, 21)
         Me.tBoxIden.TabIndex = 51
         '
         'Label_
         '
         Me.Label_.AutoSize = True
-        Me.Label_.Location = New System.Drawing.Point(356, 130)
-        Me.Label_.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label_.Location = New System.Drawing.Point(249, 87)
+        Me.Label_.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_.Name = "Label_"
-        Me.Label_.Size = New System.Drawing.Size(56, 18)
+        Me.Label_.Size = New System.Drawing.Size(37, 12)
         Me.Label_.TabIndex = 72
         Me.Label_.Text = "성명 :"
         '
         'Button_OK
         '
-        Me.Button_OK.Location = New System.Drawing.Point(605, 128)
-        Me.Button_OK.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_OK.Location = New System.Drawing.Point(423, 85)
+        Me.Button_OK.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_OK.Name = "Button_OK"
-        Me.Button_OK.Size = New System.Drawing.Size(258, 79)
+        Me.Button_OK.Size = New System.Drawing.Size(181, 53)
         Me.Button_OK.TabIndex = 57
         Me.Button_OK.Text = "저장하기"
         Me.Button_OK.UseVisualStyleBackColor = True
@@ -93,180 +93,180 @@ Partial Class ClientForm
         'lblAOE
         '
         Me.lblAOE.AutoSize = True
-        Me.lblAOE.Location = New System.Drawing.Point(750, 340)
-        Me.lblAOE.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.lblAOE.Location = New System.Drawing.Point(525, 227)
+        Me.lblAOE.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblAOE.Name = "lblAOE"
-        Me.lblAOE.Size = New System.Drawing.Size(100, 18)
+        Me.lblAOE.Size = New System.Drawing.Size(69, 12)
         Me.lblAOE.TabIndex = 71
         Me.lblAOE.Text = "Add Or Edit"
         Me.lblAOE.Visible = False
         '
         'Button_Clear
         '
-        Me.Button_Clear.Location = New System.Drawing.Point(464, 23)
-        Me.Button_Clear.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_Clear.Location = New System.Drawing.Point(325, 15)
+        Me.Button_Clear.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Clear.Name = "Button_Clear"
-        Me.Button_Clear.Size = New System.Drawing.Size(118, 80)
+        Me.Button_Clear.Size = New System.Drawing.Size(83, 53)
         Me.Button_Clear.TabIndex = 70
         Me.Button_Clear.Text = "비우기"
         Me.Button_Clear.UseVisualStyleBackColor = True
         '
         'Button_GridView
         '
-        Me.Button_GridView.Location = New System.Drawing.Point(605, 234)
-        Me.Button_GridView.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_GridView.Location = New System.Drawing.Point(423, 156)
+        Me.Button_GridView.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_GridView.Name = "Button_GridView"
-        Me.Button_GridView.Size = New System.Drawing.Size(397, 80)
+        Me.Button_GridView.Size = New System.Drawing.Size(278, 53)
         Me.Button_GridView.TabIndex = 69
         Me.Button_GridView.Text = "데이터 목록 보기"
         Me.Button_GridView.UseVisualStyleBackColor = True
         '
         'Button_Delete
         '
-        Me.Button_Delete.Location = New System.Drawing.Point(885, 128)
-        Me.Button_Delete.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_Delete.Location = New System.Drawing.Point(619, 85)
+        Me.Button_Delete.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Delete.Name = "Button_Delete"
-        Me.Button_Delete.Size = New System.Drawing.Size(118, 79)
+        Me.Button_Delete.Size = New System.Drawing.Size(83, 53)
         Me.Button_Delete.TabIndex = 68
         Me.Button_Delete.Text = "삭제"
         Me.Button_Delete.UseVisualStyleBackColor = True
         '
         'Button_Modify
         '
-        Me.Button_Modify.Location = New System.Drawing.Point(745, 128)
-        Me.Button_Modify.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_Modify.Location = New System.Drawing.Point(521, 85)
+        Me.Button_Modify.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Modify.Name = "Button_Modify"
-        Me.Button_Modify.Size = New System.Drawing.Size(118, 79)
+        Me.Button_Modify.Size = New System.Drawing.Size(83, 53)
         Me.Button_Modify.TabIndex = 67
         Me.Button_Modify.Text = "수정"
         Me.Button_Modify.UseVisualStyleBackColor = True
         '
         'Button_Add
         '
-        Me.Button_Add.Location = New System.Drawing.Point(605, 128)
-        Me.Button_Add.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_Add.Location = New System.Drawing.Point(423, 85)
+        Me.Button_Add.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Add.Name = "Button_Add"
-        Me.Button_Add.Size = New System.Drawing.Size(118, 79)
+        Me.Button_Add.Size = New System.Drawing.Size(83, 53)
         Me.Button_Add.TabIndex = 66
         Me.Button_Add.Text = "추가"
         Me.Button_Add.UseVisualStyleBackColor = True
         '
         'Button_Search
         '
-        Me.Button_Search.Location = New System.Drawing.Point(605, 23)
-        Me.Button_Search.Margin = New System.Windows.Forms.Padding(2)
+        Me.Button_Search.Location = New System.Drawing.Point(423, 15)
+        Me.Button_Search.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Search.Name = "Button_Search"
-        Me.Button_Search.Size = New System.Drawing.Size(397, 80)
+        Me.Button_Search.Size = New System.Drawing.Size(278, 53)
         Me.Button_Search.TabIndex = 65
         Me.Button_Search.Text = "찾기"
         Me.Button_Search.UseVisualStyleBackColor = True
         '
         'tBoxComment
         '
-        Me.tBoxComment.Location = New System.Drawing.Point(144, 287)
-        Me.tBoxComment.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxComment.Location = New System.Drawing.Point(101, 191)
+        Me.tBoxComment.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxComment.Multiline = True
         Me.tBoxComment.Name = "tBoxComment"
-        Me.tBoxComment.Size = New System.Drawing.Size(438, 26)
+        Me.tBoxComment.Size = New System.Drawing.Size(308, 19)
         Me.tBoxComment.TabIndex = 56
         '
         'tBoxJongmok
         '
-        Me.tBoxJongmok.Location = New System.Drawing.Point(421, 233)
-        Me.tBoxJongmok.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxJongmok.Location = New System.Drawing.Point(295, 155)
+        Me.tBoxJongmok.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxJongmok.Name = "tBoxJongmok"
-        Me.tBoxJongmok.Size = New System.Drawing.Size(161, 28)
+        Me.tBoxJongmok.Size = New System.Drawing.Size(114, 21)
         Me.tBoxJongmok.TabIndex = 55
         '
         'tBoxType
         '
-        Me.tBoxType.Location = New System.Drawing.Point(144, 233)
-        Me.tBoxType.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxType.Location = New System.Drawing.Point(101, 155)
+        Me.tBoxType.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxType.Name = "tBoxType"
-        Me.tBoxType.Size = New System.Drawing.Size(161, 28)
+        Me.tBoxType.Size = New System.Drawing.Size(114, 21)
         Me.tBoxType.TabIndex = 54
         '
         'tBoxAddr
         '
-        Me.tBoxAddr.Location = New System.Drawing.Point(144, 180)
-        Me.tBoxAddr.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxAddr.Location = New System.Drawing.Point(101, 120)
+        Me.tBoxAddr.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxAddr.Name = "tBoxAddr"
-        Me.tBoxAddr.Size = New System.Drawing.Size(438, 28)
+        Me.tBoxAddr.Size = New System.Drawing.Size(308, 21)
         Me.tBoxAddr.TabIndex = 53
         '
         'tBoxHeadname
         '
-        Me.tBoxHeadname.Location = New System.Drawing.Point(421, 127)
-        Me.tBoxHeadname.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxHeadname.Location = New System.Drawing.Point(295, 85)
+        Me.tBoxHeadname.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxHeadname.Name = "tBoxHeadname"
-        Me.tBoxHeadname.Size = New System.Drawing.Size(161, 28)
+        Me.tBoxHeadname.Size = New System.Drawing.Size(114, 21)
         Me.tBoxHeadname.TabIndex = 52
         '
         'tBoxName
         '
-        Me.tBoxName.Location = New System.Drawing.Point(144, 75)
-        Me.tBoxName.Margin = New System.Windows.Forms.Padding(2)
+        Me.tBoxName.Location = New System.Drawing.Point(101, 50)
+        Me.tBoxName.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxName.Name = "tBoxName"
-        Me.tBoxName.Size = New System.Drawing.Size(161, 28)
+        Me.tBoxName.Size = New System.Drawing.Size(114, 21)
         Me.tBoxName.TabIndex = 50
         '
         'Label_etc
         '
         Me.Label_etc.AutoSize = True
-        Me.Label_etc.Location = New System.Drawing.Point(78, 290)
-        Me.Label_etc.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label_etc.Location = New System.Drawing.Point(55, 193)
+        Me.Label_etc.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_etc.Name = "Label_etc"
-        Me.Label_etc.Size = New System.Drawing.Size(56, 18)
+        Me.Label_etc.Size = New System.Drawing.Size(37, 12)
         Me.Label_etc.TabIndex = 64
         Me.Label_etc.Text = "비고 :"
         '
         'Label_jongmok
         '
         Me.Label_jongmok.AutoSize = True
-        Me.Label_jongmok.Location = New System.Drawing.Point(356, 237)
-        Me.Label_jongmok.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label_jongmok.Location = New System.Drawing.Point(249, 158)
+        Me.Label_jongmok.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_jongmok.Name = "Label_jongmok"
-        Me.Label_jongmok.Size = New System.Drawing.Size(56, 18)
+        Me.Label_jongmok.Size = New System.Drawing.Size(37, 12)
         Me.Label_jongmok.TabIndex = 63
         Me.Label_jongmok.Text = "종목 :"
         '
         'Label_type
         '
         Me.Label_type.AutoSize = True
-        Me.Label_type.Location = New System.Drawing.Point(78, 239)
-        Me.Label_type.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label_type.Location = New System.Drawing.Point(55, 159)
+        Me.Label_type.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_type.Name = "Label_type"
-        Me.Label_type.Size = New System.Drawing.Size(56, 18)
+        Me.Label_type.Size = New System.Drawing.Size(37, 12)
         Me.Label_type.TabIndex = 62
         Me.Label_type.Text = "업태 :"
         '
         'Label_addr
         '
         Me.Label_addr.AutoSize = True
-        Me.Label_addr.Location = New System.Drawing.Point(25, 185)
-        Me.Label_addr.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label_addr.Location = New System.Drawing.Point(17, 123)
+        Me.Label_addr.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_addr.Name = "Label_addr"
-        Me.Label_addr.Size = New System.Drawing.Size(110, 18)
+        Me.Label_addr.Size = New System.Drawing.Size(73, 12)
         Me.Label_addr.TabIndex = 61
         Me.Label_addr.Text = "사업장주소 :"
         '
         'Label_identify_num
         '
         Me.Label_identify_num.AutoSize = True
-        Me.Label_identify_num.Location = New System.Drawing.Point(25, 133)
-        Me.Label_identify_num.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label_identify_num.Location = New System.Drawing.Point(17, 89)
+        Me.Label_identify_num.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_identify_num.Name = "Label_identify_num"
-        Me.Label_identify_num.Size = New System.Drawing.Size(110, 18)
+        Me.Label_identify_num.Size = New System.Drawing.Size(73, 12)
         Me.Label_identify_num.TabIndex = 60
         Me.Label_identify_num.Text = "사업자번호 :"
         '
         'Label_company
         '
         Me.Label_company.AutoSize = True
-        Me.Label_company.Location = New System.Drawing.Point(78, 81)
-        Me.Label_company.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label_company.Location = New System.Drawing.Point(55, 54)
+        Me.Label_company.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_company.Name = "Label_company"
-        Me.Label_company.Size = New System.Drawing.Size(56, 18)
+        Me.Label_company.Size = New System.Drawing.Size(37, 12)
         Me.Label_company.TabIndex = 59
         Me.Label_company.Text = "상호 :"
         '
@@ -276,11 +276,11 @@ Partial Class ClientForm
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CnameDataGridViewTextBoxColumn, Me.CaddressDataGridViewTextBoxColumn, Me.CheadnameDataGridViewTextBoxColumn, Me.CtypeDataGridViewTextBoxColumn, Me.CjongmokDataGridViewTextBoxColumn, Me.CidnumDataGridViewTextBoxColumn, Me.CcommentDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.ClientBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(24, 395)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(2)
+        Me.DataGridView1.Location = New System.Drawing.Point(17, 263)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 37
-        Me.DataGridView1.Size = New System.Drawing.Size(978, 314)
+        Me.DataGridView1.Size = New System.Drawing.Size(685, 209)
         Me.DataGridView1.TabIndex = 73
         '
         'CnameDataGridViewTextBoxColumn
@@ -341,9 +341,9 @@ Partial Class ClientForm
         '
         'ClientForm
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(10.0!, 18.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1027, 735)
+        Me.ClientSize = New System.Drawing.Size(723, 501)
         Me.Controls.Add(Me.DataGridView1)
         Me.Controls.Add(Me.tBoxIden)
         Me.Controls.Add(Me.Label_)
@@ -367,10 +367,12 @@ Partial Class ClientForm
         Me.Controls.Add(Me.Label_addr)
         Me.Controls.Add(Me.Label_identify_num)
         Me.Controls.Add(Me.Label_company)
-        Me.Margin = New System.Windows.Forms.Padding(2)
-        Me.MaximumSize = New System.Drawing.Size(1049, 791)
-        Me.MinimumSize = New System.Drawing.Size(1049, 791)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(1)
+        Me.MaximumSize = New System.Drawing.Size(739, 540)
+        Me.MinimumSize = New System.Drawing.Size(739, 540)
         Me.Name = "ClientForm"
+        Me.Text = "업체 관리"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
