@@ -78,3 +78,4 @@ C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\ForkliftManager.x
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.exe.manifest
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.application
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\ExcelForm.xls
+C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.CodeMod.resources

@@ -26,6 +26,7 @@ Partial Class Import
         Me.btn_open = New System.Windows.Forms.Button()
         Me.lbl_prog = New System.Windows.Forms.Label()
         Me.lbl_complete = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'lbl_wait
@@ -40,7 +41,7 @@ Partial Class Import
         '
         'btn_open
         '
-        Me.btn_open.Location = New System.Drawing.Point(83, 12)
+        Me.btn_open.Location = New System.Drawing.Point(30, 12)
         Me.btn_open.Name = "btn_open"
         Me.btn_open.Size = New System.Drawing.Size(176, 60)
         Me.btn_open.TabIndex = 34
@@ -69,11 +70,21 @@ Partial Class Import
         Me.lbl_complete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.lbl_complete.Visible = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(212, 12)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(113, 60)
+        Me.Button1.TabIndex = 38
+        Me.Button1.Text = "코드 편집.."
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Import
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(350, 121)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.lbl_complete)
         Me.Controls.Add(Me.lbl_prog)
         Me.Controls.Add(Me.btn_open)
@@ -91,4 +102,5 @@ Partial Class Import
     Friend WithEvents btn_open As System.Windows.Forms.Button
     Friend WithEvents lbl_prog As System.Windows.Forms.Label
     Friend WithEvents lbl_complete As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

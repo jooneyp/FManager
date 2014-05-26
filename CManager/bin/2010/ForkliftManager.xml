@@ -31,6 +31,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.tonDataDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:ForkliftManager.SourceDBDataSet.clientRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -43,6 +47,10 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.tonDataRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:ForkliftManager.SourceDBDataSet.clientRowChangeEvent">
 	<summary>
 Row event argument class
@@ -52,6 +60,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:ForkliftManager.SourceDBDataSet.userRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSet.tonDataRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -68,6 +80,10 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ForkliftManager.SourceDBDataSetTableAdapters.tonDataTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

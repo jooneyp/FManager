@@ -166,6 +166,12 @@
     <Compile Include="ClientForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CodeMod.Designer.vb">
+      <DependentUpon>CodeMod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CodeMod.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="DealForm.Designer.vb">
       <DependentUpon>DealForm.vb</DependentUpon>
     </Compile>
@@ -226,6 +232,9 @@
   <ItemGroup>
     <EmbeddedResource Include="ClientForm.resx">
       <DependentUpon>ClientForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CodeMod.resx">
+      <DependentUpon>CodeMod.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DealForm.resx">
       <DependentUpon>DealForm.vb</DependentUpon>
