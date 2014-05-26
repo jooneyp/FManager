@@ -303,7 +303,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="SourceDB.mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -26,12 +26,19 @@ Partial Class MainForm
         Me.btn_userMod = New System.Windows.Forms.Button()
         Me.btn_deal = New System.Windows.Forms.Button()
         Me.btn_print = New System.Windows.Forms.Button()
-        Me.btn_Import = New System.Windows.Forms.Button()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.파일ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.보기ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.사용자초기화ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.업체목록초기화ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.거래내역초기화ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.코드관리ToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btn_clientMod
         '
-        Me.btn_clientMod.Location = New System.Drawing.Point(283, 18)
+        Me.btn_clientMod.Location = New System.Drawing.Point(252, 26)
         Me.btn_clientMod.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_clientMod.Name = "btn_clientMod"
         Me.btn_clientMod.Size = New System.Drawing.Size(66, 52)
@@ -41,7 +48,7 @@ Partial Class MainForm
         '
         'btn_userMod
         '
-        Me.btn_userMod.Location = New System.Drawing.Point(195, 18)
+        Me.btn_userMod.Location = New System.Drawing.Point(172, 26)
         Me.btn_userMod.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_userMod.Name = "btn_userMod"
         Me.btn_userMod.Size = New System.Drawing.Size(66, 52)
@@ -51,7 +58,7 @@ Partial Class MainForm
         '
         'btn_deal
         '
-        Me.btn_deal.Location = New System.Drawing.Point(20, 18)
+        Me.btn_deal.Location = New System.Drawing.Point(11, 26)
         Me.btn_deal.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_deal.Name = "btn_deal"
         Me.btn_deal.Size = New System.Drawing.Size(66, 52)
@@ -61,7 +68,7 @@ Partial Class MainForm
         '
         'btn_print
         '
-        Me.btn_print.Location = New System.Drawing.Point(107, 18)
+        Me.btn_print.Location = New System.Drawing.Point(92, 26)
         Me.btn_print.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_print.Name = "btn_print"
         Me.btn_print.Size = New System.Drawing.Size(66, 52)
@@ -69,37 +76,86 @@ Partial Class MainForm
         Me.btn_print.Text = "거래내역 출력"
         Me.btn_print.UseVisualStyleBackColor = True
         '
-        'btn_Import
+        'MenuStrip1
         '
-        Me.btn_Import.Location = New System.Drawing.Point(372, 18)
-        Me.btn_Import.Margin = New System.Windows.Forms.Padding(2)
-        Me.btn_Import.Name = "btn_Import"
-        Me.btn_Import.Size = New System.Drawing.Size(66, 52)
-        Me.btn_Import.TabIndex = 9
-        Me.btn_Import.Text = "가져오기"
-        Me.btn_Import.UseVisualStyleBackColor = True
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.파일ToolStripMenuItem, Me.보기ToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(328, 24)
+        Me.MenuStrip1.TabIndex = 10
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        '파일ToolStripMenuItem
+        '
+        Me.파일ToolStripMenuItem.Name = "파일ToolStripMenuItem"
+        Me.파일ToolStripMenuItem.Size = New System.Drawing.Size(119, 20)
+        Me.파일ToolStripMenuItem.Text = "거래내역 가져오기"
+        '
+        '보기ToolStripMenuItem
+        '
+        Me.보기ToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.사용자초기화ToolStripMenuItem, Me.업체목록초기화ToolStripMenuItem, Me.거래내역초기화ToolStripMenuItem1, Me.코드관리ToolStripMenuItem})
+        Me.보기ToolStripMenuItem.Name = "보기ToolStripMenuItem"
+        Me.보기ToolStripMenuItem.Size = New System.Drawing.Size(43, 20)
+        Me.보기ToolStripMenuItem.Text = "설정"
+        '
+        '사용자초기화ToolStripMenuItem
+        '
+        Me.사용자초기화ToolStripMenuItem.Name = "사용자초기화ToolStripMenuItem"
+        Me.사용자초기화ToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.사용자초기화ToolStripMenuItem.Text = "사용자 초기화"
+        Me.사용자초기화ToolStripMenuItem.Visible = False
+        '
+        '업체목록초기화ToolStripMenuItem
+        '
+        Me.업체목록초기화ToolStripMenuItem.Name = "업체목록초기화ToolStripMenuItem"
+        Me.업체목록초기화ToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.업체목록초기화ToolStripMenuItem.Text = "업체목록 초기화"
+        Me.업체목록초기화ToolStripMenuItem.Visible = False
+        '
+        '거래내역초기화ToolStripMenuItem1
+        '
+        Me.거래내역초기화ToolStripMenuItem1.Name = "거래내역초기화ToolStripMenuItem1"
+        Me.거래내역초기화ToolStripMenuItem1.Size = New System.Drawing.Size(162, 22)
+        Me.거래내역초기화ToolStripMenuItem1.Text = "거래내역 초기화"
+        Me.거래내역초기화ToolStripMenuItem1.Visible = False
+        '
+        '코드관리ToolStripMenuItem
+        '
+        Me.코드관리ToolStripMenuItem.Name = "코드관리ToolStripMenuItem"
+        Me.코드관리ToolStripMenuItem.Size = New System.Drawing.Size(162, 22)
+        Me.코드관리ToolStripMenuItem.Text = "코드 관리"
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(456, 86)
-        Me.Controls.Add(Me.btn_Import)
+        Me.ClientSize = New System.Drawing.Size(328, 87)
         Me.Controls.Add(Me.btn_print)
         Me.Controls.Add(Me.btn_clientMod)
         Me.Controls.Add(Me.btn_userMod)
         Me.Controls.Add(Me.btn_deal)
+        Me.Controls.Add(Me.MenuStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.MainMenuStrip = Me.MenuStrip1
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "MainForm"
-        Me.Text = "MainMenu"
+        Me.Text = "메인 메뉴"
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents btn_clientMod As System.Windows.Forms.Button
     Friend WithEvents btn_userMod As System.Windows.Forms.Button
     Friend WithEvents btn_deal As System.Windows.Forms.Button
     Friend WithEvents btn_print As System.Windows.Forms.Button
-    Friend WithEvents btn_Import As System.Windows.Forms.Button
+    Friend WithEvents MenuStrip1 As System.Windows.Forms.MenuStrip
+    Friend WithEvents 파일ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 보기ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 사용자초기화ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 업체목록초기화ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 거래내역초기화ToolStripMenuItem1 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents 코드관리ToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class

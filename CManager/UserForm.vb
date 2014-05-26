@@ -131,7 +131,6 @@ Public Class UserForm
     Private Sub ClientForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.UserTableAdapter.Fill(Me.SourceDBDataSet.user)
         myConn.Open()
-        Me.Text = "User Form"
     End Sub
 
     Private Sub Button_GridView_Click(sender As Object, e As EventArgs) Handles Button_GridView.Click

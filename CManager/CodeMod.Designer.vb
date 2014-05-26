@@ -44,6 +44,7 @@ Partial Class CodeMod
         '
         Me.cBoxCode.DataSource = Me.TonDataBindingSource
         Me.cBoxCode.DisplayMember = "code"
+        Me.cBoxCode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cBoxCode.FormattingEnabled = True
         Me.cBoxCode.Location = New System.Drawing.Point(29, 41)
         Me.cBoxCode.Name = "cBoxCode"
@@ -159,7 +160,7 @@ Partial Class CodeMod
         Me.Controls.Add(Me.tBoxTons)
         Me.Controls.Add(Me.cBoxCode)
         Me.Name = "CodeMod"
-        Me.Text = "CodeMod"
+        Me.Text = "코드 수정"
         CType(Me.TonDataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

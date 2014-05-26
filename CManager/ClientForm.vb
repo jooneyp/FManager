@@ -139,7 +139,6 @@ Public Class ClientForm
 
     Private Sub ClientForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.ClientTableAdapter.Fill(Me.SourceDBDataSet.client)
-        Me.Text = "Client Form"
         myConn.Open()
     End Sub
 

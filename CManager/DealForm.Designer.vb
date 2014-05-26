@@ -23,7 +23,6 @@ Partial Class DealForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.cBox_Tons = New System.Windows.Forms.TextBox()
         Me.btnSubmit = New System.Windows.Forms.Button()
         Me.lblDutyR = New System.Windows.Forms.Label()
         Me.lblFCostR = New System.Windows.Forms.Label()
@@ -35,8 +34,8 @@ Partial Class DealForm
         Me.lblDate = New System.Windows.Forms.Label()
         Me.lblu_name = New System.Windows.Forms.Label()
         Me.lblc_name = New System.Windows.Forms.Label()
-        Me.cBox_Qty = New System.Windows.Forms.TextBox()
-        Me.cBox_Cost = New System.Windows.Forms.TextBox()
+        Me.tBoxQty = New System.Windows.Forms.TextBox()
+        Me.tBoxCost = New System.Windows.Forms.TextBox()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.cBoxu_name = New System.Windows.Forms.ComboBox()
         Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -46,18 +45,14 @@ Partial Class DealForm
         Me.DealTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.dealTableAdapter()
         Me.ClientTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.clientTableAdapter()
         Me.UserTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter()
+        Me.cBoxTons = New System.Windows.Forms.ComboBox()
+        Me.TonDataBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TonDataTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.tonDataTableAdapter()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ClientBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TonDataBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'cBox_Tons
-        '
-        Me.cBox_Tons.Location = New System.Drawing.Point(26, 169)
-        Me.cBox_Tons.Margin = New System.Windows.Forms.Padding(1)
-        Me.cBox_Tons.Name = "cBox_Tons"
-        Me.cBox_Tons.Size = New System.Drawing.Size(78, 21)
-        Me.cBox_Tons.TabIndex = 25
         '
         'btnSubmit
         '
@@ -171,21 +166,23 @@ Partial Class DealForm
         Me.lblc_name.TabIndex = 28
         Me.lblc_name.Text = "업체명"
         '
-        'cBox_Qty
+        'tBoxQty
         '
-        Me.cBox_Qty.Location = New System.Drawing.Point(211, 169)
-        Me.cBox_Qty.Margin = New System.Windows.Forms.Padding(1)
-        Me.cBox_Qty.Name = "cBox_Qty"
-        Me.cBox_Qty.Size = New System.Drawing.Size(36, 21)
-        Me.cBox_Qty.TabIndex = 27
+        Me.tBoxQty.Location = New System.Drawing.Point(211, 169)
+        Me.tBoxQty.Margin = New System.Windows.Forms.Padding(1)
+        Me.tBoxQty.Name = "tBoxQty"
+        Me.tBoxQty.Size = New System.Drawing.Size(36, 21)
+        Me.tBoxQty.TabIndex = 27
+        Me.tBoxQty.Text = "1"
         '
-        'cBox_Cost
+        'tBoxCost
         '
-        Me.cBox_Cost.Location = New System.Drawing.Point(118, 169)
-        Me.cBox_Cost.Margin = New System.Windows.Forms.Padding(1)
-        Me.cBox_Cost.Name = "cBox_Cost"
-        Me.cBox_Cost.Size = New System.Drawing.Size(79, 21)
-        Me.cBox_Cost.TabIndex = 26
+        Me.tBoxCost.Location = New System.Drawing.Point(118, 169)
+        Me.tBoxCost.Margin = New System.Windows.Forms.Padding(1)
+        Me.tBoxCost.Name = "tBoxCost"
+        Me.tBoxCost.Size = New System.Drawing.Size(79, 21)
+        Me.tBoxCost.TabIndex = 26
+        Me.tBoxCost.Text = "40000"
         '
         'DateTimePicker1
         '
@@ -247,12 +244,32 @@ Partial Class DealForm
         '
         Me.UserTableAdapter.ClearBeforeFill = True
         '
+        'cBoxTons
+        '
+        Me.cBoxTons.DataSource = Me.TonDataBindingSource
+        Me.cBoxTons.DisplayMember = "ton"
+        Me.cBoxTons.FormattingEnabled = True
+        Me.cBoxTons.Location = New System.Drawing.Point(26, 170)
+        Me.cBoxTons.Name = "cBoxTons"
+        Me.cBoxTons.Size = New System.Drawing.Size(78, 20)
+        Me.cBoxTons.TabIndex = 39
+        Me.cBoxTons.Text = "7t"
+        '
+        'TonDataBindingSource
+        '
+        Me.TonDataBindingSource.DataMember = "tonData"
+        Me.TonDataBindingSource.DataSource = Me.DBDataSet
+        '
+        'TonDataTableAdapter
+        '
+        Me.TonDataTableAdapter.ClearBeforeFill = True
+        '
         'DealForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(276, 306)
-        Me.Controls.Add(Me.cBox_Tons)
+        Me.ClientSize = New System.Drawing.Size(286, 316)
+        Me.Controls.Add(Me.cBoxTons)
         Me.Controls.Add(Me.btnSubmit)
         Me.Controls.Add(Me.lblDutyR)
         Me.Controls.Add(Me.lblFCostR)
@@ -264,8 +281,8 @@ Partial Class DealForm
         Me.Controls.Add(Me.lblDate)
         Me.Controls.Add(Me.lblu_name)
         Me.Controls.Add(Me.lblc_name)
-        Me.Controls.Add(Me.cBox_Qty)
-        Me.Controls.Add(Me.cBox_Cost)
+        Me.Controls.Add(Me.tBoxQty)
+        Me.Controls.Add(Me.tBoxCost)
         Me.Controls.Add(Me.DateTimePicker1)
         Me.Controls.Add(Me.cBoxu_name)
         Me.Controls.Add(Me.cBoxc_name)
@@ -278,11 +295,11 @@ Partial Class DealForm
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ClientBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TonDataBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
-End Sub
-    Friend WithEvents cBox_Tons As System.Windows.Forms.TextBox
+    End Sub
     Friend WithEvents btnSubmit As System.Windows.Forms.Button
     Friend WithEvents lblDutyR As System.Windows.Forms.Label
     Friend WithEvents lblFCostR As System.Windows.Forms.Label
@@ -294,8 +311,8 @@ End Sub
     Friend WithEvents lblDate As System.Windows.Forms.Label
     Friend WithEvents lblu_name As System.Windows.Forms.Label
     Friend WithEvents lblc_name As System.Windows.Forms.Label
-    Friend WithEvents cBox_Qty As System.Windows.Forms.TextBox
-    Friend WithEvents cBox_Cost As System.Windows.Forms.TextBox
+    Friend WithEvents tBoxQty As System.Windows.Forms.TextBox
+    Friend WithEvents tBoxCost As System.Windows.Forms.TextBox
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
     Friend WithEvents cBoxu_name As System.Windows.Forms.ComboBox
     Friend WithEvents cBoxc_name As System.Windows.Forms.ComboBox
@@ -305,4 +322,7 @@ End Sub
     Friend WithEvents ClientTableAdapter As ForkliftManager.SourceDBDataSetTableAdapters.clientTableAdapter
     Friend WithEvents UserBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents UserTableAdapter As ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter
+    Friend WithEvents cBoxTons As System.Windows.Forms.ComboBox
+    Friend WithEvents TonDataBindingSource As System.Windows.Forms.BindingSource
+    Friend WithEvents TonDataTableAdapter As ForkliftManager.SourceDBDataSetTableAdapters.tonDataTableAdapter
 End Class

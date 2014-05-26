@@ -23,6 +23,7 @@ Public Class CodeMod
     End Sub
 
     Private Sub btnAdd_Click(sender As Object, e As EventArgs) Handles btnAdd.Click
+        cBoxCode.DropDownStyle = ComboBoxStyle.DropDown
         flag = 0
         btnOK.Visible = True
         btnCancel.Visible = True
@@ -35,9 +36,6 @@ Public Class CodeMod
         flag = 1
         btnOK.Visible = True
         btnCancel.Visible = True
-        cBoxCode.Text = ""
-        tBoxCost.Text = ""
-        tBoxTons.Text = ""
     End Sub
 
     Private Sub CodeMod_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
@@ -45,28 +43,40 @@ Public Class CodeMod
     End Sub
 
     Private Sub btnOK_Click(sender As Object, e As EventArgs) Handles btnOK.Click
-        If flag = 0 Then
-            Dim cmdText = "INSERT INTO [tonData] (code, ton, cost) VALUES (?, ?, ?)"
-            Dim myCmd = New OleDbCommand(cmdText, myConn)
-            myCmd.Parameters.AddWithValue("@code", cBoxCode.Text)
-            myCmd.Parameters.AddWithValue("@ton", tBoxTons.Text)
-            myCmd.Parameters.AddWithValue("@cost", tBoxCost.Text)
-            myCmd.ExecuteNonQuery()
-        ElseIf flag = 1 Then
-            Dim cmdText = "UPDATE [tonData] SET ton = ?, cost = ? WHERE (code = ?)"
-            Dim myCmd = New OleDbCommand(cmdText, myConn)
-            myCmd.Parameters.AddWithValue("@code", cBoxCode.Text)
-            myCmd.Parameters.AddWithValue("@ton", tBoxTons.Text)
-            myCmd.Parameters.AddWithValue("@cost", tBoxCost.Text)
-            myCmd.ExecuteNonQuery()
+        If cBoxCode.Text = "" Or tBoxCost.Text = "" Or tBoxTons.Text = "" Then
+            MessageBox.Show("입력 내용을 확인해주세요.")
+        Else
+            If flag = 0 Then
+                Dim cmdText = "INSERT INTO [tonData] (code, ton, cost) VALUES (?, ?, ?)"
+                Dim myCmd = New OleDbCommand(cmdText, myConn)
+                myCmd.Parameters.AddWithValue("@code", cBoxCode.Text)
+                myCmd.Parameters.AddWithValue("@ton", tBoxTons.Text)
+                myCmd.Parameters.AddWithValue("@cost", tBoxCost.Text)
+                myCmd.ExecuteNonQuery()
+                cBoxCode.DropDownStyle = ComboBoxStyle.DropDownList
+            ElseIf flag = 1 Then
+                Dim cmdText = "UPDATE [tonData] SET ton = ?, cost = ? WHERE (code = ?)"
+                Dim myCmd = New OleDbCommand(cmdText, myConn)
+                myCmd.Parameters.AddWithValue("@code", cBoxCode.Text)
+                myCmd.Parameters.AddWithValue("@ton", tBoxTons.Text)
+                myCmd.Parameters.AddWithValue("@cost", tBoxCost.Text)
+                myCmd.ExecuteNonQuery()
+            End If
+
+            MessageBox.Show("입력이 완료되었습니다.")
+            btnOK.Visible = False
+            btnCancel.Visible = False
+            cBoxCode.Text = ""
+            tBoxCost.Text = ""
+            tBoxTons.Text = ""
+            Me.TonDataTableAdapter.Fill(Me.SourceDBDataSet.tonData)
         End If
 
-        MessageBox.Show("입력이 완료되었습니다.")
+    End Sub
+
+    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
         btnOK.Visible = False
         btnCancel.Visible = False
-        cBoxCode.Text = ""
-        tBoxCost.Text = ""
-        tBoxTons.Text = ""
-        Me.TonDataTableAdapter.Fill(Me.SourceDBDataSet.tonData)
+        cBoxCode.Text = "a"
     End Sub
 End Class

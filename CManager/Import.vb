@@ -62,10 +62,17 @@ Public Class Import
                                 data(1) = WorkS.Cells(index + i, 1).Value
                                 'add date
                                 data(2) = ExcelApp.Sheets(1).Cells(2, 36).Value & "-" & WorkS.Cells(index + 2, j).Value
-                                Debug.WriteLine(data(2))
                                 Try
                                     commentText = WorkS.Cells(index + i, j).Comment.Text
                                     'add cost&tons
+                                    Dim myAdapter As New OleDbDataAdapter("SELECT * FROM [tonData] WHERE (code = '" + commentText + "')", myConn)
+                                    Dim myDataTable As New DataTable
+                                    myAdapter.Fill(myDataTable)
+                                    If myDataTable.Rows.Count > 0 Then
+                                        data(3) = myDataTable.Rows(0).Item("cost")
+                                        data(4) = myDataTable.Rows(0).Item("ton")
+                                    Else
+                                    End If
 
                                 Catch ex As Exception
                                     data(3) = "40000"
@@ -101,9 +108,5 @@ Public Class Import
         myConn.Close()
         lbl_prog.Visible = False
         lbl_complete.Visible = True
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        CodeMod.Show()
     End Sub
 End Class
