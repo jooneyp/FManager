@@ -47,14 +47,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ForkliftManager.exe" size="764416">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ForkliftManager.exe" size="798208">
       <assemblyIdentity name="ForkliftManager" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>/yC1H3ok28Q3mnWZ8JLp+uAI6+M=</dsig:DigestValue>
+        <dsig:DigestValue>T+o+D4hquVHJvjOtR2xQjjnq6BQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

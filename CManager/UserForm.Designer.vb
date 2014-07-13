@@ -24,15 +24,7 @@ Partial Class UserForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.UnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UphoneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UaddrDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UbnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UbaccountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UcommentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SourceDBDataSet = New ForkliftManager.SourceDBDataSet()
-        Me.tBoxPhone = New System.Windows.Forms.TextBox()
+        Me.tBoxIdnum = New System.Windows.Forms.TextBox()
         Me.Button_OK = New System.Windows.Forms.Button()
         Me.lblAOE = New System.Windows.Forms.Label()
         Me.Button_Clear = New System.Windows.Forms.Button()
@@ -41,9 +33,9 @@ Partial Class UserForm
         Me.Button_Modify = New System.Windows.Forms.Button()
         Me.Button_Add = New System.Windows.Forms.Button()
         Me.Button_Search = New System.Windows.Forms.Button()
-        Me.tBoxEtc = New System.Windows.Forms.TextBox()
-        Me.tBoxBAccount = New System.Windows.Forms.TextBox()
-        Me.tBoxBName = New System.Windows.Forms.TextBox()
+        Me.tBoxComment = New System.Windows.Forms.TextBox()
+        Me.tBoxJongmok = New System.Windows.Forms.TextBox()
+        Me.tBoxType = New System.Windows.Forms.TextBox()
         Me.tBoxAddr = New System.Windows.Forms.TextBox()
         Me.tBoxName = New System.Windows.Forms.TextBox()
         Me.lblEtc = New System.Windows.Forms.Label()
@@ -52,83 +44,48 @@ Partial Class UserForm
         Me.lblAddr = New System.Windows.Forms.Label()
         Me.lblPhone = New System.Windows.Forms.Label()
         Me.lblName = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.tBoxHeadname = New System.Windows.Forms.TextBox()
         Me.UserTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter()
+        Me.SourceDBDataSet = New ForkliftManager.SourceDBDataSet()
+        Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.UnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UaddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UheadnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UtypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UidnumDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UcommentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DataGridView1
         '
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UnameDataGridViewTextBoxColumn, Me.UphoneDataGridViewTextBoxColumn, Me.UaddrDataGridViewTextBoxColumn, Me.UbnameDataGridViewTextBoxColumn, Me.UbaccountDataGridViewTextBoxColumn, Me.UcommentDataGridViewTextBoxColumn})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UnameDataGridViewTextBoxColumn, Me.UaddressDataGridViewTextBoxColumn, Me.UheadnameDataGridViewTextBoxColumn, Me.UtypeDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.UidnumDataGridViewTextBoxColumn, Me.UcommentDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.UserBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(13, 263)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(1)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.RowTemplate.Height = 37
         Me.DataGridView1.Size = New System.Drawing.Size(683, 216)
         Me.DataGridView1.TabIndex = 72
         '
-        'UnameDataGridViewTextBoxColumn
+        'tBoxIdnum
         '
-        Me.UnameDataGridViewTextBoxColumn.DataPropertyName = "u_name"
-        Me.UnameDataGridViewTextBoxColumn.HeaderText = "u_name"
-        Me.UnameDataGridViewTextBoxColumn.Name = "UnameDataGridViewTextBoxColumn"
-        '
-        'UphoneDataGridViewTextBoxColumn
-        '
-        Me.UphoneDataGridViewTextBoxColumn.DataPropertyName = "u_phone"
-        Me.UphoneDataGridViewTextBoxColumn.HeaderText = "u_phone"
-        Me.UphoneDataGridViewTextBoxColumn.Name = "UphoneDataGridViewTextBoxColumn"
-        '
-        'UaddrDataGridViewTextBoxColumn
-        '
-        Me.UaddrDataGridViewTextBoxColumn.DataPropertyName = "u_addr"
-        Me.UaddrDataGridViewTextBoxColumn.HeaderText = "u_addr"
-        Me.UaddrDataGridViewTextBoxColumn.Name = "UaddrDataGridViewTextBoxColumn"
-        '
-        'UbnameDataGridViewTextBoxColumn
-        '
-        Me.UbnameDataGridViewTextBoxColumn.DataPropertyName = "u_bname"
-        Me.UbnameDataGridViewTextBoxColumn.HeaderText = "u_bname"
-        Me.UbnameDataGridViewTextBoxColumn.Name = "UbnameDataGridViewTextBoxColumn"
-        '
-        'UbaccountDataGridViewTextBoxColumn
-        '
-        Me.UbaccountDataGridViewTextBoxColumn.DataPropertyName = "u_baccount"
-        Me.UbaccountDataGridViewTextBoxColumn.HeaderText = "u_baccount"
-        Me.UbaccountDataGridViewTextBoxColumn.Name = "UbaccountDataGridViewTextBoxColumn"
-        '
-        'UcommentDataGridViewTextBoxColumn
-        '
-        Me.UcommentDataGridViewTextBoxColumn.DataPropertyName = "u_comment"
-        Me.UcommentDataGridViewTextBoxColumn.HeaderText = "u_comment"
-        Me.UcommentDataGridViewTextBoxColumn.Name = "UcommentDataGridViewTextBoxColumn"
-        '
-        'UserBindingSource
-        '
-        Me.UserBindingSource.DataMember = "user"
-        Me.UserBindingSource.DataSource = Me.SourceDBDataSet
-        '
-        'SourceDBDataSet
-        '
-        Me.SourceDBDataSet.DataSetName = "SourceDBDataSet"
-        Me.SourceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'tBoxPhone
-        '
-        Me.tBoxPhone.Location = New System.Drawing.Point(95, 85)
-        Me.tBoxPhone.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.tBoxPhone.Name = "tBoxPhone"
-        Me.tBoxPhone.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxPhone.TabIndex = 52
+        Me.tBoxIdnum.Location = New System.Drawing.Point(95, 85)
+        Me.tBoxIdnum.Margin = New System.Windows.Forms.Padding(1)
+        Me.tBoxIdnum.Name = "tBoxIdnum"
+        Me.tBoxIdnum.Size = New System.Drawing.Size(114, 21)
+        Me.tBoxIdnum.TabIndex = 52
         '
         'Button_OK
         '
         Me.Button_OK.Location = New System.Drawing.Point(419, 85)
-        Me.Button_OK.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Button_OK.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_OK.Name = "Button_OK"
         Me.Button_OK.Size = New System.Drawing.Size(181, 53)
         Me.Button_OK.TabIndex = 57
@@ -150,7 +107,7 @@ Partial Class UserForm
         'Button_Clear
         '
         Me.Button_Clear.Location = New System.Drawing.Point(319, 15)
-        Me.Button_Clear.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Button_Clear.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Clear.Name = "Button_Clear"
         Me.Button_Clear.Size = New System.Drawing.Size(83, 53)
         Me.Button_Clear.TabIndex = 70
@@ -160,7 +117,7 @@ Partial Class UserForm
         'Button_GridView
         '
         Me.Button_GridView.Location = New System.Drawing.Point(419, 155)
-        Me.Button_GridView.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Button_GridView.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_GridView.Name = "Button_GridView"
         Me.Button_GridView.Size = New System.Drawing.Size(278, 53)
         Me.Button_GridView.TabIndex = 69
@@ -170,7 +127,7 @@ Partial Class UserForm
         'Button_Delete
         '
         Me.Button_Delete.Location = New System.Drawing.Point(614, 85)
-        Me.Button_Delete.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Button_Delete.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Delete.Name = "Button_Delete"
         Me.Button_Delete.Size = New System.Drawing.Size(83, 53)
         Me.Button_Delete.TabIndex = 68
@@ -180,7 +137,7 @@ Partial Class UserForm
         'Button_Modify
         '
         Me.Button_Modify.Location = New System.Drawing.Point(517, 85)
-        Me.Button_Modify.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Button_Modify.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Modify.Name = "Button_Modify"
         Me.Button_Modify.Size = New System.Drawing.Size(83, 53)
         Me.Button_Modify.TabIndex = 67
@@ -190,7 +147,7 @@ Partial Class UserForm
         'Button_Add
         '
         Me.Button_Add.Location = New System.Drawing.Point(419, 85)
-        Me.Button_Add.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Button_Add.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Add.Name = "Button_Add"
         Me.Button_Add.Size = New System.Drawing.Size(83, 53)
         Me.Button_Add.TabIndex = 66
@@ -200,50 +157,50 @@ Partial Class UserForm
         'Button_Search
         '
         Me.Button_Search.Location = New System.Drawing.Point(418, 15)
-        Me.Button_Search.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Button_Search.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Search.Name = "Button_Search"
         Me.Button_Search.Size = New System.Drawing.Size(278, 53)
         Me.Button_Search.TabIndex = 65
         Me.Button_Search.Text = "찾기"
         Me.Button_Search.UseVisualStyleBackColor = True
         '
-        'tBoxEtc
+        'tBoxComment
         '
-        Me.tBoxEtc.Location = New System.Drawing.Point(95, 191)
-        Me.tBoxEtc.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.tBoxEtc.Multiline = True
-        Me.tBoxEtc.Name = "tBoxEtc"
-        Me.tBoxEtc.Size = New System.Drawing.Size(308, 19)
-        Me.tBoxEtc.TabIndex = 56
+        Me.tBoxComment.Location = New System.Drawing.Point(95, 191)
+        Me.tBoxComment.Margin = New System.Windows.Forms.Padding(1)
+        Me.tBoxComment.Multiline = True
+        Me.tBoxComment.Name = "tBoxComment"
+        Me.tBoxComment.Size = New System.Drawing.Size(308, 19)
+        Me.tBoxComment.TabIndex = 57
         '
-        'tBoxBAccount
+        'tBoxJongmok
         '
-        Me.tBoxBAccount.Location = New System.Drawing.Point(289, 155)
-        Me.tBoxBAccount.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.tBoxBAccount.Name = "tBoxBAccount"
-        Me.tBoxBAccount.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxBAccount.TabIndex = 55
+        Me.tBoxJongmok.Location = New System.Drawing.Point(289, 155)
+        Me.tBoxJongmok.Margin = New System.Windows.Forms.Padding(1)
+        Me.tBoxJongmok.Name = "tBoxJongmok"
+        Me.tBoxJongmok.Size = New System.Drawing.Size(114, 21)
+        Me.tBoxJongmok.TabIndex = 56
         '
-        'tBoxBName
+        'tBoxType
         '
-        Me.tBoxBName.Location = New System.Drawing.Point(95, 155)
-        Me.tBoxBName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
-        Me.tBoxBName.Name = "tBoxBName"
-        Me.tBoxBName.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxBName.TabIndex = 54
+        Me.tBoxType.Location = New System.Drawing.Point(95, 155)
+        Me.tBoxType.Margin = New System.Windows.Forms.Padding(1)
+        Me.tBoxType.Name = "tBoxType"
+        Me.tBoxType.Size = New System.Drawing.Size(114, 21)
+        Me.tBoxType.TabIndex = 55
         '
         'tBoxAddr
         '
         Me.tBoxAddr.Location = New System.Drawing.Point(95, 120)
-        Me.tBoxAddr.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tBoxAddr.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxAddr.Name = "tBoxAddr"
         Me.tBoxAddr.Size = New System.Drawing.Size(308, 21)
-        Me.tBoxAddr.TabIndex = 53
+        Me.tBoxAddr.TabIndex = 54
         '
         'tBoxName
         '
         Me.tBoxName.Location = New System.Drawing.Point(95, 50)
-        Me.tBoxName.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.tBoxName.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxName.Name = "tBoxName"
         Me.tBoxName.Size = New System.Drawing.Size(114, 21)
         Me.tBoxName.TabIndex = 51
@@ -261,22 +218,22 @@ Partial Class UserForm
         'lblBAccount
         '
         Me.lblBAccount.AutoSize = True
-        Me.lblBAccount.Location = New System.Drawing.Point(217, 157)
+        Me.lblBAccount.Location = New System.Drawing.Point(242, 158)
         Me.lblBAccount.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblBAccount.Name = "lblBAccount"
-        Me.lblBAccount.Size = New System.Drawing.Size(61, 12)
+        Me.lblBAccount.Size = New System.Drawing.Size(37, 12)
         Me.lblBAccount.TabIndex = 63
-        Me.lblBAccount.Text = "계좌번호 :"
+        Me.lblBAccount.Text = "종목 :"
         '
         'lblBName
         '
         Me.lblBName.AutoSize = True
-        Me.lblBName.Location = New System.Drawing.Point(36, 157)
+        Me.lblBName.Location = New System.Drawing.Point(50, 158)
         Me.lblBName.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblBName.Name = "lblBName"
-        Me.lblBName.Size = New System.Drawing.Size(49, 12)
+        Me.lblBName.Size = New System.Drawing.Size(37, 12)
         Me.lblBName.TabIndex = 62
-        Me.lblBName.Text = "은행명 :"
+        Me.lblBName.Text = "업태 :"
         '
         'lblAddr
         '
@@ -291,34 +248,106 @@ Partial Class UserForm
         'lblPhone
         '
         Me.lblPhone.AutoSize = True
-        Me.lblPhone.Location = New System.Drawing.Point(23, 87)
+        Me.lblPhone.Location = New System.Drawing.Point(14, 88)
         Me.lblPhone.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblPhone.Name = "lblPhone"
-        Me.lblPhone.Size = New System.Drawing.Size(61, 12)
+        Me.lblPhone.Size = New System.Drawing.Size(73, 12)
         Me.lblPhone.TabIndex = 60
-        Me.lblPhone.Text = "전화번호 :"
+        Me.lblPhone.Text = "사업자번호 :"
         '
         'lblName
         '
         Me.lblName.AutoSize = True
-        Me.lblName.Location = New System.Drawing.Point(50, 51)
+        Me.lblName.Location = New System.Drawing.Point(38, 53)
         Me.lblName.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblName.Name = "lblName"
-        Me.lblName.Size = New System.Drawing.Size(37, 12)
+        Me.lblName.Size = New System.Drawing.Size(49, 12)
         Me.lblName.TabIndex = 59
-        Me.lblName.Text = "이름 :"
+        Me.lblName.Text = "상호명 :"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(242, 88)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(37, 12)
+        Me.Label1.TabIndex = 73
+        Me.Label1.Text = "성명 :"
+        '
+        'tBoxHeadname
+        '
+        Me.tBoxHeadname.Location = New System.Drawing.Point(289, 85)
+        Me.tBoxHeadname.Margin = New System.Windows.Forms.Padding(1)
+        Me.tBoxHeadname.Name = "tBoxHeadname"
+        Me.tBoxHeadname.Size = New System.Drawing.Size(114, 21)
+        Me.tBoxHeadname.TabIndex = 53
         '
         'UserTableAdapter
         '
         Me.UserTableAdapter.ClearBeforeFill = True
+        '
+        'SourceDBDataSet
+        '
+        Me.SourceDBDataSet.DataSetName = "SourceDBDataSet"
+        Me.SourceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UserBindingSource
+        '
+        Me.UserBindingSource.DataMember = "user"
+        Me.UserBindingSource.DataSource = Me.SourceDBDataSet
+        '
+        'UnameDataGridViewTextBoxColumn
+        '
+        Me.UnameDataGridViewTextBoxColumn.DataPropertyName = "u_name"
+        Me.UnameDataGridViewTextBoxColumn.HeaderText = "u_name"
+        Me.UnameDataGridViewTextBoxColumn.Name = "UnameDataGridViewTextBoxColumn"
+        '
+        'UaddressDataGridViewTextBoxColumn
+        '
+        Me.UaddressDataGridViewTextBoxColumn.DataPropertyName = "u_address"
+        Me.UaddressDataGridViewTextBoxColumn.HeaderText = "u_address"
+        Me.UaddressDataGridViewTextBoxColumn.Name = "UaddressDataGridViewTextBoxColumn"
+        '
+        'UheadnameDataGridViewTextBoxColumn
+        '
+        Me.UheadnameDataGridViewTextBoxColumn.DataPropertyName = "u_headname"
+        Me.UheadnameDataGridViewTextBoxColumn.HeaderText = "u_headname"
+        Me.UheadnameDataGridViewTextBoxColumn.Name = "UheadnameDataGridViewTextBoxColumn"
+        '
+        'UtypeDataGridViewTextBoxColumn
+        '
+        Me.UtypeDataGridViewTextBoxColumn.DataPropertyName = "u_type"
+        Me.UtypeDataGridViewTextBoxColumn.HeaderText = "u_type"
+        Me.UtypeDataGridViewTextBoxColumn.Name = "UtypeDataGridViewTextBoxColumn"
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "u_jongmok"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "u_jongmok"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'UidnumDataGridViewTextBoxColumn
+        '
+        Me.UidnumDataGridViewTextBoxColumn.DataPropertyName = "u_idnum"
+        Me.UidnumDataGridViewTextBoxColumn.HeaderText = "u_idnum"
+        Me.UidnumDataGridViewTextBoxColumn.Name = "UidnumDataGridViewTextBoxColumn"
+        '
+        'UcommentDataGridViewTextBoxColumn
+        '
+        Me.UcommentDataGridViewTextBoxColumn.DataPropertyName = "u_comment"
+        Me.UcommentDataGridViewTextBoxColumn.HeaderText = "u_comment"
+        Me.UcommentDataGridViewTextBoxColumn.Name = "UcommentDataGridViewTextBoxColumn"
         '
         'UserForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(714, 501)
+        Me.Controls.Add(Me.tBoxHeadname)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.tBoxPhone)
+        Me.Controls.Add(Me.tBoxIdnum)
         Me.Controls.Add(Me.Button_OK)
         Me.Controls.Add(Me.lblAOE)
         Me.Controls.Add(Me.Button_Clear)
@@ -327,9 +356,9 @@ Partial Class UserForm
         Me.Controls.Add(Me.Button_Modify)
         Me.Controls.Add(Me.Button_Add)
         Me.Controls.Add(Me.Button_Search)
-        Me.Controls.Add(Me.tBoxEtc)
-        Me.Controls.Add(Me.tBoxBAccount)
-        Me.Controls.Add(Me.tBoxBName)
+        Me.Controls.Add(Me.tBoxComment)
+        Me.Controls.Add(Me.tBoxJongmok)
+        Me.Controls.Add(Me.tBoxType)
         Me.Controls.Add(Me.tBoxAddr)
         Me.Controls.Add(Me.tBoxName)
         Me.Controls.Add(Me.lblEtc)
@@ -339,20 +368,20 @@ Partial Class UserForm
         Me.Controls.Add(Me.lblPhone)
         Me.Controls.Add(Me.lblName)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(1, 1, 1, 1)
+        Me.Margin = New System.Windows.Forms.Padding(1)
         Me.MaximumSize = New System.Drawing.Size(730, 540)
         Me.MinimumSize = New System.Drawing.Size(730, 540)
         Me.Name = "UserForm"
         Me.Text = "사용자 관리"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents tBoxPhone As System.Windows.Forms.TextBox
+    Friend WithEvents tBoxIdnum As System.Windows.Forms.TextBox
     Friend WithEvents Button_OK As System.Windows.Forms.Button
     Friend WithEvents lblAOE As System.Windows.Forms.Label
     Friend WithEvents Button_Clear As System.Windows.Forms.Button
@@ -361,9 +390,9 @@ Partial Class UserForm
     Friend WithEvents Button_Modify As System.Windows.Forms.Button
     Friend WithEvents Button_Add As System.Windows.Forms.Button
     Friend WithEvents Button_Search As System.Windows.Forms.Button
-    Friend WithEvents tBoxEtc As System.Windows.Forms.TextBox
-    Friend WithEvents tBoxBAccount As System.Windows.Forms.TextBox
-    Friend WithEvents tBoxBName As System.Windows.Forms.TextBox
+    Friend WithEvents tBoxComment As System.Windows.Forms.TextBox
+    Friend WithEvents tBoxJongmok As System.Windows.Forms.TextBox
+    Friend WithEvents tBoxType As System.Windows.Forms.TextBox
     Friend WithEvents tBoxAddr As System.Windows.Forms.TextBox
     Friend WithEvents tBoxName As System.Windows.Forms.TextBox
     Friend WithEvents lblEtc As System.Windows.Forms.Label
@@ -372,13 +401,20 @@ Partial Class UserForm
     Friend WithEvents lblAddr As System.Windows.Forms.Label
     Friend WithEvents lblPhone As System.Windows.Forms.Label
     Friend WithEvents lblName As System.Windows.Forms.Label
-    Friend WithEvents SourceDBDataSet As ForkliftManager.SourceDBDataSet
-    Friend WithEvents UserBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents UserTableAdapter As ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter
-    Friend WithEvents UnameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents UphoneDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents UaddrDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents UbnameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents UbaccountDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents tBoxHeadname As System.Windows.Forms.TextBox
+    Friend WithEvents UjongmokDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SourceDBDataSet As ForkliftManager.SourceDBDataSet
+    Friend WithEvents UnameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents UaddressDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents UheadnameDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents UtypeDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents UidnumDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents UcommentDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents UserBindingSource As System.Windows.Forms.BindingSource
 End Class

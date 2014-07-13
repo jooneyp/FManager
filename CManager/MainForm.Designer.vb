@@ -38,7 +38,7 @@ Partial Class MainForm
         '
         'btn_clientMod
         '
-        Me.btn_clientMod.Location = New System.Drawing.Point(252, 26)
+        Me.btn_clientMod.Location = New System.Drawing.Point(90, 26)
         Me.btn_clientMod.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_clientMod.Name = "btn_clientMod"
         Me.btn_clientMod.Size = New System.Drawing.Size(66, 52)
@@ -48,7 +48,7 @@ Partial Class MainForm
         '
         'btn_userMod
         '
-        Me.btn_userMod.Location = New System.Drawing.Point(172, 26)
+        Me.btn_userMod.Location = New System.Drawing.Point(11, 26)
         Me.btn_userMod.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_userMod.Name = "btn_userMod"
         Me.btn_userMod.Size = New System.Drawing.Size(66, 52)
@@ -58,7 +58,7 @@ Partial Class MainForm
         '
         'btn_deal
         '
-        Me.btn_deal.Location = New System.Drawing.Point(11, 26)
+        Me.btn_deal.Location = New System.Drawing.Point(169, 26)
         Me.btn_deal.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_deal.Name = "btn_deal"
         Me.btn_deal.Size = New System.Drawing.Size(66, 52)
@@ -68,7 +68,7 @@ Partial Class MainForm
         '
         'btn_print
         '
-        Me.btn_print.Location = New System.Drawing.Point(92, 26)
+        Me.btn_print.Location = New System.Drawing.Point(248, 26)
         Me.btn_print.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_print.Name = "btn_print"
         Me.btn_print.Size = New System.Drawing.Size(66, 52)
@@ -81,7 +81,7 @@ Partial Class MainForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.파일ToolStripMenuItem, Me.보기ToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(328, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(325, 24)
         Me.MenuStrip1.TabIndex = 10
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -129,7 +129,7 @@ Partial Class MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(328, 87)
+        Me.ClientSize = New System.Drawing.Size(325, 87)
         Me.Controls.Add(Me.btn_print)
         Me.Controls.Add(Me.btn_clientMod)
         Me.Controls.Add(Me.btn_userMod)

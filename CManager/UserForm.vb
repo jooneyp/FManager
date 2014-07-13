@@ -13,39 +13,43 @@ Public Class UserForm
         Else
             myAdapter.Fill(myDataTable)
             If myDataTable.Rows.Count > 0 Then
-                tBoxPhone.Text = myDataTable.Rows(0).Item("u_phone")
-                tBoxAddr.Text = myDataTable.Rows(0).Item("u_addr")
-                tBoxBName.Text = myDataTable.Rows(0).Item("u_bname")
-                tBoxBAccount.Text = myDataTable.Rows(0).Item("u_baccount")
-                tBoxEtc.Text = myDataTable.Rows(0).Item("u_comment")
+                tBoxIdnum.Text = myDataTable.Rows(0).Item("u_idnum")
+                tBoxHeadname.Text = myDataTable.Rows(0).Item("u_headname")
+                tBoxAddr.Text = myDataTable.Rows(0).Item("u_address")
+                tBoxType.Text = myDataTable.Rows(0).Item("u_type")
+                tBoxJongmok.Text = myDataTable.Rows(0).Item("u_jongmok")
+                tBoxComment.Text = myDataTable.Rows(0).Item("u_comment")
             Else
                 MsgBox("해당 이름이 없습니다.")
                 tBoxName.Text = ""
-                tBoxPhone.Text = ""
+                tBoxHeadname.Text = ""
+                tBoxIdnum.Text = ""
                 tBoxAddr.Text = ""
-                tBoxBName.Text = ""
-                tBoxBAccount.Text = ""
-                tBoxEtc.Text = ""
+                tBoxType.Text = ""
+                tBoxJongmok.Text = ""
+                tBoxComment.Text = ""
             End If
         End If
     End Sub
 
     Private Sub EnableTextBoxes()
         tBoxName.Enabled = True
-        tBoxPhone.Enabled = True
+        tBoxIdnum.Enabled = True
+        tBoxHeadname.Enabled = True
         tBoxAddr.Enabled = True
-        tBoxBName.Enabled = True
-        tBoxBAccount.Enabled = True
-        tBoxEtc.Enabled = True
+        tBoxType.Enabled = True
+        tBoxJongmok.Enabled = True
+        tBoxComment.Enabled = True
     End Sub
 
     Private Sub ClearTextBoxes()
         tBoxName.Text = ""
-        tBoxPhone.Text = ""
+        tBoxIdnum.Text = ""
+        tBoxHeadname.Text = ""
         tBoxAddr.Text = ""
-        tBoxBName.Text = ""
-        tBoxBAccount.Text = ""
-        tBoxEtc.Text = ""
+        tBoxType.Text = ""
+        tBoxJongmok.Text = ""
+        tBoxComment.Text = ""
     End Sub
 
     Private Sub Button_Add_Click(sender As Object, e As EventArgs) Handles Button_Add.Click
@@ -77,14 +81,15 @@ Public Class UserForm
     Private Sub Button_OK_Click(sender As Object, e As EventArgs) Handles Button_OK.Click
         Try
             If lblAOE.Text = "추가모드입니다" Then
-                Dim cmdText = "INSERT INTO [user] (u_name, u_phone, u_addr, u_bname, u_baccount, u_comment) VALUES (?, ?, ?, ?, ?, ?)"
+                Dim cmdText = "INSERT INTO [user] (u_name, u_address, u_headname, u_type, u_jongmok, u_idnum, u_comment) VALUES (?, ?, ?, ?, ?, ?, ?)"
                 Dim myCmd = New OleDbCommand(cmdText, myConn)
                 myCmd.Parameters.AddWithValue("@name", tBoxName.Text)
-                myCmd.Parameters.AddWithValue("@idnum", tBoxPhone.Text)
-                myCmd.Parameters.AddWithValue("@head", tBoxAddr.Text)
-                myCmd.Parameters.AddWithValue("@addr", tBoxBName.Text)
-                myCmd.Parameters.AddWithValue("@type", tBoxBAccount.Text)
-                myCmd.Parameters.AddWithValue("@jongmok", tBoxEtc.Text)
+                myCmd.Parameters.AddWithValue("@address", tBoxAddr.Text)
+                myCmd.Parameters.AddWithValue("@head", tBoxHeadname.Text)
+                myCmd.Parameters.AddWithValue("@type", tBoxType.Text)
+                myCmd.Parameters.AddWithValue("@jongmok", tBoxJongmok.Text)
+                myCmd.Parameters.AddWithValue("@idnum", tBoxIdnum.Text)
+                myCmd.Parameters.AddWithValue("@comment", tBoxComment.Text)
                 myCmd.ExecuteNonQuery()
                 Button_Add.Visible = True
                 Button_Modify.Visible = True
@@ -93,15 +98,14 @@ Public Class UserForm
                 Button_Clear.Text = "비우기"
             End If
             If lblAOE.Text = "수정모드입니다" Then
-                Dim cmdText = "UPDATE [user] SET u_phone = ?, u_addr = ?, u_bname = ?, u_baccount = ?, u_comment = ? WHERE (u_name = ?)"
+                Dim cmdText = "UPDATE [user] SET u_address = ?, u_headname = ?,  u_type = ?, u_jongmok = ?, u_idnum = ?, u_comment = ? WHERE (u_name = ?)"
                 Dim myCmd = New OleDbCommand(cmdText, myConn)
-
-
-                myCmd.Parameters.AddWithValue("@idnum", tBoxPhone.Text)
-                myCmd.Parameters.AddWithValue("@addr", tBoxAddr.Text)
-                myCmd.Parameters.AddWithValue("@bname", tBoxBName.Text)
-                myCmd.Parameters.AddWithValue("@baccount", tBoxBAccount.Text)
-                myCmd.Parameters.AddWithValue("@comment", tBoxEtc.Text)
+                myCmd.Parameters.AddWithValue("@address", tBoxAddr.Text)
+                myCmd.Parameters.AddWithValue("@head", tBoxHeadname.Text)
+                myCmd.Parameters.AddWithValue("@type", tBoxType.Text)
+                myCmd.Parameters.AddWithValue("@jongmok", tBoxJongmok.Text)
+                myCmd.Parameters.AddWithValue("@idnum", tBoxIdnum.Text)
+                myCmd.Parameters.AddWithValue("@comment", tBoxComment.Text)
                 myCmd.Parameters.AddWithValue("@name", tBoxName.Text)
                 myCmd.ExecuteNonQuery()
                 Button_Add.Visible = True
@@ -129,6 +133,7 @@ Public Class UserForm
     End Sub
 
     Private Sub ClientForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: 이 코드는 데이터를 'SourceDBDataSet1.user' 테이블에 로드합니다. 필요한 경우 이 코드를 이동하거나 제거할 수 있습니다.
         Me.UserTableAdapter.Fill(Me.SourceDBDataSet.user)
         myConn.Open()
     End Sub
