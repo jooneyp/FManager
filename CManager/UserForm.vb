@@ -1,6 +1,5 @@
 ﻿Imports System.Data.OleDb
 
-
 Public Class UserForm
     Private myConn As New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=.\SourceDB.mdb")
 
@@ -81,14 +80,14 @@ Public Class UserForm
     Private Sub Button_OK_Click(sender As Object, e As EventArgs) Handles Button_OK.Click
         Try
             If lblAOE.Text = "추가모드입니다" Then
-                Dim cmdText = "INSERT INTO [user] (u_name, u_address, u_headname, u_type, u_jongmok, u_idnum, u_comment) VALUES (?, ?, ?, ?, ?, ?, ?)"
+                Dim cmdText = "INSERT INTO [user] (u_name, u_idnum, u_headname, u_address, u_type, u_jongmok, u_comment) VALUES (?, ?, ?, ?, ?, ?, ?)"
                 Dim myCmd = New OleDbCommand(cmdText, myConn)
                 myCmd.Parameters.AddWithValue("@name", tBoxName.Text)
-                myCmd.Parameters.AddWithValue("@address", tBoxAddr.Text)
+                myCmd.Parameters.AddWithValue("@idnum", tBoxIdnum.Text)
                 myCmd.Parameters.AddWithValue("@head", tBoxHeadname.Text)
+                myCmd.Parameters.AddWithValue("@addr", tBoxAddr.Text)
                 myCmd.Parameters.AddWithValue("@type", tBoxType.Text)
                 myCmd.Parameters.AddWithValue("@jongmok", tBoxJongmok.Text)
-                myCmd.Parameters.AddWithValue("@idnum", tBoxIdnum.Text)
                 myCmd.Parameters.AddWithValue("@comment", tBoxComment.Text)
                 myCmd.ExecuteNonQuery()
                 Button_Add.Visible = True
@@ -98,15 +97,16 @@ Public Class UserForm
                 Button_Clear.Text = "비우기"
             End If
             If lblAOE.Text = "수정모드입니다" Then
-                Dim cmdText = "UPDATE [user] SET u_address = ?, u_headname = ?,  u_type = ?, u_jongmok = ?, u_idnum = ?, u_comment = ? WHERE (u_name = ?)"
+                Dim cmdText = "UPDATE [user] SET  u_idnum = ?, u_headname = ?, u_address = ?, u_type = ?, u_jongmok = ?, u_comment = ? WHERE (u_name = ?)"
                 Dim myCmd = New OleDbCommand(cmdText, myConn)
-                myCmd.Parameters.AddWithValue("@address", tBoxAddr.Text)
+                myCmd.Parameters.AddWithValue("@idnum", tBoxIdnum.Text)
                 myCmd.Parameters.AddWithValue("@head", tBoxHeadname.Text)
+                myCmd.Parameters.AddWithValue("@addr", tBoxAddr.Text)
                 myCmd.Parameters.AddWithValue("@type", tBoxType.Text)
                 myCmd.Parameters.AddWithValue("@jongmok", tBoxJongmok.Text)
-                myCmd.Parameters.AddWithValue("@idnum", tBoxIdnum.Text)
                 myCmd.Parameters.AddWithValue("@comment", tBoxComment.Text)
                 myCmd.Parameters.AddWithValue("@name", tBoxName.Text)
+
                 myCmd.ExecuteNonQuery()
                 Button_Add.Visible = True
                 Button_Modify.Visible = True
@@ -133,6 +133,8 @@ Public Class UserForm
     End Sub
 
     Private Sub ClientForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: 이 코드는 데이터를 'SourceDBDataSet.user' 테이블에 로드합니다. 필요한 경우 이 코드를 이동하거나 제거할 수 있습니다.
+        Me.UserTableAdapter.Fill(Me.SourceDBDataSet.user)
         'TODO: 이 코드는 데이터를 'SourceDBDataSet1.user' 테이블에 로드합니다. 필요한 경우 이 코드를 이동하거나 제거할 수 있습니다.
         Me.UserTableAdapter.Fill(Me.SourceDBDataSet.user)
         myConn.Open()
