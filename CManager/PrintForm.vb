@@ -40,7 +40,7 @@ Public Class PrintForm
 
             ExcelApp = New Excel.Application
             ExcelApp.Visible = False
-            WorkB = ExcelApp.Workbooks.Open(My.Computer.FileSystem.CurrentDirectory & "\ExcelForm.xls")
+            WorkB = ExcelApp.Workbooks.Open(My.Computer.FileSystem.CurrentDirectory & "\PrintForm.xls")
             WorkS = ExcelApp.Sheets("input_se")
 
             Dim UserAdapter As New OleDbDataAdapter("SELECT * FROM [user] WHERE [u_name] = '" + cBox_user.Text + "'", myConn)

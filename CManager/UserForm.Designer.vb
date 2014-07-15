@@ -63,11 +63,11 @@ Partial Class UserForm
         '
         'tBoxIdnum
         '
-        Me.tBoxIdnum.Location = New System.Drawing.Point(95, 85)
+        Me.tBoxIdnum.Location = New System.Drawing.Point(95, 190)
         Me.tBoxIdnum.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxIdnum.Name = "tBoxIdnum"
         Me.tBoxIdnum.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxIdnum.TabIndex = 52
+        Me.tBoxIdnum.TabIndex = 7
         '
         'Button_OK
         '
@@ -153,12 +153,12 @@ Partial Class UserForm
         '
         'tBoxComment
         '
-        Me.tBoxComment.Location = New System.Drawing.Point(95, 191)
+        Me.tBoxComment.Location = New System.Drawing.Point(288, 85)
         Me.tBoxComment.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxComment.Multiline = True
         Me.tBoxComment.Name = "tBoxComment"
-        Me.tBoxComment.Size = New System.Drawing.Size(308, 19)
-        Me.tBoxComment.TabIndex = 57
+        Me.tBoxComment.Size = New System.Drawing.Size(114, 21)
+        Me.tBoxComment.TabIndex = 3
         '
         'tBoxJongmok
         '
@@ -166,7 +166,7 @@ Partial Class UserForm
         Me.tBoxJongmok.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxJongmok.Name = "tBoxJongmok"
         Me.tBoxJongmok.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxJongmok.TabIndex = 56
+        Me.tBoxJongmok.TabIndex = 6
         '
         'tBoxType
         '
@@ -174,7 +174,7 @@ Partial Class UserForm
         Me.tBoxType.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxType.Name = "tBoxType"
         Me.tBoxType.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxType.TabIndex = 55
+        Me.tBoxType.TabIndex = 5
         '
         'tBoxAddr
         '
@@ -182,7 +182,7 @@ Partial Class UserForm
         Me.tBoxAddr.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxAddr.Name = "tBoxAddr"
         Me.tBoxAddr.Size = New System.Drawing.Size(308, 21)
-        Me.tBoxAddr.TabIndex = 54
+        Me.tBoxAddr.TabIndex = 4
         '
         'tBoxName
         '
@@ -190,17 +190,17 @@ Partial Class UserForm
         Me.tBoxName.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxName.Name = "tBoxName"
         Me.tBoxName.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxName.TabIndex = 51
+        Me.tBoxName.TabIndex = 1
         '
         'lblEtc
         '
         Me.lblEtc.AutoSize = True
-        Me.lblEtc.Location = New System.Drawing.Point(50, 193)
+        Me.lblEtc.Location = New System.Drawing.Point(219, 88)
         Me.lblEtc.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblEtc.Name = "lblEtc"
-        Me.lblEtc.Size = New System.Drawing.Size(37, 12)
+        Me.lblEtc.Size = New System.Drawing.Size(61, 12)
         Me.lblEtc.TabIndex = 64
-        Me.lblEtc.Text = "비고 :"
+        Me.lblEtc.Text = "전화번호 :"
         '
         'lblBAccount
         '
@@ -235,7 +235,7 @@ Partial Class UserForm
         'lblPhone
         '
         Me.lblPhone.AutoSize = True
-        Me.lblPhone.Location = New System.Drawing.Point(14, 88)
+        Me.lblPhone.Location = New System.Drawing.Point(14, 193)
         Me.lblPhone.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblPhone.Name = "lblPhone"
         Me.lblPhone.Size = New System.Drawing.Size(73, 12)
@@ -255,7 +255,7 @@ Partial Class UserForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(242, 88)
+        Me.Label1.Location = New System.Drawing.Point(49, 88)
         Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(37, 12)
@@ -264,11 +264,11 @@ Partial Class UserForm
         '
         'tBoxHeadname
         '
-        Me.tBoxHeadname.Location = New System.Drawing.Point(289, 85)
+        Me.tBoxHeadname.Location = New System.Drawing.Point(95, 85)
         Me.tBoxHeadname.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxHeadname.Name = "tBoxHeadname"
         Me.tBoxHeadname.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxHeadname.TabIndex = 53
+        Me.tBoxHeadname.TabIndex = 2
         '
         'DataGridView1
         '

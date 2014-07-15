@@ -52,7 +52,6 @@ C:\Users\Jooney\Documents\GitHub\FManager\CManager\obj\2010\CManager.vbproj.Gene
 C:\Users\Jooney\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.exe.manifest
 C:\Users\Jooney\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.application
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDBDataSet.xsd
-C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\ExcelForm.xls
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDB.mdb
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDBDataSet.Designer.vb
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDBDataSet.vb
@@ -79,3 +78,4 @@ C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.a
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.exe
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.xml
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.pdb
+C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\PrintForm.xls

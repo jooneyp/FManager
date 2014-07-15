@@ -67,7 +67,7 @@ Partial Class ClientForm
         Me.tBoxIdnum.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxIdnum.Name = "tBoxIdnum"
         Me.tBoxIdnum.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxIdnum.TabIndex = 51
+        Me.tBoxIdnum.TabIndex = 2
         '
         'Label_
         '
@@ -168,7 +168,7 @@ Partial Class ClientForm
         Me.tBoxComment.Multiline = True
         Me.tBoxComment.Name = "tBoxComment"
         Me.tBoxComment.Size = New System.Drawing.Size(308, 19)
-        Me.tBoxComment.TabIndex = 56
+        Me.tBoxComment.TabIndex = 7
         '
         'tBoxJongmok
         '
@@ -176,7 +176,7 @@ Partial Class ClientForm
         Me.tBoxJongmok.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxJongmok.Name = "tBoxJongmok"
         Me.tBoxJongmok.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxJongmok.TabIndex = 55
+        Me.tBoxJongmok.TabIndex = 6
         '
         'tBoxType
         '
@@ -184,7 +184,7 @@ Partial Class ClientForm
         Me.tBoxType.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxType.Name = "tBoxType"
         Me.tBoxType.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxType.TabIndex = 54
+        Me.tBoxType.TabIndex = 5
         '
         'tBoxAddr
         '
@@ -192,7 +192,7 @@ Partial Class ClientForm
         Me.tBoxAddr.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxAddr.Name = "tBoxAddr"
         Me.tBoxAddr.Size = New System.Drawing.Size(308, 21)
-        Me.tBoxAddr.TabIndex = 53
+        Me.tBoxAddr.TabIndex = 4
         '
         'tBoxHeadname
         '
@@ -200,7 +200,7 @@ Partial Class ClientForm
         Me.tBoxHeadname.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxHeadname.Name = "tBoxHeadname"
         Me.tBoxHeadname.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxHeadname.TabIndex = 52
+        Me.tBoxHeadname.TabIndex = 3
         '
         'tBoxName
         '
@@ -208,7 +208,7 @@ Partial Class ClientForm
         Me.tBoxName.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxName.Name = "tBoxName"
         Me.tBoxName.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxName.TabIndex = 50
+        Me.tBoxName.TabIndex = 1
         '
         'Label_etc
         '
