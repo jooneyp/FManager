@@ -23,8 +23,6 @@ Partial Class UserForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SourceDBDataSet = New ForkliftManager.SourceDBDataSet()
         Me.tBoxIdnum = New System.Windows.Forms.TextBox()
         Me.Button_OK = New System.Windows.Forms.Button()
         Me.lblAOE = New System.Windows.Forms.Label()
@@ -47,29 +45,21 @@ Partial Class UserForm
         Me.lblName = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.tBoxHeadname = New System.Windows.Forms.TextBox()
-        Me.UserTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter()
-        Me.UcommentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UidnumDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UtypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UheadnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UaddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.UnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UaddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UheadnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UtypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UidnumDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UcommentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SourceDBDataSet = New ForkliftManager.SourceDBDataSet()
+        Me.UserTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter()
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'UserBindingSource
-        '
-        Me.UserBindingSource.DataMember = "user"
-        Me.UserBindingSource.DataSource = Me.SourceDBDataSet
-        '
-        'SourceDBDataSet
-        '
-        Me.SourceDBDataSet.DataSetName = "SourceDBDataSet"
-        Me.SourceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'tBoxIdnum
         '
@@ -280,54 +270,9 @@ Partial Class UserForm
         Me.tBoxHeadname.Size = New System.Drawing.Size(114, 21)
         Me.tBoxHeadname.TabIndex = 53
         '
-        'UserTableAdapter
-        '
-        Me.UserTableAdapter.ClearBeforeFill = True
-        '
-        'UcommentDataGridViewTextBoxColumn
-        '
-        Me.UcommentDataGridViewTextBoxColumn.DataPropertyName = "u_comment"
-        Me.UcommentDataGridViewTextBoxColumn.HeaderText = "u_comment"
-        Me.UcommentDataGridViewTextBoxColumn.Name = "UcommentDataGridViewTextBoxColumn"
-        '
-        'UidnumDataGridViewTextBoxColumn
-        '
-        Me.UidnumDataGridViewTextBoxColumn.DataPropertyName = "u_idnum"
-        Me.UidnumDataGridViewTextBoxColumn.HeaderText = "u_idnum"
-        Me.UidnumDataGridViewTextBoxColumn.Name = "UidnumDataGridViewTextBoxColumn"
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "u_jongmok"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "u_jongmok"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        '
-        'UtypeDataGridViewTextBoxColumn
-        '
-        Me.UtypeDataGridViewTextBoxColumn.DataPropertyName = "u_type"
-        Me.UtypeDataGridViewTextBoxColumn.HeaderText = "u_type"
-        Me.UtypeDataGridViewTextBoxColumn.Name = "UtypeDataGridViewTextBoxColumn"
-        '
-        'UheadnameDataGridViewTextBoxColumn
-        '
-        Me.UheadnameDataGridViewTextBoxColumn.DataPropertyName = "u_headname"
-        Me.UheadnameDataGridViewTextBoxColumn.HeaderText = "u_headname"
-        Me.UheadnameDataGridViewTextBoxColumn.Name = "UheadnameDataGridViewTextBoxColumn"
-        '
-        'UaddressDataGridViewTextBoxColumn
-        '
-        Me.UaddressDataGridViewTextBoxColumn.DataPropertyName = "u_address"
-        Me.UaddressDataGridViewTextBoxColumn.HeaderText = "u_address"
-        Me.UaddressDataGridViewTextBoxColumn.Name = "UaddressDataGridViewTextBoxColumn"
-        '
-        'UnameDataGridViewTextBoxColumn
-        '
-        Me.UnameDataGridViewTextBoxColumn.DataPropertyName = "u_name"
-        Me.UnameDataGridViewTextBoxColumn.HeaderText = "u_name"
-        Me.UnameDataGridViewTextBoxColumn.Name = "UnameDataGridViewTextBoxColumn"
-        '
         'DataGridView1
         '
+        Me.DataGridView1.AllowUserToOrderColumns = True
         Me.DataGridView1.AutoGenerateColumns = False
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.UnameDataGridViewTextBoxColumn, Me.UaddressDataGridViewTextBoxColumn, Me.UheadnameDataGridViewTextBoxColumn, Me.UtypeDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.UidnumDataGridViewTextBoxColumn, Me.UcommentDataGridViewTextBoxColumn})
@@ -338,6 +283,62 @@ Partial Class UserForm
         Me.DataGridView1.RowTemplate.Height = 37
         Me.DataGridView1.Size = New System.Drawing.Size(683, 216)
         Me.DataGridView1.TabIndex = 72
+        '
+        'UnameDataGridViewTextBoxColumn
+        '
+        Me.UnameDataGridViewTextBoxColumn.DataPropertyName = "u_name"
+        Me.UnameDataGridViewTextBoxColumn.HeaderText = "u_name"
+        Me.UnameDataGridViewTextBoxColumn.Name = "UnameDataGridViewTextBoxColumn"
+        '
+        'UaddressDataGridViewTextBoxColumn
+        '
+        Me.UaddressDataGridViewTextBoxColumn.DataPropertyName = "u_address"
+        Me.UaddressDataGridViewTextBoxColumn.HeaderText = "u_address"
+        Me.UaddressDataGridViewTextBoxColumn.Name = "UaddressDataGridViewTextBoxColumn"
+        '
+        'UheadnameDataGridViewTextBoxColumn
+        '
+        Me.UheadnameDataGridViewTextBoxColumn.DataPropertyName = "u_headname"
+        Me.UheadnameDataGridViewTextBoxColumn.HeaderText = "u_headname"
+        Me.UheadnameDataGridViewTextBoxColumn.Name = "UheadnameDataGridViewTextBoxColumn"
+        '
+        'UtypeDataGridViewTextBoxColumn
+        '
+        Me.UtypeDataGridViewTextBoxColumn.DataPropertyName = "u_type"
+        Me.UtypeDataGridViewTextBoxColumn.HeaderText = "u_type"
+        Me.UtypeDataGridViewTextBoxColumn.Name = "UtypeDataGridViewTextBoxColumn"
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "u_jongmok"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "u_jongmok"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        '
+        'UidnumDataGridViewTextBoxColumn
+        '
+        Me.UidnumDataGridViewTextBoxColumn.DataPropertyName = "u_idnum"
+        Me.UidnumDataGridViewTextBoxColumn.HeaderText = "u_idnum"
+        Me.UidnumDataGridViewTextBoxColumn.Name = "UidnumDataGridViewTextBoxColumn"
+        '
+        'UcommentDataGridViewTextBoxColumn
+        '
+        Me.UcommentDataGridViewTextBoxColumn.DataPropertyName = "u_comment"
+        Me.UcommentDataGridViewTextBoxColumn.HeaderText = "u_comment"
+        Me.UcommentDataGridViewTextBoxColumn.Name = "UcommentDataGridViewTextBoxColumn"
+        '
+        'UserBindingSource
+        '
+        Me.UserBindingSource.DataMember = "user"
+        Me.UserBindingSource.DataSource = Me.SourceDBDataSet
+        '
+        'SourceDBDataSet
+        '
+        Me.SourceDBDataSet.DataSetName = "SourceDBDataSet"
+        Me.SourceDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'UserTableAdapter
+        '
+        Me.UserTableAdapter.ClearBeforeFill = True
         '
         'UserForm
         '
@@ -373,9 +374,9 @@ Partial Class UserForm
         Me.MinimumSize = New System.Drawing.Size(730, 540)
         Me.Name = "UserForm"
         Me.Text = "사용자 관리"
+        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

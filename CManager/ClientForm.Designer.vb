@@ -23,7 +23,7 @@ Partial Class ClientForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.tBoxIden = New System.Windows.Forms.TextBox()
+        Me.tBoxIdnum = New System.Windows.Forms.TextBox()
         Me.Label_ = New System.Windows.Forms.Label()
         Me.Button_OK = New System.Windows.Forms.Button()
         Me.lblAOE = New System.Windows.Forms.Label()
@@ -61,13 +61,13 @@ Partial Class ClientForm
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'tBoxIden
+        'tBoxIdnum
         '
-        Me.tBoxIden.Location = New System.Drawing.Point(101, 85)
-        Me.tBoxIden.Margin = New System.Windows.Forms.Padding(1)
-        Me.tBoxIden.Name = "tBoxIden"
-        Me.tBoxIden.Size = New System.Drawing.Size(114, 21)
-        Me.tBoxIden.TabIndex = 51
+        Me.tBoxIdnum.Location = New System.Drawing.Point(101, 85)
+        Me.tBoxIdnum.Margin = New System.Windows.Forms.Padding(1)
+        Me.tBoxIdnum.Name = "tBoxIdnum"
+        Me.tBoxIdnum.Size = New System.Drawing.Size(114, 21)
+        Me.tBoxIdnum.TabIndex = 51
         '
         'Label_
         '
@@ -345,7 +345,7 @@ Partial Class ClientForm
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(723, 501)
         Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.tBoxIden)
+        Me.Controls.Add(Me.tBoxIdnum)
         Me.Controls.Add(Me.Label_)
         Me.Controls.Add(Me.Button_OK)
         Me.Controls.Add(Me.lblAOE)
@@ -377,10 +377,10 @@ Partial Class ClientForm
         CType(Me.ClientBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout
+        Me.PerformLayout()
 
-End Sub
-    Friend WithEvents tBoxIden As System.Windows.Forms.TextBox
+    End Sub
+    Friend WithEvents tBoxIdnum As System.Windows.Forms.TextBox
     Friend WithEvents Label_ As System.Windows.Forms.Label
     Friend WithEvents Button_OK As System.Windows.Forms.Button
     Friend WithEvents lblAOE As System.Windows.Forms.Label

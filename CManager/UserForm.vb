@@ -133,9 +133,6 @@ Public Class UserForm
     End Sub
 
     Private Sub ClientForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: 이 코드는 데이터를 'SourceDBDataSet.user' 테이블에 로드합니다. 필요한 경우 이 코드를 이동하거나 제거할 수 있습니다.
-        Me.UserTableAdapter.Fill(Me.SourceDBDataSet.user)
-        'TODO: 이 코드는 데이터를 'SourceDBDataSet1.user' 테이블에 로드합니다. 필요한 경우 이 코드를 이동하거나 제거할 수 있습니다.
         Me.UserTableAdapter.Fill(Me.SourceDBDataSet.user)
         myConn.Open()
     End Sub

@@ -18,7 +18,7 @@ Public Class CodeMod
 
         Me.TonDataTableAdapter.Fill(Me.SourceDBDataSet.tonData)
         myConn.Open()
-        Dim myAdapter As New OleDbDataAdapter("SELECT * FROM [tonData]", myConn)
+        Dim myAdapter As New OleDbDataAdapter("SELECT * FROM [tonData] ORDER BY code", myConn)
         Dim myDataTable As New DataTable
         myAdapter.Fill(myDataTable)
         Try

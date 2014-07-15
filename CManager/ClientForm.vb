@@ -12,7 +12,7 @@ Public Class ClientForm
         Else
             myAdapter.Fill(myDataTable)
             If myDataTable.Rows.Count > 0 Then
-                tBoxIden.Text = myDataTable.Rows(0).Item("c_idnum")
+                tBoxIdnum.Text = myDataTable.Rows(0).Item("c_idnum")
                 tBoxHeadname.Text = myDataTable.Rows(0).Item("c_headname")
                 tBoxAddr.Text = myDataTable.Rows(0).Item("c_address")
                 tBoxType.Text = myDataTable.Rows(0).Item("c_type")
@@ -21,7 +21,7 @@ Public Class ClientForm
             Else
                 MsgBox("해당 ID가 없습니다.")
                 tBoxName.Text = ""
-                tBoxIden.Text = ""
+                tBoxIdnum.Text = ""
                 tBoxHeadname.Text = ""
                 tBoxAddr.Text = ""
                 tBoxType.Text = ""
@@ -33,7 +33,7 @@ Public Class ClientForm
 
     Private Sub EnableTextBoxes()
         tBoxName.Enabled = True
-        tBoxIden.Enabled = True
+        tBoxIdnum.Enabled = True
         tBoxHeadname.Enabled = True
         tBoxAddr.Enabled = True
         tBoxType.Enabled = True
@@ -43,7 +43,7 @@ Public Class ClientForm
 
     Private Sub ClearTextBoxes()
         tBoxName.Text = ""
-        tBoxIden.Text = ""
+        tBoxIdnum.Text = ""
         tBoxHeadname.Text = ""
         tBoxAddr.Text = ""
         tBoxType.Text = ""
@@ -84,7 +84,7 @@ Public Class ClientForm
                 Dim cmdText = "INSERT INTO [client] (c_name, c_idnum, c_headname, c_address, c_type, c_jongmok, c_comment) VALUES (?, ?, ?, ?, ?, ?, ?)"
                 Dim myCmd = New OleDbCommand(cmdText, myConn)
                 myCmd.Parameters.AddWithValue("@cname", tBoxName.Text)
-                myCmd.Parameters.AddWithValue("@idnum", tBoxIden.Text)
+                myCmd.Parameters.AddWithValue("@idnum", tBoxIdnum.Text)
                 myCmd.Parameters.AddWithValue("@head", tBoxHeadname.Text)
                 myCmd.Parameters.AddWithValue("@addr", tBoxAddr.Text)
                 myCmd.Parameters.AddWithValue("@type", tBoxType.Text)
@@ -100,7 +100,7 @@ Public Class ClientForm
             If lblAOE.Text = "수정모드입니다" Then
                 Dim cmdText = "UPDATE [client] SET c_idnum = ?, c_headname = ?, c_address = ?, c_type = ?, c_jongmok = ?, c_comment = ? WHERE (c_name = ?)"
                 Dim myCmd = New OleDbCommand(cmdText, myConn)
-                myCmd.Parameters.AddWithValue("@idnum", tBoxIden.Text)
+                myCmd.Parameters.AddWithValue("@idnum", tBoxIdnum.Text)
                 myCmd.Parameters.AddWithValue("@head", tBoxHeadname.Text)
                 myCmd.Parameters.AddWithValue("@addr", tBoxAddr.Text)
                 myCmd.Parameters.AddWithValue("@type", tBoxType.Text)
