@@ -2,118 +2,107 @@
 
 Public Class ClientForm
     Private myConn As New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=.\SourceDB.mdb")
+    Dim tBoxs(8) As TextBox
+    Dim i As Integer
 
-    Private Sub Button_Search_Click(sender As Object, e As EventArgs) Handles Button_Search.Click
+    Private Sub Button_Search_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
 
-        Dim myAdapter As New OleDbDataAdapter("SELECT * FROM [client] WHERE (c_name = '" + tBoxName.Text + "')", myConn)
+        Dim myAdapter As New OleDbDataAdapter("SELECT * FROM [client] WHERE (c_name = '" + tBox2.Text + "')", myConn)
         Dim myDataTable As New DataTable
-        If tBoxName.Text = "" Then
+        If tBox2.Text = "" Then
             MsgBox("업체명을 입력해주세요.")
         Else
             myAdapter.Fill(myDataTable)
             If myDataTable.Rows.Count > 0 Then
-                tBoxIdnum.Text = myDataTable.Rows(0).Item("c_idnum")
-                tBoxHeadname.Text = myDataTable.Rows(0).Item("c_headname")
-                tBoxAddr.Text = myDataTable.Rows(0).Item("c_address")
-                tBoxType.Text = myDataTable.Rows(0).Item("c_type")
-                tBoxJongmok.Text = myDataTable.Rows(0).Item("c_jongmok")
-                tBoxComment.Text = myDataTable.Rows(0).Item("c_comment")
+                Try
+                    tBox3.Text = myDataTable.Rows(0).Item("c_headname")
+                    tBox4.Text = myDataTable.Rows(0).Item("c_address")
+                    tBox5.Text = myDataTable.Rows(0).Item("c_type")
+                    tBox6.Text = myDataTable.Rows(0).Item("c_jongmok")
+                    tBox7.Text = myDataTable.Rows(0).Item("c_idnum")
+                    tBox8.Text = myDataTable.Rows(0).Item("c_comment")
+                    Button_Modify.Enabled = True
+                    Button_Delete.Enabled = True
+                Catch ex As InvalidCastException
+                End Try
             Else
-                MsgBox("해당 ID가 없습니다.")
-                tBoxName.Text = ""
-                tBoxIdnum.Text = ""
-                tBoxHeadname.Text = ""
-                tBoxAddr.Text = ""
-                tBoxType.Text = ""
-                tBoxJongmok.Text = ""
-                tBoxComment.Text = ""
+                MsgBox("해당 업체가 없습니다.")
+                For i As Integer = 1 To 8
+                    tBoxs(i).Text = ""
+                Next
             End If
         End If
     End Sub
 
     Private Sub EnableTextBoxes()
-        tBoxName.Enabled = True
-        tBoxIdnum.Enabled = True
-        tBoxHeadname.Enabled = True
-        tBoxAddr.Enabled = True
-        tBoxType.Enabled = True
-        tBoxJongmok.Enabled = True
-        tBoxComment.Enabled = True
+        For i As Integer = 1 To 8
+            tBoxs(i).Enabled = True
+        Next
+    End Sub
+
+    Private Sub DisableTextBoxes()
+        For i As Integer = 1 To 8
+            tBoxs(i).Enabled = False
+        Next
+        tBox2.Enabled = True
     End Sub
 
     Private Sub ClearTextBoxes()
-        tBoxName.Text = ""
-        tBoxIdnum.Text = ""
-        tBoxHeadname.Text = ""
-        tBoxAddr.Text = ""
-        tBoxType.Text = ""
-        tBoxJongmok.Text = ""
-        tBoxComment.Text = ""
+        For i As Integer = 1 To 8
+            tBoxs(i).Text = ""
+        Next
     End Sub
 
     Private Sub Button_Add_Click(sender As Object, e As EventArgs) Handles Button_Add.Click
-        lblAOE.Text = "추가모드입니다"
-        Button_Clear.Text = "취소"
         ClearTextBoxes()
-        Button_Add.Visible = False
-        Button_Modify.Visible = False
-        Button_OK.Visible = True
-
+        EnableTextBoxes()
+        lblStat.Text = "add"
+        tBox1.Enabled = False
     End Sub
 
     Private Sub Button_Clear_Click(sender As Object, e As EventArgs) Handles Button_Clear.Click
         ClearTextBoxes()
-        Button_Add.Visible = True
-        Button_Modify.Visible = True
-        Button_OK.Visible = False
-        lblAOE.Text = ""
-        Button_Clear.Text = "비우기"
+        DisableTextBoxes()
     End Sub
 
     Private Sub Button_Modify_Click(sender As Object, e As EventArgs) Handles Button_Modify.Click
-        lblAOE.Text = "수정모드입니다"
-        Button_Add.Visible = False
-        Button_Modify.Visible = False
-        Button_OK.Visible = True
-        Button_Clear.Text = "취소"
+        EnableTextBoxes()
+        lblStat.Text = "mod"
+        tBox1.Enabled = False
     End Sub
 
     Private Sub Button_OK_Click(sender As Object, e As EventArgs) Handles Button_OK.Click
         Try
-            If lblAOE.Text = "추가모드입니다" Then
-                Dim cmdText = "INSERT INTO [client] (c_name, c_idnum, c_headname, c_address, c_type, c_jongmok, c_comment) VALUES (?, ?, ?, ?, ?, ?, ?)"
+            If lblStat.Text = "add" Then
+                Dim cmdText = "INSERT INTO [client] (c_name, c_headname, c_address, c_type, c_jongmok, c_idnum, c_comment) VALUES (?, ?, ?, ?, ?, ?, ?)"
                 Dim myCmd = New OleDbCommand(cmdText, myConn)
-                myCmd.Parameters.AddWithValue("@cname", tBoxName.Text)
-                myCmd.Parameters.AddWithValue("@idnum", tBoxIdnum.Text)
-                myCmd.Parameters.AddWithValue("@head", tBoxHeadname.Text)
-                myCmd.Parameters.AddWithValue("@addr", tBoxAddr.Text)
-                myCmd.Parameters.AddWithValue("@type", tBoxType.Text)
-                myCmd.Parameters.AddWithValue("@jongmok", tBoxJongmok.Text)
-                myCmd.Parameters.AddWithValue("@comment", tBoxComment.Text)
+                myCmd.Parameters.AddWithValue("@cname", tBox2.Text)
+                myCmd.Parameters.AddWithValue("@head", tBox3.Text)
+                myCmd.Parameters.AddWithValue("@addr", tBox4.Text)
+                myCmd.Parameters.AddWithValue("@type", tBox5.Text)
+                myCmd.Parameters.AddWithValue("@jongmok", tBox6.Text)
+                myCmd.Parameters.AddWithValue("@idnum", tBox7.Text)
+                myCmd.Parameters.AddWithValue("@comment", tBox8.Text)
                 myCmd.ExecuteNonQuery()
-                Button_Add.Visible = True
-                Button_Modify.Visible = True
-                Button_OK.Visible = False
                 ClearTextBoxes()
-                Button_Clear.Text = "비우기"
+                DisableTextBoxes()
+                lblStat.Text = ""
             End If
-            If lblAOE.Text = "수정모드입니다" Then
-                Dim cmdText = "UPDATE [client] SET c_idnum = ?, c_headname = ?, c_address = ?, c_type = ?, c_jongmok = ?, c_comment = ? WHERE (c_name = ?)"
+            If lblStat.Text = "mod" Then
+                Dim cmdText = "UPDATE [client] SET c_name = ?, c_headname = ?, c_address = ?, c_type = ?, c_jongmok = ?, c_idnum = ?, c_comment = ? WHERE (key = ?)"
                 Dim myCmd = New OleDbCommand(cmdText, myConn)
-                myCmd.Parameters.AddWithValue("@idnum", tBoxIdnum.Text)
-                myCmd.Parameters.AddWithValue("@head", tBoxHeadname.Text)
-                myCmd.Parameters.AddWithValue("@addr", tBoxAddr.Text)
-                myCmd.Parameters.AddWithValue("@type", tBoxType.Text)
-                myCmd.Parameters.AddWithValue("@jongmok", tBoxJongmok.Text)
-                myCmd.Parameters.AddWithValue("@comment", tBoxComment.Text)
-                myCmd.Parameters.AddWithValue("@cname", tBoxName.Text)
-
+                myCmd.Parameters.AddWithValue("@cname", tBox2.Text)
+                myCmd.Parameters.AddWithValue("@head", tBox3.Text)
+                myCmd.Parameters.AddWithValue("@addr", tBox4.Text)
+                myCmd.Parameters.AddWithValue("@type", tBox5.Text)
+                myCmd.Parameters.AddWithValue("@jongmok", tBox6.Text)
+                myCmd.Parameters.AddWithValue("@idnum", tBox7.Text)
+                myCmd.Parameters.AddWithValue("@comment", tBox8.Text)
+                myCmd.Parameters.AddWithValue("@key", tBox1.Text)
                 myCmd.ExecuteNonQuery()
-                Button_Add.Visible = True
-                Button_Modify.Visible = True
-                Button_OK.Visible = False
                 ClearTextBoxes()
-                Button_Clear.Text = "비우기"
+                DisableTextBoxes()
+                lblStat.Text = ""
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -125,24 +114,47 @@ Public Class ClientForm
             MsgBox("취소되었습니다.")
             Exit Sub
         Else
-            Dim cmdText = "DELETE FROM [client] WHERE (c_name = '" + tBoxName.Text + "')"
+            Dim cmdText = "DELETE FROM [client] WHERE (c_name = '" + tBox2.Text + "')"
             Dim myCmd = New OleDbCommand(cmdText, myConn)
             myCmd.ExecuteNonQuery()
             MsgBox("삭제되었습니다.")
             ClearTextBoxes()
         End If
+        DataGridView.Sort(DataGridView.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
     End Sub
 
     Private Sub Button_GridView_Click(sender As Object, e As EventArgs) Handles Button_GridView.Click
-        Me.ClientTableAdapter.Fill(Me.SourceDBDataSet.client)
+        Me.ClientTableAdapter1.Fill(Me.SourceDBDataSet.client)
     End Sub
 
     Private Sub ClientForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Me.ClientTableAdapter.Fill(Me.SourceDBDataSet.client)
+        'TODO: 이 코드는 데이터를 'SourceDBDataSet.client' 테이블에 로드합니다. 필요한 경우 이 코드를 이동하거나 제거할 수 있습니다.
+        Me.ClientTableAdapter1.Fill(Me.SourceDBDataSet.client)
         myConn.Open()
+        For i As Integer = 1 To 8
+            tBoxs(i) = CType(Controls("tBox" + i.ToString), TextBox)
+        Next i
+
     End Sub
 
     Private Sub ClientFrom_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         myConn.Close()
+    End Sub
+
+    Private Sub DataGridView1_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView.CellClick
+        DataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        Try
+            If DataGridView.Item(1, e.RowIndex).Value = "" Then
+                DataGridView.Item(0, e.RowIndex).Value = ""
+            Else
+                For i As Integer = 1 To 8
+                    tBoxs(i).Text = DataGridView.Item(i - 1, e.RowIndex).Value.ToString
+                Next
+                Button_Modify.Enabled = True
+                Button_Delete.Enabled = True
+            End If
+
+        Catch ee As Exception
+        End Try
     End Sub
 End Class

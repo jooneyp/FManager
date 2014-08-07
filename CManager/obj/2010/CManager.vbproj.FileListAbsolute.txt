@@ -51,12 +51,7 @@ C:\Users\Jooney\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.User
 C:\Users\Jooney\Documents\GitHub\FManager\CManager\obj\2010\CManager.vbproj.GenerateResource.Cache
 C:\Users\Jooney\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.exe.manifest
 C:\Users\Jooney\Documents\GitHub\FManager\CManager\obj\2010\ForkliftManager.application
-C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDBDataSet.xsd
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDB.mdb
-C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDBDataSet.Designer.vb
-C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDBDataSet.vb
-C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDBDataSet.xsc
-C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\SourceDBDataSet.xss
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\ForkliftManager.exe.config
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\ForkliftManager.exe.manifest
 C:\Users\JoonYoung\Documents\GitHub\FManager\CManager\bin\2010\ForkliftManager.application

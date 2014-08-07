@@ -216,11 +216,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SourceDBDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Compile>
-    <Compile Include="SourceDBDataSet.vb">
-      <DependentUpon>SourceDBDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="UserForm.Designer.vb">
       <DependentUpon>UserForm.vb</DependentUpon>
@@ -276,17 +271,14 @@
     </None>
     <None Include="SourceDBDataSet.xsc">
       <DependentUpon>SourceDBDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <EmbeddedResource Include="SourceDBDataSet.xsd">
+    <None Include="SourceDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>SourceDBDataSet.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </EmbeddedResource>
+    </None>
     <None Include="SourceDBDataSet.xss">
       <DependentUpon>SourceDBDataSet.xsd</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
   <ItemGroup>

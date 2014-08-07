@@ -43,7 +43,7 @@ Partial Class MainForm
         Me.btn_clientMod.Name = "btn_clientMod"
         Me.btn_clientMod.Size = New System.Drawing.Size(66, 52)
         Me.btn_clientMod.TabIndex = 6
-        Me.btn_clientMod.Text = "업체" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "관리"
+        Me.btn_clientMod.Text = "거래처" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "관리"
         Me.btn_clientMod.UseVisualStyleBackColor = True
         '
         'btn_userMod

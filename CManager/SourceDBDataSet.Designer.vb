@@ -389,6 +389,8 @@ Partial Public Class SourceDBDataSet
         Inherits Global.System.Data.DataTable
         Implements Global.System.Collections.IEnumerable
         
+        Private columnkey As Global.System.Data.DataColumn
+        
         Private columnc_name As Global.System.Data.DataColumn
         
         Private columnc_address As Global.System.Data.DataColumn
@@ -437,6 +439,14 @@ Partial Public Class SourceDBDataSet
             MyBase.New(info, context)
             Me.InitVars
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property keyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnkey
+            End Get
+        End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -533,7 +543,7 @@ Partial Public Class SourceDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Overloads Function AddclientRow(ByVal c_name As String, ByVal c_address As String, ByVal c_headname As String, ByVal c_type As String, ByVal c_jongmok As String, ByVal c_idnum As String, ByVal c_comment As String) As clientRow
             Dim rowclientRow As clientRow = CType(Me.NewRow,clientRow)
-            Dim columnValuesArray() As Object = New Object() {c_name, c_address, c_headname, c_type, c_jongmok, c_idnum, c_comment}
+            Dim columnValuesArray() As Object = New Object() {Nothing, c_name, c_address, c_headname, c_type, c_jongmok, c_idnum, c_comment}
             rowclientRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowclientRow)
             Return rowclientRow
@@ -541,8 +551,8 @@ Partial Public Class SourceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByc_name(ByVal c_name As String) As clientRow
-            Return CType(Me.Rows.Find(New Object() {c_name}),clientRow)
+        Public Function FindBykey(ByVal key As Integer) As clientRow
+            Return CType(Me.Rows.Find(New Object() {key}),clientRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -568,6 +578,7 @@ Partial Public Class SourceDBDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnkey = MyBase.Columns("key")
             Me.columnc_name = MyBase.Columns("c_name")
             Me.columnc_address = MyBase.Columns("c_address")
             Me.columnc_headname = MyBase.Columns("c_headname")
@@ -580,6 +591,8 @@ Partial Public Class SourceDBDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
+            Me.columnkey = New Global.System.Data.DataColumn("key", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnkey)
             Me.columnc_name = New Global.System.Data.DataColumn("c_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnc_name)
             Me.columnc_address = New Global.System.Data.DataColumn("c_address", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -594,9 +607,12 @@ Partial Public Class SourceDBDataSet
             MyBase.Columns.Add(Me.columnc_idnum)
             Me.columnc_comment = New Global.System.Data.DataColumn("c_comment", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnc_comment)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnc_name}, true))
-            Me.columnc_name.AllowDBNull = false
-            Me.columnc_name.Unique = true
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnkey}, true))
+            Me.columnkey.AutoIncrement = true
+            Me.columnkey.AutoIncrementSeed = -1
+            Me.columnkey.AutoIncrementStep = -1
+            Me.columnkey.AllowDBNull = false
+            Me.columnkey.Unique = true
             Me.columnc_name.MaxLength = 255
             Me.columnc_address.MaxLength = 255
             Me.columnc_headname.MaxLength = 255
@@ -1394,7 +1410,13 @@ Partial Public Class SourceDBDataSet
         Inherits Global.System.Data.DataTable
         Implements Global.System.Collections.IEnumerable
         
+        Private columnkey As Global.System.Data.DataColumn
+        
         Private columnu_name As Global.System.Data.DataColumn
+        
+        Private columnu_address As Global.System.Data.DataColumn
+        
+        Private columnu_headname As Global.System.Data.DataColumn
         
         Private columnu_type As Global.System.Data.DataColumn
         
@@ -1403,10 +1425,6 @@ Partial Public Class SourceDBDataSet
         Private columnu_idnum As Global.System.Data.DataColumn
         
         Private columnu_comment As Global.System.Data.DataColumn
-        
-        Private columnu_headname As Global.System.Data.DataColumn
-        
-        Private columnu_address As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -1445,9 +1463,33 @@ Partial Public Class SourceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property keyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnkey
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public ReadOnly Property u_nameColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnu_name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property u_addressColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnu_address
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property u_headnameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnu_headname
             End Get
         End Property
         
@@ -1480,22 +1522,6 @@ Partial Public Class SourceDBDataSet
         Public ReadOnly Property u_commentColumn() As Global.System.Data.DataColumn
             Get
                 Return Me.columnu_comment
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property u_headnameColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnu_headname
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public ReadOnly Property u_addressColumn() As Global.System.Data.DataColumn
-            Get
-                Return Me.columnu_address
             End Get
         End Property
         
@@ -1536,9 +1562,9 @@ Partial Public Class SourceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AdduserRow(ByVal u_name As String, ByVal u_type As String, ByVal u_jongmok As String, ByVal u_idnum As String, ByVal u_comment As String, ByVal u_headname As String, ByVal u_address As String) As userRow
+        Public Overloads Function AdduserRow(ByVal u_name As String, ByVal u_address As String, ByVal u_headname As String, ByVal u_type As String, ByVal u_jongmok As String, ByVal u_idnum As String, ByVal u_comment As String) As userRow
             Dim rowuserRow As userRow = CType(Me.NewRow,userRow)
-            Dim columnValuesArray() As Object = New Object() {u_name, u_type, u_jongmok, u_idnum, u_comment, u_headname, u_address}
+            Dim columnValuesArray() As Object = New Object() {Nothing, u_name, u_address, u_headname, u_type, u_jongmok, u_idnum, u_comment}
             rowuserRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowuserRow)
             Return rowuserRow
@@ -1546,8 +1572,8 @@ Partial Public Class SourceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function FindByu_name(ByVal u_name As String) As userRow
-            Return CType(Me.Rows.Find(New Object() {u_name}),userRow)
+        Public Function FindBykey(ByVal key As Integer) As userRow
+            Return CType(Me.Rows.Find(New Object() {key}),userRow)
         End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1573,20 +1599,27 @@ Partial Public Class SourceDBDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Friend Sub InitVars()
+            Me.columnkey = MyBase.Columns("key")
             Me.columnu_name = MyBase.Columns("u_name")
+            Me.columnu_address = MyBase.Columns("u_address")
+            Me.columnu_headname = MyBase.Columns("u_headname")
             Me.columnu_type = MyBase.Columns("u_type")
             Me.columnu_jongmok = MyBase.Columns("u_jongmok")
             Me.columnu_idnum = MyBase.Columns("u_idnum")
             Me.columnu_comment = MyBase.Columns("u_comment")
-            Me.columnu_headname = MyBase.Columns("u_headname")
-            Me.columnu_address = MyBase.Columns("u_address")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitClass()
+            Me.columnkey = New Global.System.Data.DataColumn("key", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnkey)
             Me.columnu_name = New Global.System.Data.DataColumn("u_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnu_name)
+            Me.columnu_address = New Global.System.Data.DataColumn("u_address", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnu_address)
+            Me.columnu_headname = New Global.System.Data.DataColumn("u_headname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnu_headname)
             Me.columnu_type = New Global.System.Data.DataColumn("u_type", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnu_type)
             Me.columnu_jongmok = New Global.System.Data.DataColumn("u_jongmok", GetType(String), Nothing, Global.System.Data.MappingType.Element)
@@ -1595,20 +1628,19 @@ Partial Public Class SourceDBDataSet
             MyBase.Columns.Add(Me.columnu_idnum)
             Me.columnu_comment = New Global.System.Data.DataColumn("u_comment", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnu_comment)
-            Me.columnu_headname = New Global.System.Data.DataColumn("u_headname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnu_headname)
-            Me.columnu_address = New Global.System.Data.DataColumn("u_address", GetType(String), Nothing, Global.System.Data.MappingType.Element)
-            MyBase.Columns.Add(Me.columnu_address)
-            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnu_name}, true))
-            Me.columnu_name.AllowDBNull = false
-            Me.columnu_name.Unique = true
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnkey}, true))
+            Me.columnkey.AutoIncrement = true
+            Me.columnkey.AutoIncrementSeed = -1
+            Me.columnkey.AutoIncrementStep = -1
+            Me.columnkey.AllowDBNull = false
+            Me.columnkey.Unique = true
             Me.columnu_name.MaxLength = 255
+            Me.columnu_address.MaxLength = 255
+            Me.columnu_headname.MaxLength = 255
             Me.columnu_type.MaxLength = 255
             Me.columnu_jongmok.MaxLength = 255
             Me.columnu_idnum.MaxLength = 255
             Me.columnu_comment.MaxLength = 255
-            Me.columnu_headname.MaxLength = 255
-            Me.columnu_address.MaxLength = 255
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -1755,9 +1787,24 @@ Partial Public Class SourceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property key() As Integer
+            Get
+                Return CType(Me(Me.tableclient.keyColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableclient.keyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property c_name() As String
             Get
-                Return CType(Me(Me.tableclient.c_nameColumn),String)
+                Try 
+                    Return CType(Me(Me.tableclient.c_nameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("'client' 테이블의 'c_name' 열의 값이 DBNull입니다.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableclient.c_nameColumn) = value
@@ -1853,6 +1900,18 @@ Partial Public Class SourceDBDataSet
                 Me(Me.tableclient.c_commentColumn) = value
             End Set
         End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isc_nameNull() As Boolean
+            Return Me.IsNull(Me.tableclient.c_nameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setc_nameNull()
+            Me(Me.tableclient.c_nameColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -2214,12 +2273,57 @@ Partial Public Class SourceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property key() As Integer
+            Get
+                Return CType(Me(Me.tableuser.keyColumn),Integer)
+            End Get
+            Set
+                Me(Me.tableuser.keyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Property u_name() As String
             Get
-                Return CType(Me(Me.tableuser.u_nameColumn),String)
+                Try 
+                    Return CType(Me(Me.tableuser.u_nameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("'user' 테이블의 'u_name' 열의 값이 DBNull입니다.", e)
+                End Try
             End Get
             Set
                 Me(Me.tableuser.u_nameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property u_address() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableuser.u_addressColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("'user' 테이블의 'u_address' 열의 값이 DBNull입니다.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableuser.u_addressColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property u_headname() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableuser.u_headnameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("'user' 테이블의 'u_headname' 열의 값이 DBNull입니다.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableuser.u_headnameColumn) = value
             End Set
         End Property
         
@@ -2285,33 +2389,39 @@ Partial Public Class SourceDBDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property u_headname() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableuser.u_headnameColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("'user' 테이블의 'u_headname' 열의 값이 DBNull입니다.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableuser.u_headnameColumn) = value
-            End Set
-        End Property
+        Public Function Isu_nameNull() As Boolean
+            Return Me.IsNull(Me.tableuser.u_nameColumn)
+        End Function
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Property u_address() As String
-            Get
-                Try 
-                    Return CType(Me(Me.tableuser.u_addressColumn),String)
-                Catch e As Global.System.InvalidCastException
-                    Throw New Global.System.Data.StrongTypingException("'user' 테이블의 'u_address' 열의 값이 DBNull입니다.", e)
-                End Try
-            End Get
-            Set
-                Me(Me.tableuser.u_addressColumn) = value
-            End Set
-        End Property
+        Public Sub Setu_nameNull()
+            Me(Me.tableuser.u_nameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isu_addressNull() As Boolean
+            Return Me.IsNull(Me.tableuser.u_addressColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setu_addressNull()
+            Me(Me.tableuser.u_addressColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function Isu_headnameNull() As Boolean
+            Return Me.IsNull(Me.tableuser.u_headnameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub Setu_headnameNull()
+            Me(Me.tableuser.u_headnameColumn) = Global.System.Convert.DBNull
+        End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
@@ -2359,30 +2469,6 @@ Partial Public Class SourceDBDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub Setu_commentNull()
             Me(Me.tableuser.u_commentColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Isu_headnameNull() As Boolean
-            Return Me.IsNull(Me.tableuser.u_headnameColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setu_headnameNull()
-            Me(Me.tableuser.u_headnameColumn) = Global.System.Convert.DBNull
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Function Isu_addressNull() As Boolean
-            Return Me.IsNull(Me.tableuser.u_addressColumn)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Sub Setu_addressNull()
-            Me(Me.tableuser.u_addressColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -2660,6 +2746,7 @@ Namespace SourceDBDataSetTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "client"
+            tableMapping.ColumnMappings.Add("key", "key")
             tableMapping.ColumnMappings.Add("c_name", "c_name")
             tableMapping.ColumnMappings.Add("c_address", "c_address")
             tableMapping.ColumnMappings.Add("c_headname", "c_headname")
@@ -2670,12 +2757,15 @@ Namespace SourceDBDataSetTableAdapters
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `client` WHERE ((`c_name` = ?) AND ((? = 1 AND `c_address` IS NULL) O"& _ 
-                "R (`c_address` = ?)) AND ((? = 1 AND `c_headname` IS NULL) OR (`c_headname` = ?)"& _ 
-                ") AND ((? = 1 AND `c_type` IS NULL) OR (`c_type` = ?)) AND ((? = 1 AND `c_jongmo"& _ 
-                "k` IS NULL) OR (`c_jongmok` = ?)) AND ((? = 1 AND `c_idnum` IS NULL) OR (`c_idnu"& _ 
-                "m` = ?)) AND ((? = 1 AND `c_comment` IS NULL) OR (`c_comment` = ?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `client` WHERE ((`key` = ?) AND ((? = 1 AND `c_name` IS NULL) OR (`c_"& _ 
+                "name` = ?)) AND ((? = 1 AND `c_address` IS NULL) OR (`c_address` = ?)) AND ((? ="& _ 
+                " 1 AND `c_headname` IS NULL) OR (`c_headname` = ?)) AND ((? = 1 AND `c_type` IS "& _ 
+                "NULL) OR (`c_type` = ?)) AND ((? = 1 AND `c_jongmok` IS NULL) OR (`c_jongmok` = "& _ 
+                "?)) AND ((? = 1 AND `c_idnum` IS NULL) OR (`c_idnum` = ?)) AND ((? = 1 AND `c_co"& _ 
+                "mment` IS NULL) OR (`c_comment` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_key", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "key", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_c_name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_name", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_c_name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_name", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_c_address", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_address", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_c_address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_address", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -2704,12 +2794,12 @@ Namespace SourceDBDataSetTableAdapters
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE `client` SET `c_name` = ?, `c_address` = ?, `c_headname` = ?, `c_type` = ?"& _ 
-                ", `c_jongmok` = ?, `c_idnum` = ?, `c_comment` = ? WHERE ((`c_name` = ?) AND ((? "& _ 
-                "= 1 AND `c_address` IS NULL) OR (`c_address` = ?)) AND ((? = 1 AND `c_headname` "& _ 
-                "IS NULL) OR (`c_headname` = ?)) AND ((? = 1 AND `c_type` IS NULL) OR (`c_type` ="& _ 
-                " ?)) AND ((? = 1 AND `c_jongmok` IS NULL) OR (`c_jongmok` = ?)) AND ((? = 1 AND "& _ 
-                "`c_idnum` IS NULL) OR (`c_idnum` = ?)) AND ((? = 1 AND `c_comment` IS NULL) OR ("& _ 
-                "`c_comment` = ?)))"
+                ", `c_jongmok` = ?, `c_idnum` = ?, `c_comment` = ? WHERE ((`key` = ?) AND ((? = 1"& _ 
+                " AND `c_name` IS NULL) OR (`c_name` = ?)) AND ((? = 1 AND `c_address` IS NULL) O"& _ 
+                "R (`c_address` = ?)) AND ((? = 1 AND `c_headname` IS NULL) OR (`c_headname` = ?)"& _ 
+                ") AND ((? = 1 AND `c_type` IS NULL) OR (`c_type` = ?)) AND ((? = 1 AND `c_jongmo"& _ 
+                "k` IS NULL) OR (`c_jongmok` = ?)) AND ((? = 1 AND `c_idnum` IS NULL) OR (`c_idnu"& _ 
+                "m` = ?)) AND ((? = 1 AND `c_comment` IS NULL) OR (`c_comment` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("c_name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_name", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("c_address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_address", Global.System.Data.DataRowVersion.Current, false, Nothing))
@@ -2718,6 +2808,8 @@ Namespace SourceDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("c_jongmok", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_jongmok", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("c_idnum", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_idnum", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("c_comment", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_comment", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_key", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "key", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_c_name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_name", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_c_name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_name", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_c_address", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_address", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_c_address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "c_address", Global.System.Data.DataRowVersion.Original, false, Nothing))
@@ -2746,8 +2838,8 @@ Namespace SourceDBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT c_name, c_address, c_headname, c_type, c_jongmok, c_idnum, c_comment FROM "& _ 
-                "client"
+            Me._commandCollection(0).CommandText = "SELECT [key], c_name, c_address, c_headname, c_type, c_jongmok, c_idnum, c_commen"& _ 
+                "t FROM client"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -2807,53 +2899,55 @@ Namespace SourceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_c_name As String, ByVal Original_c_address As String, ByVal Original_c_headname As String, ByVal Original_c_type As String, ByVal Original_c_jongmok As String, ByVal Original_c_idnum As String, ByVal Original_c_comment As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_key As Integer, ByVal Original_c_name As String, ByVal Original_c_address As String, ByVal Original_c_headname As String, ByVal Original_c_type As String, ByVal Original_c_jongmok As String, ByVal Original_c_idnum As String, ByVal Original_c_comment As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_key,Integer)
             If (Original_c_name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_c_name")
             Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_c_name,String)
+                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_c_name,String)
             End If
             If (Original_c_address Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_c_address,String)
-            End If
-            If (Original_c_headname Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_c_headname,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_c_address,String)
             End If
-            If (Original_c_type Is Nothing) Then
+            If (Original_c_headname Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_c_type,String)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_c_headname,String)
             End If
-            If (Original_c_jongmok Is Nothing) Then
+            If (Original_c_type Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_c_jongmok,String)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_c_type,String)
             End If
-            If (Original_c_idnum Is Nothing) Then
+            If (Original_c_jongmok Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_c_idnum,String)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_c_jongmok,String)
             End If
-            If (Original_c_comment Is Nothing) Then
+            If (Original_c_idnum Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_c_comment,String)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_c_idnum,String)
+            End If
+            If (Original_c_comment Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_c_comment,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -2929,7 +3023,7 @@ Namespace SourceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal c_name As String, ByVal c_address As String, ByVal c_headname As String, ByVal c_type As String, ByVal c_jongmok As String, ByVal c_idnum As String, ByVal c_comment As String, ByVal Original_c_name As String, ByVal Original_c_address As String, ByVal Original_c_headname As String, ByVal Original_c_type As String, ByVal Original_c_jongmok As String, ByVal Original_c_idnum As String, ByVal Original_c_comment As String) As Integer
+        Public Overloads Overridable Function Update(ByVal c_name As String, ByVal c_address As String, ByVal c_headname As String, ByVal c_type As String, ByVal c_jongmok As String, ByVal c_idnum As String, ByVal c_comment As String, ByVal Original_key As Integer, ByVal Original_c_name As String, ByVal Original_c_address As String, ByVal Original_c_headname As String, ByVal Original_c_type As String, ByVal Original_c_jongmok As String, ByVal Original_c_idnum As String, ByVal Original_c_comment As String) As Integer
             If (c_name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("c_name")
             Else
@@ -2965,52 +3059,54 @@ Namespace SourceDBDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(6).Value = CType(c_comment,String)
             End If
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_key,Integer)
             If (Original_c_name Is Nothing) Then
                 Throw New Global.System.ArgumentNullException("Original_c_name")
             Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_c_name,String)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_c_name,String)
             End If
             If (Original_c_address Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_c_address,String)
-            End If
-            If (Original_c_headname Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_c_headname,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_c_address,String)
             End If
-            If (Original_c_type Is Nothing) Then
+            If (Original_c_headname Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_c_type,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_c_headname,String)
             End If
-            If (Original_c_jongmok Is Nothing) Then
+            If (Original_c_type Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_c_jongmok,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_c_type,String)
             End If
-            If (Original_c_idnum Is Nothing) Then
+            If (Original_c_jongmok Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_c_idnum,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_c_jongmok,String)
             End If
-            If (Original_c_comment Is Nothing) Then
+            If (Original_c_idnum Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_c_comment,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_c_idnum,String)
+            End If
+            If (Original_c_comment Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_c_comment,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -3025,14 +3121,6 @@ Namespace SourceDBDataSetTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal c_address As String, ByVal c_headname As String, ByVal c_type As String, ByVal c_jongmok As String, ByVal c_idnum As String, ByVal c_comment As String, ByVal Original_c_name As String, ByVal Original_c_address As String, ByVal Original_c_headname As String, ByVal Original_c_type As String, ByVal Original_c_jongmok As String, ByVal Original_c_idnum As String, ByVal Original_c_comment As String) As Integer
-            Return Me.Update(Original_c_name, c_address, c_headname, c_type, c_jongmok, c_idnum, c_comment, Original_c_name, Original_c_address, Original_c_headname, Original_c_type, Original_c_jongmok, Original_c_idnum, Original_c_comment)
         End Function
     End Class
     
@@ -3686,7 +3774,7 @@ Namespace SourceDBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT  code, ton, cost" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "FROM     tonData" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "ORDER BY code"
+            Me._commandCollection(0).CommandText = "SELECT code, ton, cost FROM tonData"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -4006,23 +4094,31 @@ Namespace SourceDBDataSetTableAdapters
             Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
             tableMapping.SourceTable = "Table"
             tableMapping.DataSetTable = "user"
+            tableMapping.ColumnMappings.Add("key", "key")
             tableMapping.ColumnMappings.Add("u_name", "u_name")
+            tableMapping.ColumnMappings.Add("u_address", "u_address")
+            tableMapping.ColumnMappings.Add("u_headname", "u_headname")
             tableMapping.ColumnMappings.Add("u_type", "u_type")
             tableMapping.ColumnMappings.Add("u_jongmok", "u_jongmok")
             tableMapping.ColumnMappings.Add("u_idnum", "u_idnum")
             tableMapping.ColumnMappings.Add("u_comment", "u_comment")
-            tableMapping.ColumnMappings.Add("u_headname", "u_headname")
-            tableMapping.ColumnMappings.Add("u_address", "u_address")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `user` WHERE ((`u_name` = ?) AND ((? = 1 AND `u_type` IS NULL) OR (`u"& _ 
-                "_type` = ?)) AND ((? = 1 AND `u_jongmok` IS NULL) OR (`u_jongmok` = ?)) AND ((? "& _ 
-                "= 1 AND `u_idnum` IS NULL) OR (`u_idnum` = ?)) AND ((? = 1 AND `u_comment` IS NU"& _ 
-                "LL) OR (`u_comment` = ?)) AND ((? = 1 AND `u_headname` IS NULL) OR (`u_headname`"& _ 
-                " = ?)) AND ((? = 1 AND `u_address` IS NULL) OR (`u_address` = ?)))"
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM `user` WHERE ((`key` = ?) AND ((? = 1 AND `u_name` IS NULL) OR (`u_na"& _ 
+                "me` = ?)) AND ((? = 1 AND `u_address` IS NULL) OR (`u_address` = ?)) AND ((? = 1"& _ 
+                " AND `u_headname` IS NULL) OR (`u_headname` = ?)) AND ((? = 1 AND `u_type` IS NU"& _ 
+                "LL) OR (`u_type` = ?)) AND ((? = 1 AND `u_jongmok` IS NULL) OR (`u_jongmok` = ?)"& _ 
+                ") AND ((? = 1 AND `u_idnum` IS NULL) OR (`u_idnum` = ?)) AND ((? = 1 AND `u_comm"& _ 
+                "ent` IS NULL) OR (`u_comment` = ?)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_key", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "key", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_name", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_name", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_address", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_headname", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_headname", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_type", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_type", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_type", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_type", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_jongmok", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_jongmok", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4031,40 +4127,42 @@ Namespace SourceDBDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_idnum", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_idnum", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_comment", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_comment", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_comment", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_comment", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_headname", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_headname", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_address", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.InsertCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO `user` (`u_name`, `u_type`, `u_jongmok`, `u_idnum`, `u_comment`, `u_h"& _ 
-                "eadname`, `u_address`) VALUES (?, ?, ?, ?, ?, ?, ?)"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO `user` (`u_name`, `u_address`, `u_headname`, `u_type`, `u_jongmok`, `"& _ 
+                "u_idnum`, `u_comment`) VALUES (?, ?, ?, ?, ?, ?, ?)"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_name", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_headname", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_type", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_type", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_jongmok", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_jongmok", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_idnum", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_idnum", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_comment", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_comment", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_headname", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand = New Global.System.Data.OleDb.OleDbCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE `user` SET `u_name` = ?, `u_type` = ?, `u_jongmok` = ?, `u_idnum` = ?, `u_"& _ 
-                "comment` = ?, `u_headname` = ?, `u_address` = ? WHERE ((`u_name` = ?) AND ((? = "& _ 
-                "1 AND `u_type` IS NULL) OR (`u_type` = ?)) AND ((? = 1 AND `u_jongmok` IS NULL) "& _ 
-                "OR (`u_jongmok` = ?)) AND ((? = 1 AND `u_idnum` IS NULL) OR (`u_idnum` = ?)) AND"& _ 
-                " ((? = 1 AND `u_comment` IS NULL) OR (`u_comment` = ?)) AND ((? = 1 AND `u_headn"& _ 
-                "ame` IS NULL) OR (`u_headname` = ?)) AND ((? = 1 AND `u_address` IS NULL) OR (`u"& _ 
-                "_address` = ?)))"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE `user` SET `u_name` = ?, `u_address` = ?, `u_headname` = ?, `u_type` = ?, "& _ 
+                "`u_jongmok` = ?, `u_idnum` = ?, `u_comment` = ? WHERE ((`key` = ?) AND ((? = 1 A"& _ 
+                "ND `u_name` IS NULL) OR (`u_name` = ?)) AND ((? = 1 AND `u_address` IS NULL) OR "& _ 
+                "(`u_address` = ?)) AND ((? = 1 AND `u_headname` IS NULL) OR (`u_headname` = ?)) "& _ 
+                "AND ((? = 1 AND `u_type` IS NULL) OR (`u_type` = ?)) AND ((? = 1 AND `u_jongmok`"& _ 
+                " IS NULL) OR (`u_jongmok` = ?)) AND ((? = 1 AND `u_idnum` IS NULL) OR (`u_idnum`"& _ 
+                " = ?)) AND ((? = 1 AND `u_comment` IS NULL) OR (`u_comment` = ?)))"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_name", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_headname", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_type", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_type", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_jongmok", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_jongmok", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_idnum", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_idnum", Global.System.Data.DataRowVersion.Current, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_comment", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_comment", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_headname", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Current, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("u_address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Current, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_key", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "key", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_name", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_name", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_name", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_name", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_address", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Original, false, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_headname", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Original, true, Nothing))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_headname", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_type", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_type", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_type", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_type", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_jongmok", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_jongmok", Global.System.Data.DataRowVersion.Original, true, Nothing))
@@ -4073,10 +4171,6 @@ Namespace SourceDBDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_idnum", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_idnum", Global.System.Data.DataRowVersion.Original, false, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_comment", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_comment", Global.System.Data.DataRowVersion.Original, true, Nothing))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_comment", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_comment", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_headname", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_headname", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_headname", Global.System.Data.DataRowVersion.Original, false, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("IsNull_u_address", Global.System.Data.OleDb.OleDbType.[Integer], 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Original, true, Nothing))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.OleDb.OleDbParameter("Original_u_address", Global.System.Data.OleDb.OleDbType.VarWChar, 0, Global.System.Data.ParameterDirection.Input, CType(0,Byte), CType(0,Byte), "u_address", Global.System.Data.DataRowVersion.Original, false, Nothing))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -4092,8 +4186,8 @@ Namespace SourceDBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT u_name, u_type, u_jongmok, u_idnum, u_comment, u_headname, u_address FROM "& _ 
-                "[user]"
+            Me._commandCollection(0).CommandText = "SELECT [key], u_name, u_address, u_headname, u_type, u_jongmok, u_idnum, u_commen"& _ 
+                "t FROM [user]"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -4153,53 +4247,56 @@ Namespace SourceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_u_name As String, ByVal Original_u_type As String, ByVal Original_u_jongmok As String, ByVal Original_u_idnum As String, ByVal Original_u_comment As String, ByVal Original_u_headname As String, ByVal Original_u_address As String) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_key As Integer, ByVal Original_u_name As String, ByVal Original_u_address As String, ByVal Original_u_headname As String, ByVal Original_u_type As String, ByVal Original_u_jongmok As String, ByVal Original_u_idnum As String, ByVal Original_u_comment As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_key,Integer)
             If (Original_u_name Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(0).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_u_name,String)
-            End If
-            If (Original_u_type Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_u_type,String)
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(Original_u_name,String)
             End If
-            If (Original_u_jongmok Is Nothing) Then
+            If (Original_u_address Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_u_jongmok,String)
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(Original_u_address,String)
             End If
-            If (Original_u_idnum Is Nothing) Then
+            If (Original_u_headname Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_u_idnum,String)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_u_headname,String)
             End If
-            If (Original_u_comment Is Nothing) Then
+            If (Original_u_type Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_u_comment,String)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_u_type,String)
             End If
-            If (Original_u_headname Is Nothing) Then
+            If (Original_u_jongmok Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_u_headname,String)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_u_jongmok,String)
             End If
-            If (Original_u_address Is Nothing) Then
+            If (Original_u_idnum Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_u_address,String)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_u_idnum,String)
+            End If
+            If (Original_u_comment Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_u_comment,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -4220,41 +4317,41 @@ Namespace SourceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal u_name As String, ByVal u_type As String, ByVal u_jongmok As String, ByVal u_idnum As String, ByVal u_comment As String, ByVal u_headname As String, ByVal u_address As String) As Integer
+        Public Overloads Overridable Function Insert(ByVal u_name As String, ByVal u_address As String, ByVal u_headname As String, ByVal u_type As String, ByVal u_jongmok As String, ByVal u_idnum As String, ByVal u_comment As String) As Integer
             If (u_name Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(u_name,String)
             End If
-            If (u_type Is Nothing) Then
+            If (u_address Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(1).Value = CType(u_type,String)
-            End If
-            If (u_jongmok Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(u_jongmok,String)
-            End If
-            If (u_idnum Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(u_idnum,String)
-            End If
-            If (u_comment Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(u_comment,String)
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(u_address,String)
             End If
             If (u_headname Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(u_headname,String)
+            End If
+            If (u_type Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(u_type,String)
+            End If
+            If (u_jongmok Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(u_jongmok,String)
+            End If
+            If (u_idnum Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(u_headname,String)
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(u_idnum,String)
             End If
-            If (u_address Is Nothing) Then
+            If (u_comment Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(u_address,String)
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(u_comment,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -4275,88 +4372,91 @@ Namespace SourceDBDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal u_name As String, ByVal u_type As String, ByVal u_jongmok As String, ByVal u_idnum As String, ByVal u_comment As String, ByVal u_headname As String, ByVal u_address As String, ByVal Original_u_name As String, ByVal Original_u_type As String, ByVal Original_u_jongmok As String, ByVal Original_u_idnum As String, ByVal Original_u_comment As String, ByVal Original_u_headname As String, ByVal Original_u_address As String) As Integer
+        Public Overloads Overridable Function Update(ByVal u_name As String, ByVal u_address As String, ByVal u_headname As String, ByVal u_type As String, ByVal u_jongmok As String, ByVal u_idnum As String, ByVal u_comment As String, ByVal Original_key As Integer, ByVal Original_u_name As String, ByVal Original_u_address As String, ByVal Original_u_headname As String, ByVal Original_u_type As String, ByVal Original_u_jongmok As String, ByVal Original_u_idnum As String, ByVal Original_u_comment As String) As Integer
             If (u_name Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(u_name,String)
             End If
-            If (u_type Is Nothing) Then
+            If (u_address Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(u_type,String)
-            End If
-            If (u_jongmok Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(u_jongmok,String)
-            End If
-            If (u_idnum Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(u_idnum,String)
-            End If
-            If (u_comment Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(u_comment,String)
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(u_address,String)
             End If
             If (u_headname Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(u_headname,String)
+            End If
+            If (u_type Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(u_type,String)
+            End If
+            If (u_jongmok Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(u_jongmok,String)
+            End If
+            If (u_idnum Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(u_headname,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(u_idnum,String)
             End If
-            If (u_address Is Nothing) Then
+            If (u_comment Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(u_address,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(u_comment,String)
             End If
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_key,Integer)
             If (Original_u_name Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_u_name,String)
-            End If
-            If (Original_u_type Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_u_type,String)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_u_name,String)
             End If
-            If (Original_u_jongmok Is Nothing) Then
+            If (Original_u_address Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_u_jongmok,String)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_u_address,String)
             End If
-            If (Original_u_idnum Is Nothing) Then
+            If (Original_u_headname Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_u_idnum,String)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_u_headname,String)
             End If
-            If (Original_u_comment Is Nothing) Then
+            If (Original_u_type Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_u_comment,String)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_u_type,String)
             End If
-            If (Original_u_headname Is Nothing) Then
+            If (Original_u_jongmok Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_u_headname,String)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_u_jongmok,String)
             End If
-            If (Original_u_address Is Nothing) Then
+            If (Original_u_idnum Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(19).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_u_address,String)
+                Me.Adapter.UpdateCommand.Parameters(19).Value = CType(Original_u_idnum,String)
+            End If
+            If (Original_u_comment Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(21).Value = CType(Original_u_comment,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -4371,14 +4471,6 @@ Namespace SourceDBDataSetTableAdapters
                     Me.Adapter.UpdateCommand.Connection.Close
                 End If
             End Try
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
-         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
-         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal u_type As String, ByVal u_jongmok As String, ByVal u_idnum As String, ByVal u_comment As String, ByVal u_headname As String, ByVal u_address As String, ByVal Original_u_name As String, ByVal Original_u_type As String, ByVal Original_u_jongmok As String, ByVal Original_u_idnum As String, ByVal Original_u_comment As String, ByVal Original_u_headname As String, ByVal Original_u_address As String) As Integer
-            Return Me.Update(Original_u_name, u_type, u_jongmok, u_idnum, u_comment, u_headname, u_address, Original_u_name, Original_u_type, Original_u_jongmok, Original_u_idnum, Original_u_comment, Original_u_headname, Original_u_address)
         End Function
     End Class
     
