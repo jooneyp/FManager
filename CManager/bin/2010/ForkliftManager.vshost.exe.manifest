@@ -47,14 +47,19 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ForkliftManager.exe" size="680448">
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="office" version="12.0.0.0" publicKeyToken="71E9BCE111E9429C" language="neutral" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ForkliftManager.exe" size="684544">
       <assemblyIdentity name="ForkliftManager" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>WHJiSb78wez9nB+DNiY0Z/2UQQc=</dsig:DigestValue>
+        <dsig:DigestValue>oYcgdGQl1LQh9kzeUnUQ693+j4Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -65,6 +70,51 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>uj6mx4OV1ak5asMmZXq2vOEnI0s=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Images\고동환.png" size="8067">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>SeikJF1mrF8fVbhvXtmmb12F8tU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Images\김민호.png" size="6499">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>CtHLQAr6l5UZLRyCMAOLmPINIek=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Images\박진우.png" size="7743">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>cUKFzlkGVsVYZ9FTVHyjmQPQEeQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Images\오동열.png" size="7412">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>nSdVLRcNHDkFpOmiYvrG/P8jBeA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Images\최정휘.png" size="9088">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>pITlTJ3tu/DXbYiwHx+QX70/Gv4=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

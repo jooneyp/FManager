@@ -3774,7 +3774,7 @@ Namespace SourceDBDataSetTableAdapters
             Me._commandCollection = New Global.System.Data.OleDb.OleDbCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.OleDb.OleDbCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT code, ton, cost FROM tonData"
+            Me._commandCollection(0).CommandText = "SELECT code, ton, cost FROM tonData ORDER BY code ASC"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

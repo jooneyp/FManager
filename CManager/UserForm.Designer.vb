@@ -46,14 +46,6 @@ Partial Class UserForm
         Me.Label_identify_num = New System.Windows.Forms.Label()
         Me.Label_company = New System.Windows.Forms.Label()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
-        Me.KeyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UheadnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UaddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UtypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UjongmokDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UidnumDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.UcommentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SourceDBDataSet = New ForkliftManager.SourceDBDataSet()
         Me.Button_OK = New System.Windows.Forms.Button()
@@ -62,6 +54,14 @@ Partial Class UserForm
         Me.lblStat = New System.Windows.Forms.Label()
         Me.UserTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter()
         Me.btnSearch = New System.Windows.Forms.Button()
+        Me.KeyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UheadnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UaddressDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UtypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UjongmokDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UidnumDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UcommentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -195,12 +195,12 @@ Partial Class UserForm
         'Label_etc
         '
         Me.Label_etc.AutoSize = True
-        Me.Label_etc.Location = New System.Drawing.Point(536, 270)
+        Me.Label_etc.Location = New System.Drawing.Point(512, 269)
         Me.Label_etc.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_etc.Name = "Label_etc"
-        Me.Label_etc.Size = New System.Drawing.Size(29, 12)
+        Me.Label_etc.Size = New System.Drawing.Size(53, 12)
         Me.Label_etc.TabIndex = 64
-        Me.Label_etc.Text = "비고"
+        Me.Label_etc.Text = "계좌번호"
         '
         'Label_jongmok
         '
@@ -289,62 +289,6 @@ Partial Class UserForm
         Me.DataGridView.Size = New System.Drawing.Size(475, 619)
         Me.DataGridView.TabIndex = 73
         '
-        'KeyDataGridViewTextBoxColumn
-        '
-        Me.KeyDataGridViewTextBoxColumn.DataPropertyName = "key"
-        Me.KeyDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.KeyDataGridViewTextBoxColumn.Name = "KeyDataGridViewTextBoxColumn"
-        Me.KeyDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UnameDataGridViewTextBoxColumn
-        '
-        Me.UnameDataGridViewTextBoxColumn.DataPropertyName = "u_name"
-        Me.UnameDataGridViewTextBoxColumn.HeaderText = "상호명"
-        Me.UnameDataGridViewTextBoxColumn.Name = "UnameDataGridViewTextBoxColumn"
-        Me.UnameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UheadnameDataGridViewTextBoxColumn
-        '
-        Me.UheadnameDataGridViewTextBoxColumn.DataPropertyName = "u_headname"
-        Me.UheadnameDataGridViewTextBoxColumn.HeaderText = "대표자명"
-        Me.UheadnameDataGridViewTextBoxColumn.Name = "UheadnameDataGridViewTextBoxColumn"
-        Me.UheadnameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UaddressDataGridViewTextBoxColumn
-        '
-        Me.UaddressDataGridViewTextBoxColumn.DataPropertyName = "u_address"
-        Me.UaddressDataGridViewTextBoxColumn.HeaderText = "사업장주소"
-        Me.UaddressDataGridViewTextBoxColumn.Name = "UaddressDataGridViewTextBoxColumn"
-        Me.UaddressDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UtypeDataGridViewTextBoxColumn
-        '
-        Me.UtypeDataGridViewTextBoxColumn.DataPropertyName = "u_type"
-        Me.UtypeDataGridViewTextBoxColumn.HeaderText = "업태"
-        Me.UtypeDataGridViewTextBoxColumn.Name = "UtypeDataGridViewTextBoxColumn"
-        Me.UtypeDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UjongmokDataGridViewTextBoxColumn
-        '
-        Me.UjongmokDataGridViewTextBoxColumn.DataPropertyName = "u_jongmok"
-        Me.UjongmokDataGridViewTextBoxColumn.HeaderText = "종목"
-        Me.UjongmokDataGridViewTextBoxColumn.Name = "UjongmokDataGridViewTextBoxColumn"
-        Me.UjongmokDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UidnumDataGridViewTextBoxColumn
-        '
-        Me.UidnumDataGridViewTextBoxColumn.DataPropertyName = "u_idnum"
-        Me.UidnumDataGridViewTextBoxColumn.HeaderText = "사업자번호"
-        Me.UidnumDataGridViewTextBoxColumn.Name = "UidnumDataGridViewTextBoxColumn"
-        Me.UidnumDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UcommentDataGridViewTextBoxColumn
-        '
-        Me.UcommentDataGridViewTextBoxColumn.DataPropertyName = "u_comment"
-        Me.UcommentDataGridViewTextBoxColumn.HeaderText = "비고"
-        Me.UcommentDataGridViewTextBoxColumn.Name = "UcommentDataGridViewTextBoxColumn"
-        Me.UcommentDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'UserBindingSource
         '
         Me.UserBindingSource.DataMember = "user"
@@ -406,6 +350,62 @@ Partial Class UserForm
         Me.btnSearch.TabIndex = 78
         Me.btnSearch.Text = "상호명으로 찾기"
         Me.btnSearch.UseVisualStyleBackColor = True
+        '
+        'KeyDataGridViewTextBoxColumn
+        '
+        Me.KeyDataGridViewTextBoxColumn.DataPropertyName = "key"
+        Me.KeyDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.KeyDataGridViewTextBoxColumn.Name = "KeyDataGridViewTextBoxColumn"
+        Me.KeyDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UnameDataGridViewTextBoxColumn
+        '
+        Me.UnameDataGridViewTextBoxColumn.DataPropertyName = "u_name"
+        Me.UnameDataGridViewTextBoxColumn.HeaderText = "상호명"
+        Me.UnameDataGridViewTextBoxColumn.Name = "UnameDataGridViewTextBoxColumn"
+        Me.UnameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UheadnameDataGridViewTextBoxColumn
+        '
+        Me.UheadnameDataGridViewTextBoxColumn.DataPropertyName = "u_headname"
+        Me.UheadnameDataGridViewTextBoxColumn.HeaderText = "대표자명"
+        Me.UheadnameDataGridViewTextBoxColumn.Name = "UheadnameDataGridViewTextBoxColumn"
+        Me.UheadnameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UaddressDataGridViewTextBoxColumn
+        '
+        Me.UaddressDataGridViewTextBoxColumn.DataPropertyName = "u_address"
+        Me.UaddressDataGridViewTextBoxColumn.HeaderText = "사업장주소"
+        Me.UaddressDataGridViewTextBoxColumn.Name = "UaddressDataGridViewTextBoxColumn"
+        Me.UaddressDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UtypeDataGridViewTextBoxColumn
+        '
+        Me.UtypeDataGridViewTextBoxColumn.DataPropertyName = "u_type"
+        Me.UtypeDataGridViewTextBoxColumn.HeaderText = "업태"
+        Me.UtypeDataGridViewTextBoxColumn.Name = "UtypeDataGridViewTextBoxColumn"
+        Me.UtypeDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UjongmokDataGridViewTextBoxColumn
+        '
+        Me.UjongmokDataGridViewTextBoxColumn.DataPropertyName = "u_jongmok"
+        Me.UjongmokDataGridViewTextBoxColumn.HeaderText = "종목"
+        Me.UjongmokDataGridViewTextBoxColumn.Name = "UjongmokDataGridViewTextBoxColumn"
+        Me.UjongmokDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UidnumDataGridViewTextBoxColumn
+        '
+        Me.UidnumDataGridViewTextBoxColumn.DataPropertyName = "u_idnum"
+        Me.UidnumDataGridViewTextBoxColumn.HeaderText = "사업자번호"
+        Me.UidnumDataGridViewTextBoxColumn.Name = "UidnumDataGridViewTextBoxColumn"
+        Me.UidnumDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'UcommentDataGridViewTextBoxColumn
+        '
+        Me.UcommentDataGridViewTextBoxColumn.DataPropertyName = "u_comment"
+        Me.UcommentDataGridViewTextBoxColumn.HeaderText = "계좌번호"
+        Me.UcommentDataGridViewTextBoxColumn.Name = "UcommentDataGridViewTextBoxColumn"
+        Me.UcommentDataGridViewTextBoxColumn.ReadOnly = True
         '
         'UserForm
         '

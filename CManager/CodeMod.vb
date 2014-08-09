@@ -59,4 +59,12 @@ Public Class CodeMod
         Me.Hide()
 
     End Sub
+
+    Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
+        If CheckBox1.Checked = True Then
+            Me.TopMost = True
+        Else
+            Me.TopMost = False
+        End If
+    End Sub
 End Class

@@ -196,7 +196,7 @@ Partial Class DealForm
         'cBoxu_name
         '
         Me.cBoxu_name.DataSource = Me.UserBindingSource
-        Me.cBoxu_name.DisplayMember = "u_name"
+        Me.cBoxu_name.DisplayMember = "u_headname"
         Me.cBoxu_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cBoxu_name.FormattingEnabled = True
         Me.cBoxu_name.Location = New System.Drawing.Point(169, 42)
@@ -253,7 +253,6 @@ Partial Class DealForm
         Me.cBoxTons.Name = "cBoxTons"
         Me.cBoxTons.Size = New System.Drawing.Size(78, 20)
         Me.cBoxTons.TabIndex = 39
-        Me.cBoxTons.Text = "7t"
         '
         'TonDataBindingSource
         '
@@ -268,7 +267,7 @@ Partial Class DealForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(286, 316)
+        Me.ClientSize = New System.Drawing.Size(276, 306)
         Me.Controls.Add(Me.cBoxTons)
         Me.Controls.Add(Me.btnSubmit)
         Me.Controls.Add(Me.lblDutyR)
