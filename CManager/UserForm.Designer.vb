@@ -46,14 +46,6 @@ Partial Class UserForm
         Me.Label_identify_num = New System.Windows.Forms.Label()
         Me.Label_company = New System.Windows.Forms.Label()
         Me.DataGridView = New System.Windows.Forms.DataGridView()
-        Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.SourceDBDataSet = New ForkliftManager.SourceDBDataSet()
-        Me.Button_OK = New System.Windows.Forms.Button()
-        Me.tBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.lblStat = New System.Windows.Forms.Label()
-        Me.UserTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter()
-        Me.btnSearch = New System.Windows.Forms.Button()
         Me.KeyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UheadnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -62,6 +54,14 @@ Partial Class UserForm
         Me.UjongmokDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UidnumDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UcommentDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UserBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SourceDBDataSet = New ForkliftManager.SourceDBDataSet()
+        Me.Button_OK = New System.Windows.Forms.Button()
+        Me.tBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblStat = New System.Windows.Forms.Label()
+        Me.UserTableAdapter = New ForkliftManager.SourceDBDataSetTableAdapters.userTableAdapter()
+        Me.btnSearch = New System.Windows.Forms.Button()
         CType(Me.DataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SourceDBDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -70,46 +70,46 @@ Partial Class UserForm
         'tBox7
         '
         Me.tBox7.Enabled = False
-        Me.tBox7.Location = New System.Drawing.Point(568, 231)
+        Me.tBox7.Location = New System.Drawing.Point(905, 47)
         Me.tBox7.Margin = New System.Windows.Forms.Padding(1)
         Me.tBox7.Name = "tBox7"
         Me.tBox7.Size = New System.Drawing.Size(114, 21)
-        Me.tBox7.TabIndex = 7
+        Me.tBox7.TabIndex = 2
         '
         'Label_
         '
         Me.Label_.AutoSize = True
-        Me.Label_.Location = New System.Drawing.Point(512, 131)
+        Me.Label_.Location = New System.Drawing.Point(843, 122)
         Me.Label_.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_.Name = "Label_"
-        Me.Label_.Size = New System.Drawing.Size(53, 12)
+        Me.Label_.Size = New System.Drawing.Size(59, 12)
         Me.Label_.TabIndex = 72
-        Me.Label_.Text = "대표자명"
+        Me.Label_.Text = "*대표자명"
         '
         'Button_Clear
         '
-        Me.Button_Clear.Location = New System.Drawing.Point(870, 263)
+        Me.Button_Clear.Location = New System.Drawing.Point(1207, 220)
         Me.Button_Clear.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Clear.Name = "Button_Clear"
-        Me.Button_Clear.Size = New System.Drawing.Size(83, 21)
+        Me.Button_Clear.Size = New System.Drawing.Size(83, 23)
         Me.Button_Clear.TabIndex = 70
         Me.Button_Clear.Text = "취소"
         Me.Button_Clear.UseVisualStyleBackColor = True
         '
         'Button_GridView
         '
-        Me.Button_GridView.Location = New System.Drawing.Point(402, 10)
+        Me.Button_GridView.Location = New System.Drawing.Point(725, 244)
         Me.Button_GridView.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_GridView.Name = "Button_GridView"
-        Me.Button_GridView.Size = New System.Drawing.Size(83, 36)
-        Me.Button_GridView.TabIndex = 69
+        Me.Button_GridView.Size = New System.Drawing.Size(83, 46)
+        Me.Button_GridView.TabIndex = 71
         Me.Button_GridView.Text = "새로고침"
         Me.Button_GridView.UseVisualStyleBackColor = True
         '
         'Button_Delete
         '
         Me.Button_Delete.Enabled = False
-        Me.Button_Delete.Location = New System.Drawing.Point(870, 158)
+        Me.Button_Delete.Location = New System.Drawing.Point(1207, 115)
         Me.Button_Delete.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Delete.Name = "Button_Delete"
         Me.Button_Delete.Size = New System.Drawing.Size(83, 42)
@@ -120,7 +120,7 @@ Partial Class UserForm
         'Button_Modify
         '
         Me.Button_Modify.Enabled = False
-        Me.Button_Modify.Location = New System.Drawing.Point(870, 106)
+        Me.Button_Modify.Location = New System.Drawing.Point(1207, 63)
         Me.Button_Modify.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Modify.Name = "Button_Modify"
         Me.Button_Modify.Size = New System.Drawing.Size(83, 42)
@@ -130,7 +130,7 @@ Partial Class UserForm
         '
         'Button_Add
         '
-        Me.Button_Add.Location = New System.Drawing.Point(870, 54)
+        Me.Button_Add.Location = New System.Drawing.Point(1207, 11)
         Me.Button_Add.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_Add.Name = "Button_Add"
         Me.Button_Add.Size = New System.Drawing.Size(83, 42)
@@ -141,61 +141,61 @@ Partial Class UserForm
         'tBox8
         '
         Me.tBox8.Enabled = False
-        Me.tBox8.Location = New System.Drawing.Point(568, 266)
+        Me.tBox8.Location = New System.Drawing.Point(905, 222)
         Me.tBox8.Margin = New System.Windows.Forms.Padding(1)
         Me.tBox8.Multiline = True
         Me.tBox8.Name = "tBox8"
-        Me.tBox8.Size = New System.Drawing.Size(279, 19)
+        Me.tBox8.Size = New System.Drawing.Size(279, 21)
         Me.tBox8.TabIndex = 8
         '
         'tBox6
         '
         Me.tBox6.Enabled = False
-        Me.tBox6.Location = New System.Drawing.Point(733, 196)
+        Me.tBox6.Location = New System.Drawing.Point(1070, 187)
         Me.tBox6.Margin = New System.Windows.Forms.Padding(1)
         Me.tBox6.Name = "tBox6"
         Me.tBox6.Size = New System.Drawing.Size(114, 21)
-        Me.tBox6.TabIndex = 6
+        Me.tBox6.TabIndex = 7
         '
         'tBox5
         '
         Me.tBox5.Enabled = False
-        Me.tBox5.Location = New System.Drawing.Point(568, 196)
+        Me.tBox5.Location = New System.Drawing.Point(905, 187)
         Me.tBox5.Margin = New System.Windows.Forms.Padding(1)
         Me.tBox5.Name = "tBox5"
         Me.tBox5.Size = New System.Drawing.Size(114, 21)
-        Me.tBox5.TabIndex = 5
+        Me.tBox5.TabIndex = 6
         '
         'tBox4
         '
         Me.tBox4.Enabled = False
-        Me.tBox4.Location = New System.Drawing.Point(568, 161)
+        Me.tBox4.Location = New System.Drawing.Point(905, 152)
         Me.tBox4.Margin = New System.Windows.Forms.Padding(1)
         Me.tBox4.Name = "tBox4"
         Me.tBox4.Size = New System.Drawing.Size(279, 21)
-        Me.tBox4.TabIndex = 4
+        Me.tBox4.TabIndex = 5
         '
         'tBox3
         '
-        Me.tBox3.Enabled = False
-        Me.tBox3.Location = New System.Drawing.Point(568, 126)
+        Me.tBox3.Location = New System.Drawing.Point(905, 117)
         Me.tBox3.Margin = New System.Windows.Forms.Padding(1)
         Me.tBox3.Name = "tBox3"
         Me.tBox3.Size = New System.Drawing.Size(114, 21)
-        Me.tBox3.TabIndex = 3
+        Me.tBox3.TabIndex = 4
         '
         'tBox2
         '
-        Me.tBox2.Location = New System.Drawing.Point(568, 91)
+        Me.tBox2.Enabled = False
+        Me.tBox2.Location = New System.Drawing.Point(905, 82)
         Me.tBox2.Margin = New System.Windows.Forms.Padding(1)
         Me.tBox2.Name = "tBox2"
         Me.tBox2.Size = New System.Drawing.Size(114, 21)
-        Me.tBox2.TabIndex = 2
+        Me.tBox2.TabIndex = 3
         '
         'Label_etc
         '
         Me.Label_etc.AutoSize = True
-        Me.Label_etc.Location = New System.Drawing.Point(512, 269)
+        Me.Label_etc.Location = New System.Drawing.Point(849, 226)
         Me.Label_etc.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_etc.Name = "Label_etc"
         Me.Label_etc.Size = New System.Drawing.Size(53, 12)
@@ -205,7 +205,7 @@ Partial Class UserForm
         'Label_jongmok
         '
         Me.Label_jongmok.AutoSize = True
-        Me.Label_jongmok.Location = New System.Drawing.Point(701, 200)
+        Me.Label_jongmok.Location = New System.Drawing.Point(1038, 191)
         Me.Label_jongmok.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_jongmok.Name = "Label_jongmok"
         Me.Label_jongmok.Size = New System.Drawing.Size(29, 12)
@@ -215,7 +215,7 @@ Partial Class UserForm
         'Label_type
         '
         Me.Label_type.AutoSize = True
-        Me.Label_type.Location = New System.Drawing.Point(536, 200)
+        Me.Label_type.Location = New System.Drawing.Point(873, 191)
         Me.Label_type.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_type.Name = "Label_type"
         Me.Label_type.Size = New System.Drawing.Size(29, 12)
@@ -225,7 +225,7 @@ Partial Class UserForm
         'Label_addr
         '
         Me.Label_addr.AutoSize = True
-        Me.Label_addr.Location = New System.Drawing.Point(500, 166)
+        Me.Label_addr.Location = New System.Drawing.Point(837, 157)
         Me.Label_addr.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_addr.Name = "Label_addr"
         Me.Label_addr.Size = New System.Drawing.Size(65, 12)
@@ -235,7 +235,7 @@ Partial Class UserForm
         'Label_identify_num
         '
         Me.Label_identify_num.AutoSize = True
-        Me.Label_identify_num.Location = New System.Drawing.Point(500, 235)
+        Me.Label_identify_num.Location = New System.Drawing.Point(837, 51)
         Me.Label_identify_num.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_identify_num.Name = "Label_identify_num"
         Me.Label_identify_num.Size = New System.Drawing.Size(65, 12)
@@ -245,16 +245,17 @@ Partial Class UserForm
         'Label_company
         '
         Me.Label_company.AutoSize = True
-        Me.Label_company.Location = New System.Drawing.Point(518, 96)
+        Me.Label_company.Location = New System.Drawing.Point(861, 87)
         Me.Label_company.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label_company.Name = "Label_company"
-        Me.Label_company.Size = New System.Drawing.Size(47, 12)
+        Me.Label_company.Size = New System.Drawing.Size(41, 12)
         Me.Label_company.TabIndex = 59
-        Me.Label_company.Text = "*상호명"
+        Me.Label_company.Text = "상호명"
         '
         'DataGridView
         '
         Me.DataGridView.AutoGenerateColumns = False
+        Me.DataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
         DataGridViewCellStyle1.Font = New System.Drawing.Font("굴림", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(129, Byte))
@@ -274,7 +275,7 @@ Partial Class UserForm
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DataGridView.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridView.Location = New System.Drawing.Point(10, 56)
+        Me.DataGridView.Location = New System.Drawing.Point(10, 10)
         Me.DataGridView.Margin = New System.Windows.Forms.Padding(1)
         Me.DataGridView.Name = "DataGridView"
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -286,8 +287,79 @@ Partial Class UserForm
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DataGridView.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridView.RowTemplate.Height = 37
-        Me.DataGridView.Size = New System.Drawing.Size(475, 619)
+        Me.DataGridView.Size = New System.Drawing.Size(798, 230)
         Me.DataGridView.TabIndex = 73
+        '
+        'KeyDataGridViewTextBoxColumn
+        '
+        Me.KeyDataGridViewTextBoxColumn.DataPropertyName = "key"
+        Me.KeyDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.KeyDataGridViewTextBoxColumn.Name = "KeyDataGridViewTextBoxColumn"
+        Me.KeyDataGridViewTextBoxColumn.ReadOnly = True
+        Me.KeyDataGridViewTextBoxColumn.Width = 20
+        '
+        'UnameDataGridViewTextBoxColumn
+        '
+        Me.UnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.UnameDataGridViewTextBoxColumn.DataPropertyName = "u_name"
+        Me.UnameDataGridViewTextBoxColumn.HeaderText = "상호명"
+        Me.UnameDataGridViewTextBoxColumn.Name = "UnameDataGridViewTextBoxColumn"
+        Me.UnameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UnameDataGridViewTextBoxColumn.Width = 66
+        '
+        'UheadnameDataGridViewTextBoxColumn
+        '
+        Me.UheadnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.UheadnameDataGridViewTextBoxColumn.DataPropertyName = "u_headname"
+        Me.UheadnameDataGridViewTextBoxColumn.HeaderText = "대표자명"
+        Me.UheadnameDataGridViewTextBoxColumn.Name = "UheadnameDataGridViewTextBoxColumn"
+        Me.UheadnameDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UheadnameDataGridViewTextBoxColumn.Width = 78
+        '
+        'UaddressDataGridViewTextBoxColumn
+        '
+        Me.UaddressDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.UaddressDataGridViewTextBoxColumn.DataPropertyName = "u_address"
+        Me.UaddressDataGridViewTextBoxColumn.HeaderText = "사업장주소"
+        Me.UaddressDataGridViewTextBoxColumn.Name = "UaddressDataGridViewTextBoxColumn"
+        Me.UaddressDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UaddressDataGridViewTextBoxColumn.Width = 90
+        '
+        'UtypeDataGridViewTextBoxColumn
+        '
+        Me.UtypeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.UtypeDataGridViewTextBoxColumn.DataPropertyName = "u_type"
+        Me.UtypeDataGridViewTextBoxColumn.HeaderText = "업태"
+        Me.UtypeDataGridViewTextBoxColumn.Name = "UtypeDataGridViewTextBoxColumn"
+        Me.UtypeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UtypeDataGridViewTextBoxColumn.Width = 54
+        '
+        'UjongmokDataGridViewTextBoxColumn
+        '
+        Me.UjongmokDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.UjongmokDataGridViewTextBoxColumn.DataPropertyName = "u_jongmok"
+        Me.UjongmokDataGridViewTextBoxColumn.HeaderText = "종목"
+        Me.UjongmokDataGridViewTextBoxColumn.Name = "UjongmokDataGridViewTextBoxColumn"
+        Me.UjongmokDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UjongmokDataGridViewTextBoxColumn.Width = 54
+        '
+        'UidnumDataGridViewTextBoxColumn
+        '
+        Me.UidnumDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.UidnumDataGridViewTextBoxColumn.DataPropertyName = "u_idnum"
+        Me.UidnumDataGridViewTextBoxColumn.HeaderText = "사업자번호"
+        Me.UidnumDataGridViewTextBoxColumn.Name = "UidnumDataGridViewTextBoxColumn"
+        Me.UidnumDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UidnumDataGridViewTextBoxColumn.Width = 90
+        '
+        'UcommentDataGridViewTextBoxColumn
+        '
+        Me.UcommentDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells
+        Me.UcommentDataGridViewTextBoxColumn.DataPropertyName = "u_comment"
+        Me.UcommentDataGridViewTextBoxColumn.HeaderText = "계좌번호"
+        Me.UcommentDataGridViewTextBoxColumn.Name = "UcommentDataGridViewTextBoxColumn"
+        Me.UcommentDataGridViewTextBoxColumn.ReadOnly = True
+        Me.UcommentDataGridViewTextBoxColumn.Width = 78
         '
         'UserBindingSource
         '
@@ -301,18 +373,18 @@ Partial Class UserForm
         '
         'Button_OK
         '
-        Me.Button_OK.Location = New System.Drawing.Point(870, 210)
+        Me.Button_OK.Location = New System.Drawing.Point(1207, 167)
         Me.Button_OK.Margin = New System.Windows.Forms.Padding(1)
         Me.Button_OK.Name = "Button_OK"
         Me.Button_OK.Size = New System.Drawing.Size(83, 42)
-        Me.Button_OK.TabIndex = 57
+        Me.Button_OK.TabIndex = 69
         Me.Button_OK.Text = "저장"
         Me.Button_OK.UseVisualStyleBackColor = True
         '
         'tBox1
         '
         Me.tBox1.Enabled = False
-        Me.tBox1.Location = New System.Drawing.Point(568, 56)
+        Me.tBox1.Location = New System.Drawing.Point(905, 12)
         Me.tBox1.Margin = New System.Windows.Forms.Padding(1)
         Me.tBox1.Name = "tBox1"
         Me.tBox1.Size = New System.Drawing.Size(114, 21)
@@ -321,7 +393,7 @@ Partial Class UserForm
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(513, 61)
+        Me.Label1.Location = New System.Drawing.Point(850, 17)
         Me.Label1.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(52, 12)
@@ -331,7 +403,7 @@ Partial Class UserForm
         'lblStat
         '
         Me.lblStat.AutoSize = True
-        Me.lblStat.Location = New System.Drawing.Point(588, 110)
+        Me.lblStat.Location = New System.Drawing.Point(925, 103)
         Me.lblStat.Name = "lblStat"
         Me.lblStat.Size = New System.Drawing.Size(0, 12)
         Me.lblStat.TabIndex = 76
@@ -343,76 +415,20 @@ Partial Class UserForm
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(703, 90)
+        Me.btnSearch.Location = New System.Drawing.Point(1055, 115)
         Me.btnSearch.Margin = New System.Windows.Forms.Padding(1)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(129, 23)
-        Me.btnSearch.TabIndex = 78
-        Me.btnSearch.Text = "상호명으로 찾기"
+        Me.btnSearch.TabIndex = 9
+        Me.btnSearch.Text = "대표자명으로 찾기"
         Me.btnSearch.UseVisualStyleBackColor = True
-        '
-        'KeyDataGridViewTextBoxColumn
-        '
-        Me.KeyDataGridViewTextBoxColumn.DataPropertyName = "key"
-        Me.KeyDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.KeyDataGridViewTextBoxColumn.Name = "KeyDataGridViewTextBoxColumn"
-        Me.KeyDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UnameDataGridViewTextBoxColumn
-        '
-        Me.UnameDataGridViewTextBoxColumn.DataPropertyName = "u_name"
-        Me.UnameDataGridViewTextBoxColumn.HeaderText = "상호명"
-        Me.UnameDataGridViewTextBoxColumn.Name = "UnameDataGridViewTextBoxColumn"
-        Me.UnameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UheadnameDataGridViewTextBoxColumn
-        '
-        Me.UheadnameDataGridViewTextBoxColumn.DataPropertyName = "u_headname"
-        Me.UheadnameDataGridViewTextBoxColumn.HeaderText = "대표자명"
-        Me.UheadnameDataGridViewTextBoxColumn.Name = "UheadnameDataGridViewTextBoxColumn"
-        Me.UheadnameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UaddressDataGridViewTextBoxColumn
-        '
-        Me.UaddressDataGridViewTextBoxColumn.DataPropertyName = "u_address"
-        Me.UaddressDataGridViewTextBoxColumn.HeaderText = "사업장주소"
-        Me.UaddressDataGridViewTextBoxColumn.Name = "UaddressDataGridViewTextBoxColumn"
-        Me.UaddressDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UtypeDataGridViewTextBoxColumn
-        '
-        Me.UtypeDataGridViewTextBoxColumn.DataPropertyName = "u_type"
-        Me.UtypeDataGridViewTextBoxColumn.HeaderText = "업태"
-        Me.UtypeDataGridViewTextBoxColumn.Name = "UtypeDataGridViewTextBoxColumn"
-        Me.UtypeDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UjongmokDataGridViewTextBoxColumn
-        '
-        Me.UjongmokDataGridViewTextBoxColumn.DataPropertyName = "u_jongmok"
-        Me.UjongmokDataGridViewTextBoxColumn.HeaderText = "종목"
-        Me.UjongmokDataGridViewTextBoxColumn.Name = "UjongmokDataGridViewTextBoxColumn"
-        Me.UjongmokDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UidnumDataGridViewTextBoxColumn
-        '
-        Me.UidnumDataGridViewTextBoxColumn.DataPropertyName = "u_idnum"
-        Me.UidnumDataGridViewTextBoxColumn.HeaderText = "사업자번호"
-        Me.UidnumDataGridViewTextBoxColumn.Name = "UidnumDataGridViewTextBoxColumn"
-        Me.UidnumDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'UcommentDataGridViewTextBoxColumn
-        '
-        Me.UcommentDataGridViewTextBoxColumn.DataPropertyName = "u_comment"
-        Me.UcommentDataGridViewTextBoxColumn.HeaderText = "계좌번호"
-        Me.UcommentDataGridViewTextBoxColumn.Name = "UcommentDataGridViewTextBoxColumn"
-        Me.UcommentDataGridViewTextBoxColumn.ReadOnly = True
         '
         'UserForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
-        Me.ClientSize = New System.Drawing.Size(973, 685)
+        Me.ClientSize = New System.Drawing.Size(1300, 295)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Me.lblStat)
         Me.Controls.Add(Me.tBox1)

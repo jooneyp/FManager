@@ -21,6 +21,10 @@ Public Class MainForm
         PrintForm.Show()
     End Sub
 
+    Private Sub btn_dealMod_Click(sender As Object, e As EventArgs)
+        DealMod.Show()
+    End Sub
+
     Private Sub 파일ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles 파일ToolStripMenuItem.Click
         Import.Show()
     End Sub
@@ -60,5 +64,9 @@ Public Class MainForm
             myCmd.ExecuteNonQuery()
         End If
         myConn.Close()
+    End Sub
+
+    Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

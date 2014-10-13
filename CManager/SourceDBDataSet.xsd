@@ -327,7 +327,7 @@
   <xs:element name="SourceDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="SourceDBDataSet" msprop:Generator_UserDSName="SourceDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="client" msprop:Generator_TableClassName="clientDataTable" msprop:Generator_TableVarName="tableclient" msprop:Generator_RowChangedName="clientRowChanged" msprop:Generator_TablePropName="client" msprop:Generator_RowDeletingName="clientRowDeleting" msprop:Generator_RowChangingName="clientRowChanging" msprop:Generator_RowEvHandlerName="clientRowChangeEventHandler" msprop:Generator_RowDeletedName="clientRowDeleted" msprop:Generator_RowClassName="clientRow" msprop:Generator_UserTableName="client" msprop:Generator_RowEvArgName="clientRowChangeEvent">
+        <xs:element name="client" msprop:Generator_TableClassName="clientDataTable" msprop:Generator_TableVarName="tableclient" msprop:Generator_TablePropName="client" msprop:Generator_RowDeletingName="clientRowDeleting" msprop:Generator_RowChangingName="clientRowChanging" msprop:Generator_RowEvHandlerName="clientRowChangeEventHandler" msprop:Generator_RowDeletedName="clientRowDeleted" msprop:Generator_UserTableName="client" msprop:Generator_RowChangedName="clientRowChanged" msprop:Generator_RowEvArgName="clientRowChangeEvent" msprop:Generator_RowClassName="clientRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="key" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnkey" msprop:Generator_ColumnPropNameInRow="key" msprop:Generator_ColumnPropNameInTable="keyColumn" msprop:Generator_UserColumnName="key" type="xs:int" />
@@ -383,7 +383,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="deal" msprop:Generator_TableClassName="dealDataTable" msprop:Generator_TableVarName="tabledeal" msprop:Generator_RowChangedName="dealRowChanged" msprop:Generator_TablePropName="deal" msprop:Generator_RowDeletingName="dealRowDeleting" msprop:Generator_RowChangingName="dealRowChanging" msprop:Generator_RowEvHandlerName="dealRowChangeEventHandler" msprop:Generator_RowDeletedName="dealRowDeleted" msprop:Generator_RowClassName="dealRow" msprop:Generator_UserTableName="deal" msprop:Generator_RowEvArgName="dealRowChangeEvent">
+        <xs:element name="deal" msprop:Generator_TableClassName="dealDataTable" msprop:Generator_TableVarName="tabledeal" msprop:Generator_TablePropName="deal" msprop:Generator_RowDeletingName="dealRowDeleting" msprop:Generator_RowChangingName="dealRowChanging" msprop:Generator_RowEvHandlerName="dealRowChangeEventHandler" msprop:Generator_RowDeletedName="dealRowDeleted" msprop:Generator_UserTableName="deal" msprop:Generator_RowChangedName="dealRowChanged" msprop:Generator_RowEvArgName="dealRowChangeEvent" msprop:Generator_RowClassName="dealRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="deal_id" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columndeal_id" msprop:Generator_ColumnPropNameInRow="deal_id" msprop:Generator_ColumnPropNameInTable="deal_idColumn" msprop:Generator_UserColumnName="deal_id" type="xs:int" />
@@ -432,7 +432,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tonData" msprop:Generator_TableClassName="tonDataDataTable" msprop:Generator_TableVarName="tabletonData" msprop:Generator_RowChangedName="tonDataRowChanged" msprop:Generator_TablePropName="tonData" msprop:Generator_RowDeletingName="tonDataRowDeleting" msprop:Generator_RowChangingName="tonDataRowChanging" msprop:Generator_RowEvHandlerName="tonDataRowChangeEventHandler" msprop:Generator_RowDeletedName="tonDataRowDeleted" msprop:Generator_RowClassName="tonDataRow" msprop:Generator_UserTableName="tonData" msprop:Generator_RowEvArgName="tonDataRowChangeEvent">
+        <xs:element name="tonData" msprop:Generator_TableClassName="tonDataDataTable" msprop:Generator_TableVarName="tabletonData" msprop:Generator_TablePropName="tonData" msprop:Generator_RowDeletingName="tonDataRowDeleting" msprop:Generator_RowChangingName="tonDataRowChanging" msprop:Generator_RowEvHandlerName="tonDataRowChangeEventHandler" msprop:Generator_RowDeletedName="tonDataRowDeleted" msprop:Generator_UserTableName="tonData" msprop:Generator_RowChangedName="tonDataRowChanged" msprop:Generator_RowEvArgName="tonDataRowChangeEvent" msprop:Generator_RowClassName="tonDataRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="code" msprop:Generator_ColumnVarNameInTable="columncode" msprop:Generator_ColumnPropNameInRow="code" msprop:Generator_ColumnPropNameInTable="codeColumn" msprop:Generator_UserColumnName="code">
@@ -459,7 +459,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="user" msprop:Generator_TableClassName="userDataTable" msprop:Generator_TableVarName="tableuser" msprop:Generator_RowChangedName="userRowChanged" msprop:Generator_TablePropName="user" msprop:Generator_RowDeletingName="userRowDeleting" msprop:Generator_RowChangingName="userRowChanging" msprop:Generator_RowEvHandlerName="userRowChangeEventHandler" msprop:Generator_RowDeletedName="userRowDeleted" msprop:Generator_RowClassName="userRow" msprop:Generator_UserTableName="user" msprop:Generator_RowEvArgName="userRowChangeEvent">
+        <xs:element name="user" msprop:Generator_TableClassName="userDataTable" msprop:Generator_TableVarName="tableuser" msprop:Generator_TablePropName="user" msprop:Generator_RowDeletingName="userRowDeleting" msprop:Generator_RowChangingName="userRowChanging" msprop:Generator_RowEvHandlerName="userRowChangeEventHandler" msprop:Generator_RowDeletedName="userRowDeleted" msprop:Generator_UserTableName="user" msprop:Generator_RowChangedName="userRowChanged" msprop:Generator_RowEvArgName="userRowChangeEvent" msprop:Generator_RowClassName="userRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="key" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnkey" msprop:Generator_ColumnPropNameInRow="key" msprop:Generator_ColumnPropNameInTable="keyColumn" msprop:Generator_UserColumnName="key" type="xs:int" />
@@ -517,19 +517,19 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+    <xs:unique name="Constraint1">
       <xs:selector xpath=".//mstns:client" />
       <xs:field xpath="mstns:key" />
     </xs:unique>
-    <xs:unique name="deal_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+    <xs:unique name="deal_Constraint1" msdata:ConstraintName="Constraint1">
       <xs:selector xpath=".//mstns:deal" />
       <xs:field xpath="mstns:deal_id" />
     </xs:unique>
-    <xs:unique name="tonData_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+    <xs:unique name="tonData_Constraint1" msdata:ConstraintName="Constraint1">
       <xs:selector xpath=".//mstns:tonData" />
       <xs:field xpath="mstns:code" />
     </xs:unique>
-    <xs:unique name="user_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+    <xs:unique name="user_Constraint1" msdata:ConstraintName="Constraint1">
       <xs:selector xpath=".//mstns:user" />
       <xs:field xpath="mstns:key" />
     </xs:unique>

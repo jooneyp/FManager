@@ -28,11 +28,6 @@ Public Class DealForm
         Me.UserTableAdapter.Fill(Me.DBDataSet.user)
         Me.ClientTableAdapter.Fill(Me.DBDataSet.client)
         myConn.Open()
-        cBoxTons.Text = "7t"
-    End Sub
-
-    Private Sub Button1_Click(sender As Object, e As EventArgs)
-        PrintForm.Show()
     End Sub
 
     Private Sub DealFrom_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing

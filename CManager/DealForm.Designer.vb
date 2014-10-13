@@ -56,18 +56,18 @@ Partial Class DealForm
         '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(185, 222)
+        Me.btnSubmit.Location = New System.Drawing.Point(142, 155)
         Me.btnSubmit.Margin = New System.Windows.Forms.Padding(1)
         Me.btnSubmit.Name = "btnSubmit"
-        Me.btnSubmit.Size = New System.Drawing.Size(61, 54)
-        Me.btnSubmit.TabIndex = 38
+        Me.btnSubmit.Size = New System.Drawing.Size(92, 33)
+        Me.btnSubmit.TabIndex = 7
         Me.btnSubmit.Text = "입력"
         Me.btnSubmit.UseVisualStyleBackColor = True
         '
         'lblDutyR
         '
         Me.lblDutyR.AutoSize = True
-        Me.lblDutyR.Location = New System.Drawing.Point(95, 264)
+        Me.lblDutyR.Location = New System.Drawing.Point(80, 176)
         Me.lblDutyR.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblDutyR.Name = "lblDutyR"
         Me.lblDutyR.Size = New System.Drawing.Size(30, 12)
@@ -78,7 +78,7 @@ Partial Class DealForm
         'lblFCostR
         '
         Me.lblFCostR.AutoSize = True
-        Me.lblFCostR.Location = New System.Drawing.Point(95, 222)
+        Me.lblFCostR.Location = New System.Drawing.Point(79, 155)
         Me.lblFCostR.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblFCostR.Name = "lblFCostR"
         Me.lblFCostR.Size = New System.Drawing.Size(31, 12)
@@ -89,7 +89,7 @@ Partial Class DealForm
         'lblDuty
         '
         Me.lblDuty.AutoSize = True
-        Me.lblDuty.Location = New System.Drawing.Point(49, 264)
+        Me.lblDuty.Location = New System.Drawing.Point(35, 176)
         Me.lblDuty.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblDuty.Name = "lblDuty"
         Me.lblDuty.Size = New System.Drawing.Size(37, 12)
@@ -99,7 +99,7 @@ Partial Class DealForm
         'lblFCost
         '
         Me.lblFCost.AutoSize = True
-        Me.lblFCost.Location = New System.Drawing.Point(23, 222)
+        Me.lblFCost.Location = New System.Drawing.Point(11, 155)
         Me.lblFCost.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblFCost.Name = "lblFCost"
         Me.lblFCost.Size = New System.Drawing.Size(61, 12)
@@ -109,7 +109,7 @@ Partial Class DealForm
         'lblQty
         '
         Me.lblQty.AutoSize = True
-        Me.lblQty.Location = New System.Drawing.Point(211, 143)
+        Me.lblQty.Location = New System.Drawing.Point(201, 101)
         Me.lblQty.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblQty.Name = "lblQty"
         Me.lblQty.Size = New System.Drawing.Size(29, 12)
@@ -119,7 +119,7 @@ Partial Class DealForm
         'lblCost
         '
         Me.lblCost.AutoSize = True
-        Me.lblCost.Location = New System.Drawing.Point(141, 143)
+        Me.lblCost.Location = New System.Drawing.Point(132, 101)
         Me.lblCost.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblCost.Name = "lblCost"
         Me.lblCost.Size = New System.Drawing.Size(29, 12)
@@ -129,7 +129,7 @@ Partial Class DealForm
         'lblTons
         '
         Me.lblTons.AutoSize = True
-        Me.lblTons.Location = New System.Drawing.Point(43, 143)
+        Me.lblTons.Location = New System.Drawing.Point(39, 101)
         Me.lblTons.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblTons.Name = "lblTons"
         Me.lblTons.Size = New System.Drawing.Size(29, 12)
@@ -139,17 +139,17 @@ Partial Class DealForm
         'lblDate
         '
         Me.lblDate.AutoSize = True
-        Me.lblDate.Location = New System.Drawing.Point(91, 80)
+        Me.lblDate.Location = New System.Drawing.Point(27, 70)
         Me.lblDate.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblDate.Name = "lblDate"
-        Me.lblDate.Size = New System.Drawing.Size(29, 12)
+        Me.lblDate.Size = New System.Drawing.Size(53, 12)
         Me.lblDate.TabIndex = 30
-        Me.lblDate.Text = "날짜"
+        Me.lblDate.Text = "거래일자"
         '
         'lblu_name
         '
         Me.lblu_name.AutoSize = True
-        Me.lblu_name.Location = New System.Drawing.Point(189, 22)
+        Me.lblu_name.Location = New System.Drawing.Point(175, 11)
         Me.lblu_name.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblu_name.Name = "lblu_name"
         Me.lblu_name.Size = New System.Drawing.Size(41, 12)
@@ -159,7 +159,7 @@ Partial Class DealForm
         'lblc_name
         '
         Me.lblc_name.AutoSize = True
-        Me.lblc_name.Location = New System.Drawing.Point(70, 22)
+        Me.lblc_name.Location = New System.Drawing.Point(57, 11)
         Me.lblc_name.Margin = New System.Windows.Forms.Padding(1, 0, 1, 0)
         Me.lblc_name.Name = "lblc_name"
         Me.lblc_name.Size = New System.Drawing.Size(41, 12)
@@ -168,30 +168,30 @@ Partial Class DealForm
         '
         'tBoxQty
         '
-        Me.tBoxQty.Location = New System.Drawing.Point(211, 169)
+        Me.tBoxQty.Location = New System.Drawing.Point(198, 118)
         Me.tBoxQty.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxQty.Name = "tBoxQty"
         Me.tBoxQty.Size = New System.Drawing.Size(36, 21)
-        Me.tBoxQty.TabIndex = 27
+        Me.tBoxQty.TabIndex = 6
         Me.tBoxQty.Text = "1"
         '
         'tBoxCost
         '
-        Me.tBoxCost.Location = New System.Drawing.Point(118, 169)
+        Me.tBoxCost.Location = New System.Drawing.Point(105, 118)
         Me.tBoxCost.Margin = New System.Windows.Forms.Padding(1)
         Me.tBoxCost.Name = "tBoxCost"
         Me.tBoxCost.Size = New System.Drawing.Size(79, 21)
-        Me.tBoxCost.TabIndex = 26
+        Me.tBoxCost.TabIndex = 5
         Me.tBoxCost.Text = "40000"
         '
         'DateTimePicker1
         '
         Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(26, 104)
+        Me.DateTimePicker1.Location = New System.Drawing.Point(92, 65)
         Me.DateTimePicker1.Margin = New System.Windows.Forms.Padding(1)
         Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.Size = New System.Drawing.Size(221, 21)
-        Me.DateTimePicker1.TabIndex = 24
+        Me.DateTimePicker1.Size = New System.Drawing.Size(142, 21)
+        Me.DateTimePicker1.TabIndex = 3
         '
         'cBoxu_name
         '
@@ -199,11 +199,11 @@ Partial Class DealForm
         Me.cBoxu_name.DisplayMember = "u_headname"
         Me.cBoxu_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cBoxu_name.FormattingEnabled = True
-        Me.cBoxu_name.Location = New System.Drawing.Point(169, 42)
+        Me.cBoxu_name.Location = New System.Drawing.Point(156, 27)
         Me.cBoxu_name.Margin = New System.Windows.Forms.Padding(1)
         Me.cBoxu_name.Name = "cBoxu_name"
         Me.cBoxu_name.Size = New System.Drawing.Size(77, 20)
-        Me.cBoxu_name.TabIndex = 23
+        Me.cBoxu_name.TabIndex = 2
         '
         'UserBindingSource
         '
@@ -221,11 +221,11 @@ Partial Class DealForm
         Me.cBoxc_name.DisplayMember = "c_name"
         Me.cBoxc_name.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cBoxc_name.FormattingEnabled = True
-        Me.cBoxc_name.Location = New System.Drawing.Point(26, 42)
+        Me.cBoxc_name.Location = New System.Drawing.Point(13, 27)
         Me.cBoxc_name.Margin = New System.Windows.Forms.Padding(1)
         Me.cBoxc_name.Name = "cBoxc_name"
         Me.cBoxc_name.Size = New System.Drawing.Size(130, 20)
-        Me.cBoxc_name.TabIndex = 22
+        Me.cBoxc_name.TabIndex = 1
         '
         'ClientBindingSource
         '
@@ -248,11 +248,11 @@ Partial Class DealForm
         '
         Me.cBoxTons.DataSource = Me.TonDataBindingSource
         Me.cBoxTons.DisplayMember = "ton"
-        Me.cBoxTons.FormattingEnabled = True
-        Me.cBoxTons.Location = New System.Drawing.Point(26, 170)
+        Me.cBoxTons.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cBoxTons.Location = New System.Drawing.Point(13, 119)
         Me.cBoxTons.Name = "cBoxTons"
         Me.cBoxTons.Size = New System.Drawing.Size(78, 20)
-        Me.cBoxTons.TabIndex = 39
+        Me.cBoxTons.TabIndex = 4
         '
         'TonDataBindingSource
         '
@@ -267,7 +267,7 @@ Partial Class DealForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(276, 306)
+        Me.ClientSize = New System.Drawing.Size(246, 198)
         Me.Controls.Add(Me.cBoxTons)
         Me.Controls.Add(Me.btnSubmit)
         Me.Controls.Add(Me.lblDutyR)
@@ -287,8 +287,6 @@ Partial Class DealForm
         Me.Controls.Add(Me.cBoxc_name)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(1)
-        Me.MaximumSize = New System.Drawing.Size(292, 345)
-        Me.MinimumSize = New System.Drawing.Size(292, 345)
         Me.Name = "DealForm"
         Me.Text = "거래내역 입력"
         CType(Me.UserBindingSource, System.ComponentModel.ISupportInitialize).EndInit()

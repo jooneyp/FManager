@@ -2,8 +2,18 @@
 
 Public Class ClientForm
     Private myConn As New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=.\SourceDB.mdb")
-    Dim tBoxs(8) As TextBox
+    Dim tBoxs(9) As TextBox
     Dim i As Integer
+    Public dIndex As Integer
+    Public cIndex As Integer
+
+    Private Sub ClientForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Me.ClientTableAdapter1.Fill(Me.SourceDBDataSet.client)
+        myConn.Open()
+        For i As Integer = 1 To 8
+            tBoxs(i) = CType(Controls("tBox" + i.ToString), TextBox)
+        Next i
+    End Sub
 
     Private Sub Button_Search_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
 
@@ -54,10 +64,13 @@ Public Class ClientForm
     End Sub
 
     Private Sub Button_Add_Click(sender As Object, e As EventArgs) Handles Button_Add.Click
-        ClearTextBoxes()
-        EnableTextBoxes()
-        lblStat.Text = "add"
-        tBox1.Enabled = False
+        Try
+            EnableTextBoxes()
+            ClearTextBoxes()
+            lblStat.Text = "add"
+            tBox1.Enabled = False
+        Catch er As NullReferenceException
+        End Try
     End Sub
 
     Private Sub Button_Clear_Click(sender As Object, e As EventArgs) Handles Button_Clear.Click
@@ -120,41 +133,56 @@ Public Class ClientForm
             MsgBox("삭제되었습니다.")
             ClearTextBoxes()
         End If
-        DataGridView.Sort(DataGridView.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
+        dgv_cliList.Sort(dgv_cliList.Columns(0), System.ComponentModel.ListSortDirection.Ascending)
     End Sub
 
     Private Sub Button_GridView_Click(sender As Object, e As EventArgs) Handles Button_GridView.Click
         Me.ClientTableAdapter1.Fill(Me.SourceDBDataSet.client)
     End Sub
 
-    Private Sub ClientForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        'TODO: 이 코드는 데이터를 'SourceDBDataSet.client' 테이블에 로드합니다. 필요한 경우 이 코드를 이동하거나 제거할 수 있습니다.
-        Me.ClientTableAdapter1.Fill(Me.SourceDBDataSet.client)
-        myConn.Open()
-        For i As Integer = 1 To 8
-            tBoxs(i) = CType(Controls("tBox" + i.ToString), TextBox)
-        Next i
-
-    End Sub
-
     Private Sub ClientFrom_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         myConn.Close()
     End Sub
 
-    Private Sub DataGridView1_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView.CellClick
-        DataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+    Public Sub dgv_cliList_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_cliList.CellClick
+        dgv_cliList.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        cIndex = e.RowIndex
         Try
-            If DataGridView.Item(1, e.RowIndex).Value = "" Then
-                DataGridView.Item(0, e.RowIndex).Value = ""
-            Else
-                For i As Integer = 1 To 8
-                    tBoxs(i).Text = DataGridView.Item(i - 1, e.RowIndex).Value.ToString
-                Next
-                Button_Modify.Enabled = True
-                Button_Delete.Enabled = True
-            End If
-
+            For i As Integer = 1 To 8
+                tBoxs(i).Text = dgv_cliList.Item(i - 1, e.RowIndex).Value.ToString
+            Next
+            Button_Modify.Enabled = True
+            Button_Delete.Enabled = True
+            refreshDeal()
         Catch ee As Exception
+
         End Try
+    End Sub
+
+    Private Sub dgv_dealList_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_dealList.CellClick
+        dgv_dealList.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        dIndex = e.RowIndex
+    End Sub
+
+    Private Sub btn_dealMod_Click(sender As Object, e As EventArgs) Handles btn_dealMod.Click
+        DealMod.Show()
+    End Sub
+
+    Private Sub btn_dealDel_Click(sender As Object, e As EventArgs) Handles btn_dealDel.Click
+        Dim response = MsgBox("거래번호 ''" + dgv_dealList.Item(0, dIndex).Value.ToString + "''의 Data를 삭제합니다.", MsgBoxStyle.Exclamation, vbOKCancel)
+        If response = MsgBoxResult.Ok Then
+            Dim cmdText = "DELETE FROM [deal] WHERE (deal_id = " + dgv_dealList.Item(0, dIndex).Value.ToString + ")"
+            Dim myCmd = New OleDbCommand(cmdText, myConn)
+            myCmd.ExecuteNonQuery()
+            MsgBox("삭제되었습니다.")
+            refreshDeal()
+        End If
+    End Sub
+
+    Public Sub refreshDeal()
+        Dim Adp As New OleDbDataAdapter("SELECT deal_id, d_date, d_user, d_tons, d_qty, d_cost FROM deal WHERE (deal.d_client) = """ + dgv_cliList.Item(1, cIndex).Value + """ ORDER BY deal_id ASC", myConn)
+        Dim Table As New DataTable
+        Adp.Fill(Table)
+        dgv_dealList.DataSource = Table
     End Sub
 End Class

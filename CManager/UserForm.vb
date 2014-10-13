@@ -7,26 +7,26 @@ Public Class UserForm
 
     Private Sub Button_Search_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
 
-        Dim myAdapter As New OleDbDataAdapter("SELECT * FROM [user] WHERE (u_name = '" + tBox2.Text + "')", myConn)
+        Dim myAdapter As New OleDbDataAdapter("SELECT * FROM [user] WHERE (u_headname = '" + tBox3.Text + "')", myConn)
         Dim myDataTable As New DataTable
-        If tBox2.Text = "" Then
-            MsgBox("업체명을 입력해주세요.")
+        If tBox3.Text = "" Then
+            MsgBox("대표자명을 입력해주세요.")
         Else
             myAdapter.Fill(myDataTable)
             If myDataTable.Rows.Count > 0 Then
                 Try
-                    tBox3.Text = myDataTable.Rows(0).Item("u_idnum")
-                    tBox4.Text = myDataTable.Rows(0).Item("u_headname")
-                    tBox5.Text = myDataTable.Rows(0).Item("u_address")
-                    tBox6.Text = myDataTable.Rows(0).Item("u_type")
-                    tBox7.Text = myDataTable.Rows(0).Item("u_jongmok")
+                    tBox2.Text = myDataTable.Rows(0).Item("u_name")
+                    tBox4.Text = myDataTable.Rows(0).Item("u_address")
+                    tBox5.Text = myDataTable.Rows(0).Item("u_type")
+                    tBox6.Text = myDataTable.Rows(0).Item("u_jongmok")
+                    tBox7.Text = myDataTable.Rows(0).Item("u_idnum")
                     tBox8.Text = myDataTable.Rows(0).Item("u_comment")
                     Button_Modify.Enabled = True
                     Button_Delete.Enabled = True
                 Catch ex As InvalidCastException
                 End Try
             Else
-                MsgBox("해당 업체가 없습니다.")
+                MsgBox("해당 대표자가 없습니다.")
                 For i As Integer = 1 To 8
                     tBoxs(i).Text = ""
                 Next
@@ -44,7 +44,7 @@ Public Class UserForm
         For i As Integer = 1 To 8
             tBoxs(i).Enabled = False
         Next
-        tBox2.Enabled = True
+        tBox3.Enabled = True
     End Sub
 
     Private Sub ClearTextBoxes()
@@ -107,6 +107,7 @@ Public Class UserForm
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+        Me.UserTableAdapter.Fill(Me.SourceDBDataSet.user)
     End Sub
 
     Private Sub Button_Delete_Click(sender As Object, e As EventArgs) Handles Button_Delete.Click
@@ -114,11 +115,12 @@ Public Class UserForm
             MsgBox("취소되었습니다.")
             Exit Sub
         Else
-            Dim cmdText = "DELETE FROM [user] WHERE (u_name = '" + tBox2.Text + "')"
+            Dim cmdText = "DELETE FROM [user] WHERE (key = " + tBox1.Text + ")"
             Dim myCmd = New OleDbCommand(cmdText, myConn)
             myCmd.ExecuteNonQuery()
             MsgBox("삭제되었습니다.")
             ClearTextBoxes()
+            Me.UserTableAdapter.Fill(Me.SourceDBDataSet.user)
         End If
     End Sub
 
@@ -141,6 +143,7 @@ Public Class UserForm
     End Sub
 
     Private Sub DataGridView1_CellClick(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DataGridView.CellClick
+
         DataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         Try
             For i As Integer = 1 To 8

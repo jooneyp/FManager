@@ -1,5 +1,6 @@
 ﻿Imports System.Data.OleDb
 Imports Excel = Microsoft.Office.Interop.Excel
+Imports System.Runtime.InteropServices
 
 Public Class PrintForm
     Private myConn As New OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;" + "Data Source=.\SourceDB.mdb")
@@ -12,7 +13,7 @@ Public Class PrintForm
             Month = "0" & Month
         End If
         YM = Year & "-" & Month
-        Dim Adp As New OleDbDataAdapter("SELECT d_date, d_tons, d_qty, d_cost FROM deal WHERE (deal.d_client)=""" + cBox_client.Text + """ AND ((deal.d_date) Like """ & YM & "%"") AND ((deal.d_user)=""" + cBox_user.Text + """) ORDER BY d_date ASC", myConn)
+        Dim Adp As New OleDbDataAdapter("SELECT d_date, d_tons, d_qty, d_cost FROM deal WHERE (deal.d_client)=""" + cBox_client.Text + """ AND ((deal.d_date) Like """ & YM & "%"") ORDER BY d_date ASC", myConn)
         Dim Table As New DataTable
         Adp.Fill(Table)
         DataGridView_view.DataSource = Table
@@ -32,14 +33,12 @@ Public Class PrintForm
             ExcelApp.Visible = True
             WorkB = ExcelApp.Workbooks.Open(My.Computer.FileSystem.CurrentDirectory & "\PrintForm.xls")
             WorkS = ExcelApp.Sheets("output_se")
-
             WorkS.Shapes.AddPicture(My.Computer.FileSystem.CurrentDirectory & "\Images\" & cBox_user.Text & ".png", _
-                                    Microsoft.Office.Core.MsoTriState.msoFalse, _
-                                    Microsoft.Office.Core.MsoTriState.msoTrue, 226, 72, 43, 43)
+                                        Microsoft.Office.Core.MsoTriState.msoFalse, _
+                                        Microsoft.Office.Core.MsoTriState.msoTrue, 238, 70, 43, 43)
             WorkS.Shapes.AddPicture(My.Computer.FileSystem.CurrentDirectory & "\Images\" & cBox_user.Text & ".png", _
-                                    Microsoft.Office.Core.MsoTriState.msoFalse, _
-                                    Microsoft.Office.Core.MsoTriState.msoTrue, 226, 468, 43, 43)
-
+                                        Microsoft.Office.Core.MsoTriState.msoFalse, _
+                                        Microsoft.Office.Core.MsoTriState.msoTrue, 238, 464, 43, 43)
             WorkS = ExcelApp.Sheets("input_se")
 
             Dim UserAdapter As New OleDbDataAdapter("SELECT * FROM [user] WHERE [u_headname] = '" + cBox_user.Text + "'", myConn)

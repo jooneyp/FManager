@@ -177,7 +177,7 @@ Partial Class CodeMod
         Me.code1.Location = New System.Drawing.Point(20, 41)
         Me.code1.Name = "code1"
         Me.code1.Size = New System.Drawing.Size(40, 21)
-        Me.code1.TabIndex = 10
+        Me.code1.TabIndex = 41
         Me.code1.Text = "a"
         Me.code1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -186,7 +186,7 @@ Partial Class CodeMod
         Me.code2.Location = New System.Drawing.Point(20, 68)
         Me.code2.Name = "code2"
         Me.code2.Size = New System.Drawing.Size(40, 21)
-        Me.code2.TabIndex = 13
+        Me.code2.TabIndex = 42
         Me.code2.Text = "b"
         Me.code2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -195,21 +195,21 @@ Partial Class CodeMod
         Me.cost2.Location = New System.Drawing.Point(172, 68)
         Me.cost2.Name = "cost2"
         Me.cost2.Size = New System.Drawing.Size(100, 21)
-        Me.cost2.TabIndex = 12
+        Me.cost2.TabIndex = 4
         '
         'tons2
         '
         Me.tons2.Location = New System.Drawing.Point(66, 68)
         Me.tons2.Name = "tons2"
         Me.tons2.Size = New System.Drawing.Size(100, 21)
-        Me.tons2.TabIndex = 11
+        Me.tons2.TabIndex = 3
         '
         'code3
         '
         Me.code3.Location = New System.Drawing.Point(20, 95)
         Me.code3.Name = "code3"
         Me.code3.Size = New System.Drawing.Size(40, 21)
-        Me.code3.TabIndex = 16
+        Me.code3.TabIndex = 43
         Me.code3.Text = "c"
         Me.code3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -218,21 +218,21 @@ Partial Class CodeMod
         Me.cost3.Location = New System.Drawing.Point(172, 95)
         Me.cost3.Name = "cost3"
         Me.cost3.Size = New System.Drawing.Size(100, 21)
-        Me.cost3.TabIndex = 15
+        Me.cost3.TabIndex = 6
         '
         'tons3
         '
         Me.tons3.Location = New System.Drawing.Point(66, 95)
         Me.tons3.Name = "tons3"
         Me.tons3.Size = New System.Drawing.Size(100, 21)
-        Me.tons3.TabIndex = 14
+        Me.tons3.TabIndex = 5
         '
         'code4
         '
         Me.code4.Location = New System.Drawing.Point(20, 122)
         Me.code4.Name = "code4"
         Me.code4.Size = New System.Drawing.Size(40, 21)
-        Me.code4.TabIndex = 19
+        Me.code4.TabIndex = 44
         Me.code4.Text = "d"
         Me.code4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -241,21 +241,21 @@ Partial Class CodeMod
         Me.cost4.Location = New System.Drawing.Point(172, 122)
         Me.cost4.Name = "cost4"
         Me.cost4.Size = New System.Drawing.Size(100, 21)
-        Me.cost4.TabIndex = 18
+        Me.cost4.TabIndex = 8
         '
         'tons4
         '
         Me.tons4.Location = New System.Drawing.Point(66, 122)
         Me.tons4.Name = "tons4"
         Me.tons4.Size = New System.Drawing.Size(100, 21)
-        Me.tons4.TabIndex = 17
+        Me.tons4.TabIndex = 7
         '
         'code8
         '
         Me.code8.Location = New System.Drawing.Point(20, 230)
         Me.code8.Name = "code8"
         Me.code8.Size = New System.Drawing.Size(40, 21)
-        Me.code8.TabIndex = 31
+        Me.code8.TabIndex = 48
         Me.code8.Text = "h"
         Me.code8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -264,21 +264,21 @@ Partial Class CodeMod
         Me.cost8.Location = New System.Drawing.Point(172, 230)
         Me.cost8.Name = "cost8"
         Me.cost8.Size = New System.Drawing.Size(100, 21)
-        Me.cost8.TabIndex = 30
+        Me.cost8.TabIndex = 16
         '
         'tons8
         '
         Me.tons8.Location = New System.Drawing.Point(66, 230)
         Me.tons8.Name = "tons8"
         Me.tons8.Size = New System.Drawing.Size(100, 21)
-        Me.tons8.TabIndex = 29
+        Me.tons8.TabIndex = 15
         '
         'code7
         '
         Me.code7.Location = New System.Drawing.Point(20, 203)
         Me.code7.Name = "code7"
         Me.code7.Size = New System.Drawing.Size(40, 21)
-        Me.code7.TabIndex = 28
+        Me.code7.TabIndex = 47
         Me.code7.Text = "g"
         Me.code7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -287,21 +287,21 @@ Partial Class CodeMod
         Me.cost7.Location = New System.Drawing.Point(172, 203)
         Me.cost7.Name = "cost7"
         Me.cost7.Size = New System.Drawing.Size(100, 21)
-        Me.cost7.TabIndex = 27
+        Me.cost7.TabIndex = 14
         '
         'tons7
         '
         Me.tons7.Location = New System.Drawing.Point(66, 203)
         Me.tons7.Name = "tons7"
         Me.tons7.Size = New System.Drawing.Size(100, 21)
-        Me.tons7.TabIndex = 26
+        Me.tons7.TabIndex = 13
         '
         'code6
         '
         Me.code6.Location = New System.Drawing.Point(20, 176)
         Me.code6.Name = "code6"
         Me.code6.Size = New System.Drawing.Size(40, 21)
-        Me.code6.TabIndex = 25
+        Me.code6.TabIndex = 46
         Me.code6.Text = "f"
         Me.code6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -310,21 +310,21 @@ Partial Class CodeMod
         Me.cost6.Location = New System.Drawing.Point(172, 176)
         Me.cost6.Name = "cost6"
         Me.cost6.Size = New System.Drawing.Size(100, 21)
-        Me.cost6.TabIndex = 24
+        Me.cost6.TabIndex = 12
         '
         'tons6
         '
         Me.tons6.Location = New System.Drawing.Point(66, 176)
         Me.tons6.Name = "tons6"
         Me.tons6.Size = New System.Drawing.Size(100, 21)
-        Me.tons6.TabIndex = 23
+        Me.tons6.TabIndex = 11
         '
         'code5
         '
         Me.code5.Location = New System.Drawing.Point(20, 149)
         Me.code5.Name = "code5"
         Me.code5.Size = New System.Drawing.Size(40, 21)
-        Me.code5.TabIndex = 22
+        Me.code5.TabIndex = 45
         Me.code5.Text = "e"
         Me.code5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -333,21 +333,21 @@ Partial Class CodeMod
         Me.cost5.Location = New System.Drawing.Point(172, 149)
         Me.cost5.Name = "cost5"
         Me.cost5.Size = New System.Drawing.Size(100, 21)
-        Me.cost5.TabIndex = 21
+        Me.cost5.TabIndex = 10
         '
         'tons5
         '
         Me.tons5.Location = New System.Drawing.Point(66, 149)
         Me.tons5.Name = "tons5"
         Me.tons5.Size = New System.Drawing.Size(100, 21)
-        Me.tons5.TabIndex = 20
+        Me.tons5.TabIndex = 9
         '
         'code10
         '
         Me.code10.Location = New System.Drawing.Point(20, 284)
         Me.code10.Name = "code10"
         Me.code10.Size = New System.Drawing.Size(40, 21)
-        Me.code10.TabIndex = 37
+        Me.code10.TabIndex = 50
         Me.code10.Text = "j"
         Me.code10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -356,21 +356,21 @@ Partial Class CodeMod
         Me.cost10.Location = New System.Drawing.Point(172, 284)
         Me.cost10.Name = "cost10"
         Me.cost10.Size = New System.Drawing.Size(100, 21)
-        Me.cost10.TabIndex = 36
+        Me.cost10.TabIndex = 20
         '
         'tons10
         '
         Me.tons10.Location = New System.Drawing.Point(66, 284)
         Me.tons10.Name = "tons10"
         Me.tons10.Size = New System.Drawing.Size(100, 21)
-        Me.tons10.TabIndex = 35
+        Me.tons10.TabIndex = 19
         '
         'code9
         '
         Me.code9.Location = New System.Drawing.Point(20, 257)
         Me.code9.Name = "code9"
         Me.code9.Size = New System.Drawing.Size(40, 21)
-        Me.code9.TabIndex = 34
+        Me.code9.TabIndex = 49
         Me.code9.Text = "i"
         Me.code9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -379,21 +379,21 @@ Partial Class CodeMod
         Me.cost9.Location = New System.Drawing.Point(172, 257)
         Me.cost9.Name = "cost9"
         Me.cost9.Size = New System.Drawing.Size(100, 21)
-        Me.cost9.TabIndex = 33
+        Me.cost9.TabIndex = 18
         '
         'tons9
         '
         Me.tons9.Location = New System.Drawing.Point(66, 257)
         Me.tons9.Name = "tons9"
         Me.tons9.Size = New System.Drawing.Size(100, 21)
-        Me.tons9.TabIndex = 32
+        Me.tons9.TabIndex = 17
         '
         'code14
         '
         Me.code14.Location = New System.Drawing.Point(307, 122)
         Me.code14.Name = "code14"
         Me.code14.Size = New System.Drawing.Size(40, 21)
-        Me.code14.TabIndex = 55
+        Me.code14.TabIndex = 54
         Me.code14.Text = "n"
         Me.code14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -402,21 +402,21 @@ Partial Class CodeMod
         Me.cost14.Location = New System.Drawing.Point(459, 122)
         Me.cost14.Name = "cost14"
         Me.cost14.Size = New System.Drawing.Size(100, 21)
-        Me.cost14.TabIndex = 54
+        Me.cost14.TabIndex = 28
         '
         'tons14
         '
         Me.tons14.Location = New System.Drawing.Point(353, 122)
         Me.tons14.Name = "tons14"
         Me.tons14.Size = New System.Drawing.Size(100, 21)
-        Me.tons14.TabIndex = 53
+        Me.tons14.TabIndex = 27
         '
         'code13
         '
         Me.code13.Location = New System.Drawing.Point(307, 95)
         Me.code13.Name = "code13"
         Me.code13.Size = New System.Drawing.Size(40, 21)
-        Me.code13.TabIndex = 52
+        Me.code13.TabIndex = 53
         Me.code13.Text = "m"
         Me.code13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -425,21 +425,21 @@ Partial Class CodeMod
         Me.cost13.Location = New System.Drawing.Point(459, 95)
         Me.cost13.Name = "cost13"
         Me.cost13.Size = New System.Drawing.Size(100, 21)
-        Me.cost13.TabIndex = 51
+        Me.cost13.TabIndex = 26
         '
         'tons13
         '
         Me.tons13.Location = New System.Drawing.Point(353, 95)
         Me.tons13.Name = "tons13"
         Me.tons13.Size = New System.Drawing.Size(100, 21)
-        Me.tons13.TabIndex = 50
+        Me.tons13.TabIndex = 25
         '
         'code12
         '
         Me.code12.Location = New System.Drawing.Point(307, 68)
         Me.code12.Name = "code12"
         Me.code12.Size = New System.Drawing.Size(40, 21)
-        Me.code12.TabIndex = 49
+        Me.code12.TabIndex = 52
         Me.code12.Text = "l"
         Me.code12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -448,21 +448,21 @@ Partial Class CodeMod
         Me.cost12.Location = New System.Drawing.Point(459, 68)
         Me.cost12.Name = "cost12"
         Me.cost12.Size = New System.Drawing.Size(100, 21)
-        Me.cost12.TabIndex = 48
+        Me.cost12.TabIndex = 24
         '
         'tons12
         '
         Me.tons12.Location = New System.Drawing.Point(353, 68)
         Me.tons12.Name = "tons12"
         Me.tons12.Size = New System.Drawing.Size(100, 21)
-        Me.tons12.TabIndex = 47
+        Me.tons12.TabIndex = 23
         '
         'code11
         '
         Me.code11.Location = New System.Drawing.Point(307, 41)
         Me.code11.Name = "code11"
         Me.code11.Size = New System.Drawing.Size(40, 21)
-        Me.code11.TabIndex = 46
+        Me.code11.TabIndex = 51
         Me.code11.Text = "k"
         Me.code11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -471,21 +471,21 @@ Partial Class CodeMod
         Me.cost11.Location = New System.Drawing.Point(459, 41)
         Me.cost11.Name = "cost11"
         Me.cost11.Size = New System.Drawing.Size(100, 21)
-        Me.cost11.TabIndex = 45
+        Me.cost11.TabIndex = 22
         '
         'tons11
         '
         Me.tons11.Location = New System.Drawing.Point(353, 41)
         Me.tons11.Name = "tons11"
         Me.tons11.Size = New System.Drawing.Size(100, 21)
-        Me.tons11.TabIndex = 44
+        Me.tons11.TabIndex = 21
         '
         'code18
         '
         Me.code18.Location = New System.Drawing.Point(307, 230)
         Me.code18.Name = "code18"
         Me.code18.Size = New System.Drawing.Size(40, 21)
-        Me.code18.TabIndex = 67
+        Me.code18.TabIndex = 58
         Me.code18.Text = "r"
         Me.code18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -494,21 +494,21 @@ Partial Class CodeMod
         Me.cost18.Location = New System.Drawing.Point(459, 230)
         Me.cost18.Name = "cost18"
         Me.cost18.Size = New System.Drawing.Size(100, 21)
-        Me.cost18.TabIndex = 66
+        Me.cost18.TabIndex = 36
         '
         'tons18
         '
         Me.tons18.Location = New System.Drawing.Point(353, 230)
         Me.tons18.Name = "tons18"
         Me.tons18.Size = New System.Drawing.Size(100, 21)
-        Me.tons18.TabIndex = 65
+        Me.tons18.TabIndex = 35
         '
         'code17
         '
         Me.code17.Location = New System.Drawing.Point(307, 203)
         Me.code17.Name = "code17"
         Me.code17.Size = New System.Drawing.Size(40, 21)
-        Me.code17.TabIndex = 64
+        Me.code17.TabIndex = 57
         Me.code17.Text = "q"
         Me.code17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -517,21 +517,21 @@ Partial Class CodeMod
         Me.cost17.Location = New System.Drawing.Point(459, 203)
         Me.cost17.Name = "cost17"
         Me.cost17.Size = New System.Drawing.Size(100, 21)
-        Me.cost17.TabIndex = 63
+        Me.cost17.TabIndex = 34
         '
         'tons17
         '
         Me.tons17.Location = New System.Drawing.Point(353, 203)
         Me.tons17.Name = "tons17"
         Me.tons17.Size = New System.Drawing.Size(100, 21)
-        Me.tons17.TabIndex = 62
+        Me.tons17.TabIndex = 33
         '
         'code16
         '
         Me.code16.Location = New System.Drawing.Point(307, 176)
         Me.code16.Name = "code16"
         Me.code16.Size = New System.Drawing.Size(40, 21)
-        Me.code16.TabIndex = 61
+        Me.code16.TabIndex = 56
         Me.code16.Text = "p"
         Me.code16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -540,21 +540,21 @@ Partial Class CodeMod
         Me.cost16.Location = New System.Drawing.Point(459, 176)
         Me.cost16.Name = "cost16"
         Me.cost16.Size = New System.Drawing.Size(100, 21)
-        Me.cost16.TabIndex = 60
+        Me.cost16.TabIndex = 32
         '
         'tons16
         '
         Me.tons16.Location = New System.Drawing.Point(353, 176)
         Me.tons16.Name = "tons16"
         Me.tons16.Size = New System.Drawing.Size(100, 21)
-        Me.tons16.TabIndex = 59
+        Me.tons16.TabIndex = 31
         '
         'code15
         '
         Me.code15.Location = New System.Drawing.Point(307, 149)
         Me.code15.Name = "code15"
         Me.code15.Size = New System.Drawing.Size(40, 21)
-        Me.code15.TabIndex = 58
+        Me.code15.TabIndex = 55
         Me.code15.Text = "o"
         Me.code15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -563,21 +563,21 @@ Partial Class CodeMod
         Me.cost15.Location = New System.Drawing.Point(459, 149)
         Me.cost15.Name = "cost15"
         Me.cost15.Size = New System.Drawing.Size(100, 21)
-        Me.cost15.TabIndex = 57
+        Me.cost15.TabIndex = 30
         '
         'tons15
         '
         Me.tons15.Location = New System.Drawing.Point(353, 149)
         Me.tons15.Name = "tons15"
         Me.tons15.Size = New System.Drawing.Size(100, 21)
-        Me.tons15.TabIndex = 56
+        Me.tons15.TabIndex = 29
         '
         'code20
         '
         Me.code20.Location = New System.Drawing.Point(307, 284)
         Me.code20.Name = "code20"
         Me.code20.Size = New System.Drawing.Size(40, 21)
-        Me.code20.TabIndex = 73
+        Me.code20.TabIndex = 60
         Me.code20.Text = "t"
         Me.code20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -586,21 +586,21 @@ Partial Class CodeMod
         Me.cost20.Location = New System.Drawing.Point(459, 284)
         Me.cost20.Name = "cost20"
         Me.cost20.Size = New System.Drawing.Size(100, 21)
-        Me.cost20.TabIndex = 72
+        Me.cost20.TabIndex = 40
         '
         'tons20
         '
         Me.tons20.Location = New System.Drawing.Point(353, 284)
         Me.tons20.Name = "tons20"
         Me.tons20.Size = New System.Drawing.Size(100, 21)
-        Me.tons20.TabIndex = 71
+        Me.tons20.TabIndex = 39
         '
         'code19
         '
         Me.code19.Location = New System.Drawing.Point(307, 257)
         Me.code19.Name = "code19"
         Me.code19.Size = New System.Drawing.Size(40, 21)
-        Me.code19.TabIndex = 70
+        Me.code19.TabIndex = 59
         Me.code19.Text = "s"
         Me.code19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
@@ -609,14 +609,14 @@ Partial Class CodeMod
         Me.cost19.Location = New System.Drawing.Point(459, 257)
         Me.cost19.Name = "cost19"
         Me.cost19.Size = New System.Drawing.Size(100, 21)
-        Me.cost19.TabIndex = 69
+        Me.cost19.TabIndex = 38
         '
         'tons19
         '
         Me.tons19.Location = New System.Drawing.Point(353, 257)
         Me.tons19.Name = "tons19"
         Me.tons19.Size = New System.Drawing.Size(100, 21)
-        Me.tons19.TabIndex = 68
+        Me.tons19.TabIndex = 37
         '
         'Label4
         '

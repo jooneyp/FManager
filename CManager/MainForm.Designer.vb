@@ -42,7 +42,7 @@ Partial Class MainForm
         Me.btn_clientMod.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_clientMod.Name = "btn_clientMod"
         Me.btn_clientMod.Size = New System.Drawing.Size(66, 52)
-        Me.btn_clientMod.TabIndex = 6
+        Me.btn_clientMod.TabIndex = 2
         Me.btn_clientMod.Text = "거래처" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "관리"
         Me.btn_clientMod.UseVisualStyleBackColor = True
         '
@@ -52,7 +52,7 @@ Partial Class MainForm
         Me.btn_userMod.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_userMod.Name = "btn_userMod"
         Me.btn_userMod.Size = New System.Drawing.Size(66, 52)
-        Me.btn_userMod.TabIndex = 5
+        Me.btn_userMod.TabIndex = 1
         Me.btn_userMod.Text = "사용자" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "관리"
         Me.btn_userMod.UseVisualStyleBackColor = True
         '
@@ -62,7 +62,7 @@ Partial Class MainForm
         Me.btn_deal.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_deal.Name = "btn_deal"
         Me.btn_deal.Size = New System.Drawing.Size(66, 52)
-        Me.btn_deal.TabIndex = 4
+        Me.btn_deal.TabIndex = 3
         Me.btn_deal.Text = "거래내역 입력"
         Me.btn_deal.UseVisualStyleBackColor = True
         '
@@ -72,7 +72,7 @@ Partial Class MainForm
         Me.btn_print.Margin = New System.Windows.Forms.Padding(2)
         Me.btn_print.Name = "btn_print"
         Me.btn_print.Size = New System.Drawing.Size(66, 52)
-        Me.btn_print.TabIndex = 7
+        Me.btn_print.TabIndex = 4
         Me.btn_print.Text = "거래내역 출력"
         Me.btn_print.UseVisualStyleBackColor = True
         '
@@ -81,7 +81,7 @@ Partial Class MainForm
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.파일ToolStripMenuItem, Me.보기ToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(325, 24)
+        Me.MenuStrip1.Size = New System.Drawing.Size(324, 24)
         Me.MenuStrip1.TabIndex = 10
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -129,7 +129,7 @@ Partial Class MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(325, 87)
+        Me.ClientSize = New System.Drawing.Size(324, 87)
         Me.Controls.Add(Me.btn_print)
         Me.Controls.Add(Me.btn_clientMod)
         Me.Controls.Add(Me.btn_userMod)

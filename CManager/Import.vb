@@ -19,7 +19,6 @@ Public Class Import
         Try
             If ofd.ShowDialog = DialogResult.OK Then
                 WorkB = ExcelApp.Workbooks.Open(ofd.FileName)
-                lbl_wait.Text = "파일을 성공적으로 불러왔습니다."
             ElseIf ofd.ShowDialog = DialogResult.Abort Then
                 lbl_wait.Text = "파일 열기를 취소하셨습니다."
             End If
@@ -52,16 +51,19 @@ Public Class Import
                 WorkS = ExcelApp.Sheets(sCount)
                 Do Until WorkS.Cells(index, 5).Value = ""
                     i = 3
-                    Do Until WorkS.Cells(index + i, 1).Value = "" Or i > 8
+                    Do Until WorkS.Cells(index + i, 1).Value = "" Or WorkS.Cells(index + i, 1).Value = "합  계"
                         For j = 3 To 33
                             If WorkS.Cells(index + i, j).Value <> Nothing Then
 
                                 'add client name
                                 data(0) = WorkS.Cells(index, 5).Value
+                                Console.WriteLine(data(0))
                                 'add user name
                                 data(1) = WorkS.Cells(index + i, 1).Value
+                                Console.WriteLine(data(1))
                                 'add date
                                 data(2) = ExcelApp.Sheets(1).Cells(2, 36).Value & "-" & WorkS.Cells(index + 2, j).Value
+                                Console.WriteLine(data(2))
                                 Try
                                     commentText = WorkS.Cells(index + i, j).Comment.Text
                                     'add cost&tons
@@ -78,8 +80,11 @@ Public Class Import
                                     data(3) = "40000"
                                     data(4) = ""
                                 End Try
+                                Console.Out.WriteLine(data(3))
+                                Console.Out.WriteLine(data(4))
                                 'add qty
                                 data(5) = WorkS.Cells(index + i, j).Value
+                                Console.Out.WriteLine(data(5))
                                 'End If
 
                                 cmdText = "INSERT INTO [deal] (d_client, d_user, d_date, d_cost, d_tons, d_qty) VALUES (?, ?, ?, ?, ?, ?)"
@@ -97,6 +102,14 @@ Public Class Import
                         i += 1
                     Loop
                     'Next Client
+                    Do Until WorkS.Cells(index + i, 1).Value = "총   합   계"
+                        i += 1
+                    Loop
+                    Dim UpdateCmd = "UPDATE [client] SET c_provider = ? WHERE (c_name = ?)"
+                    Dim myUpdateCmd = New OleDbCommand(UpdateCmd, myConn)
+                    myUpdateCmd.Parameters.AddWithValue("@c_provider", WorkS.Cells(index + i, 36).Value())
+                    myUpdateCmd.Parameters.AddWithValue("@c_name", WorkS.Cells(index, 5).Value())
+                    myUpdateCmd.ExecuteNonQuery()
                     index += 12
                 Loop
                 sCount += 1
